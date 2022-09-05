@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>传说暗裔序列号版模拟抽奖</title>
+
+    <style>
+.btnn{
+    height: 40px;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 20px;
+    max-width: 500px;
+}
+.headbox{
+    width: 100%;
+  
+  
+}
+*{
+    color: white;
+}
+body{
+    padding: 0;
+    margin: 0;
+   
+}
+a{
+    color: red;
+    transition-duration: 0.3s;
+}
+a:hover{
+    color: darkred;
+}
+.drq{
+    max-width: 950px;
+    width: 100%;
+    margin: auto;
+    background-color: #36100f;
+    padding-bottom: 60px;
+   
+}
+.czbtn{
+    width: 25%;
+    cursor: pointer;
+}
+    </style>
+
+<!-- 导入MDUI CSS以及JS -->
+    <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css"/>
+    <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+</head>
+<body style="background-color: #c8c9cb;">
+<div class="drq">
+    <div class="mdui-dialog" id="dialog" style="color: white;background-color:#12161c ">
+        <div class="mdui-dialog-title" id="Msgtit" style="color:rgb(255, 145, 2);">标题</div>
+        <div class="mdui-dialog-content" id="zjxx" style="color: white;white-space: pre;line-height: 30px;">You'll lose all photos and media!</div>
+        <div class="mdui-dialog-actions">
+          <button class="mdui-btn mdui-ripple" mdui-dialog-cancel  style="color:rgb(255, 145, 2);">确定</button>
+      
+        </div>
+      </div>
+    <div class="headbox">
+        
+        <center><img src="csay/bzz.png" style="width: 100%;" alt="">
+            <br><br>
+            <span style="font-size: 20px;">您当前还剩下&nbsp;<span id="keynum" style="font-weight: bold;color:brown;">0</span>&nbsp;把钥匙</span> &nbsp;<a href="#">查看暂存箱</a><br><br>
+    <img src="csay/czbtn1.png" class="czbtn" onclick="KeyAdd(1);"/>
+    <img src="csay/czbtn2.png" class="czbtn" onclick="KeyAdd(11);"/>
+    <br><br><img src="csay/jc.png" style="width: 90%;max-width: 820px;" alt="">
+    <br><br>
+    <img src="csay/cjbtn1.png" class="czbtn" onclick="PTTSendClick1();"/>
+    <img src="csay/cjbtn2.png" class="czbtn" onclick="PTTSendClick10();"/>
+
+    <br>
+    <br><br>
+    <img src="csay/aybdhtit.jpg" style="width: 90%;max-width: 820px;" alt="">
+
+    <br><br>
+    <div>当前暗裔币累计:&nbsp;<span id="ljayb" style="color: rgb(255, 106, 0);">0</span>&nbsp;,当前剩余可使用暗裔币:&nbsp;<span  style="color: rgb(255, 106, 0);" id="syayb">0</span>&nbsp;</div>
+    <br><img src="csay/aybdhjc.jpg" style="width: 90%;max-width: 820px;" alt="">
+
+<br><br>
+
+    <div style="font-size:15px;color:white;line-height: 23px;">中奖信息:
+        <div>您已抽了<span id="cjcs" style="color:  rgb(255, 106, 0);">0</span>次，共获得: <span id="zjxxb" style="white-space: pre;"></span></div>
+    
+       </div>
+<br>
+<br>
+       <img src="csay/cjgl.jpg" style="width: 90%;max-width: 820px;" alt="">
+</center>
+</div>
+</div>
+</body>
+
+
+<script>
+var inst = new mdui.Dialog('#dialog');
+//初始化弹窗
+var keynum=0;
+// 定义钥匙数量
+var bnum=0;
+// 定义暗裔币数量
+var cjcs=0;
+//定义抽奖次数
+var aybnum=0;
+//定义暗裔币数量
+var zjxxend="\n";
+    var cjcs=0;
+   var $ = mdui.$;
+
+   var zjxx="";
+   var zxxxsz1=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+   var zxxxsz2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+const gailv = [
+    [1,10,'传说暗裔 无序列号版'],
+    [11,30, '鹰'],
+    [31,60, '王者星神'],
+    [61,95, '觉醒版超新星-悦享'],
+    [96,130, 'Scar Light-白虎'],
+    [131,190, '炫金火麒麟'],
+    [191,270, 'M4A1-黑骑士'],
+    [271,370, 'A背包套装-手雷包'],
+    [371,470, '超能力少女兑换券'],
+    [471,600, '王者星神原始光效'],
+    [601,1820, '暗裔宝箱'],
+    [1821,5820, '暗裔币X5'],
+    [5821,8820, '暗裔币X10'],
+    [8821,9820, '暗裔币X20'],
+    [9821,9980, '暗裔币X50'],
+    [9981,10000, '暗裔币X100'],
+
+];
+
+// 定义奖品名称以及概率
+
+function KeyAdd(addnum){
+keynum=keynum+addnum;
+$('#keynum').text(keynum);
+$('#Msgtit').text("提示");
+if(addnum>0)
+{
+$('#zjxx').text("您已成功添加"+addnum+"把钥匙！");
+inst.open();
+}
+}
+
+
+
+function PTTSendClick1()
+{
+    if(keynum>0)
+    {
+KeyAdd(-1);
+    cjcs=cjcs+1;
+    zjxxend="\n";
+    $("#cjcs").text(cjcs);
+    zjxx="";
+  var sjs= Math.ceil(Math.random()*10000);
+  
+  var syzjxx="";
+  for(j = 0; j < gailv.length; j++) {
+   var zxs=gailv[j][0]
+   var zds=gailv[j][1]
+  
+   if(sjs>=zxs&&sjs<=zds)
+   {
+  zjxx=gailv[j][2];
+zxxxsz2[j]=zxxxsz2[j]+1;
+
+if(j==11)
+{
+    aybnum=aybnum+5;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+}
+
+if(j==15)
+{
+    aybnum=aybnum+100;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+}
+
+if(j==12)
+{
+    aybnum=aybnum+10;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+}
+
+if(j==13)
+{
+    aybnum=aybnum+20;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+}
+
+if(j==14)
+{
+    aybnum=aybnum+50;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+}
+// method
+$("#zjxx").text(zjxx);
+  inst.open();
+
+   }
+   
+  
+} 
+
+
+
+for(gx=0;gx<17;gx++)
+   {
+    zjxxend=zjxxend+gailv[gx][2]+"X"+zxxxsz2[gx]+"\n";
+    console.log(zxxxsz2[gx])
+   }
+   $("#zjxxb").text(zjxxend);
+}
+else{
+    $('#zjxx').text("您当前的钥匙不足抽奖1次~");
+inst.open();
+
+}
+}
+
+ function PTTSendClick10()
+ {
+    if(keynum>9)
+    {
+KeyAdd(-10);
+    cjcs=cjcs+10;
+    zjxxend="";
+    $("#cjcs").text(cjcs);
+    zxxxsz1=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    zjxx="";
+for(var s=0;s<10;s++)
+{
+    var sjs= Math.ceil(Math.random()*10000);
+  
+  var syzjxx="";
+  for(j = 0; j < gailv.length; j++) {
+   var zxs=gailv[j][0]
+   var zds=gailv[j][1]
+  
+   if(sjs>=zxs&&sjs<=zds)
+   {
+    
+    zxxxsz1[j]=zxxxsz1[j]+1;
+    zxxxsz2[j]=zxxxsz2[j]+1;
+    if(j==11)
+{
+    aybnum=aybnum+5;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+}
+
+if(j==15)
+{
+    aybnum=aybnum+100;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+}
+
+if(j==12)
+{
+    aybnum=aybnum+10;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+}
+
+if(j==13)
+{
+    aybnum=aybnum+20;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+}
+
+if(j==14)
+{
+    aybnum=aybnum+50;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+}
+   }}
+}
+
+for(xxh=0;xxh<zxxxsz1.length;xxh++)
+{
+    if(zxxxsz1[xxh]!=0)
+    {
+        zjxx=zjxx+gailv[xxh][2]+"   X"+zxxxsz1[xxh]+"\n";
+    }
+}
+$("#zjxx").text(zjxx);
+  inst.open();
+  
+for(gx=0;gx<16;gx++)
+   {
+    zjxxend=zjxxend+gailv[gx][2]+"    共"+zxxxsz2[gx]+"个\n";
+    console.log(zxxxsz2[gx])
+   }
+   $("#zjxxb").text(zjxxend);
+ }
+ else{
+    $('#zjxx').text("您当前的钥匙不足抽奖10次~");
+    inst.open();
+ }
+ }
+
+
+// 充值钥匙方法
+
+</script>
+</html>
