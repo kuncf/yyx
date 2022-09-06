@@ -79,9 +79,11 @@ a:hover{
             <br><br>
             <br><span href="#"  mdui-dialog="{target: '#example-4'}" style="text-decoration:underline;color:red;cursor: pointer;">查看概率&nbsp;&nbsp;&nbsp;查看中奖信息</span>
           
-            <br><br><span style="font-size: 20px;">您当前还剩下&nbsp;<span id="keynum" style="font-weight: bold;color:brown;">110</span>&nbsp;把钥匙</span> &nbsp;<span href="#"  mdui-dialog="{target: '#zcx'}" style="text-decoration:underline;color:red;cursor: pointer;">查看暂存箱</span><br><br>
-      <img src="csay/czbtn1.png" class="czbtn" onclick="KeyAdd(1);"/>
-    <img src="csay/czbtn2.png" class="czbtn" onclick="KeyAdd(11);"/>
+            <br><br><span style="font-size: 20px;">您当前还剩下&nbsp;<span id="keynum" style="font-weight: bold;color:brown;">0</span>&nbsp;把钥匙</span> &nbsp;<span href="#"  mdui-dialog="{target: '#zcx'}" style="text-decoration:underline;color:red;cursor: pointer;">查看暂存箱</span><br><br>
+      <img src="csay/czbtn1.png" class="czbtn" onclick="KeyAdd(1);Czcs(1)"/>
+    <img src="csay/czbtn2.png" class="czbtn" onclick="KeyAdd(11);Czcs(10)"/>
+
+    <br><br><span>累计“充值”&nbsp;<span id="ljcz" style="color: rgb(255, 51, 0);">0</span>&nbsp;把钥匙</span>
     <br><br><img src="csay/jc.png" style="width: 90%;max-width: 820px;" alt="">
     <br><br>
     <img src="csay/cjbtn1.png" class="czbtn" onclick="PTTSendClick1();"/>
@@ -253,12 +255,20 @@ var inst = new mdui.Dialog('#dialog');
 var inst2 = new mdui.Dialog('#example-4');
 var $ = mdui.$;
 var tab = new mdui.Tab('#example4-tab');
+var czcs=0;
 
+
+function Czcs(num){
+czcs=czcs+num;
+$("#ljcz").text(czcs);
+
+}
+//刷新充值次数
 $('#example-4').on('open.mdui.dialog', function () {
   tab.handleUpdate();
 });
 //初始化弹
-var keynum=110;
+var keynum=0;
 // 定义钥匙数量
 var bnum=0;
 // 定义暗裔币数量
@@ -339,7 +349,7 @@ $("#zjxx").text("共获得"+zxxxsz2[10]+"个暗裔宝箱，一共开启"+aybxxh+
 // 定义奖品名称以及概率
 
 // 定义奖品名称以及概率
-alert("更新:\n\n开暗裔宝箱和暂存箱分解钥匙以及查看概率中奖信息 已上线~~\n\n声明:\n本页面仅做为模拟概率使用，无任何盈利和消费，抽中的道具也不会发往仓库。请大家理性消费。如有侵权联系即删~")
+alert("更新:\n\n初始钥匙设为0，更新计数“充值”次数~~\n\n调查:\n有人想要王者夺宝 王者轮回的模拟吗可以去我抖音 CF仰泳信 评论一下，我看看人多吗，人多就做。\n\n声明:\n本页面仅做为模拟概率使用，无任何盈利和消费，抽中的道具也不会发往仓库。请大家理性消费。如有侵权联系即删~")
 
 function kx1()
 {
