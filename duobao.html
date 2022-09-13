@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王者夺宝模拟器</title>
+<style>
+.jiangchi{
+width: 80%;
+    background-color: #1a364c;
+    padding: 0;
+    margin: 0;
+    margin: auto;
+  
+}
+.jiangchi img{
+    margin: 0;
+    padding: 0;
+    width: 19.5%;
+    min-width: 50px;
+   
+}
+.cjan{
+    width: 20%;
+    max-width: 150px;
+    cursor: pointer;
+}
+html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#zjxxx{
+            font-size: 20px;
+            white-space: pre;
+        
+        }
+
+</style>
+
+
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" />
+<script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
+</head>
+<body  style="background-color: #1a364c;background-image: linear-gradient(to bottom , #1a364c, #122331);height: 100%;">
+    <br><br>
+    <div class="jiangchi">
+        &nbsp;<img src="img/db/redbonebg.png" alt=""><br><br>
+        <center>
+<img  class="jpimg" src="img/db/jc0.png" alt="">
+<img  class="jpimg"  src="img/db/jc1.png" alt="">
+<img  class="jpimg"  src="img/db/jc2.png" alt="">
+<img   class="jpimg" src="img/db/jc3.png" alt="">
+<img  class="jpimg"  src="img/db/jc4.png" alt="">
+<img   class="jpimg" src="img/db/jc5.png" alt="">
+<img  class="jpimg"  src="img/db/jc6.png" alt="">
+<img   class="jpimg" src="img/db/jc7.png" alt="">
+<img   class="jpimg" src="img/db/jc8.png" alt="">
+<img  class="jpimg"  src="img/db/jc9.png" alt="">
+
+</center>
+    </div>
+    <br><br>
+    <center>
+<img src="img/db/cyc.png" class="cjan"onclick="PTTSendClick1();" alt="">
+<img src="img/db/csc.png" class="cjan" onclick="PTTSendClick10();" alt="">
+<br><br><span href="#"  mdui-dialog="{target: '#example-4'}" style="text-decoration:underline;color:rgb(163, 197, 255);cursor: pointer;">查看概率&nbsp;&nbsp;&nbsp;查看中奖信息</span>
+        
+    </center>
+
+     
+    <div class="mdui-container" >
+   
+        <div class="mdui-dialog" id="example-4" style="min-height: 400px;">
+          <div class="mdui-tab mdui-tab-full-width" id="example4-tab">
+            <a href="#example4-tab1" class="mdui-ripple">查看概率</a>
+            <a href="#example4-tab2" class="mdui-ripple">查看中奖信息</a>
+    
+          </div>
+          <div id="example4-tab1" class="mdui-p-a-2">
+            <br>
+
+            <img src="img/db/dbglv.png" style="width: 100%;max-width: 820px;margin: auto;" alt="">
+          </div>
+          <div id="example4-tab2" class="mdui-p-a-2">
+            <div style="font-size:15px;color:rgb(43, 43, 43);line-height: 23px;">中奖信息:
+                <div>您已抽了<span id="cjcs" style="color:  rgb(255, 106, 0);">0</span>次，共获得: <span id="zjxxb" style="white-space: pre;"></span></div>
+            
+               </div>
+          </div>
+          
+        </div>
+      </div>
+    <div class="mdui-dialog" id="dialog">
+    
+        <div class="mdui-dialog-title">中奖信息</div>
+        <div class="mdui-dialog-content" id="zjxxx">You'll lose all photos and media!</div>
+        <div class="mdui-dialog-actions">
+          <button class="mdui-btn mdui-ripple" mdui-dialog-cancel>确定</button>
+      
+        </div>
+      </div>
+
+
+
+
+</body>
+<script>
+
+
+var inst = new mdui.Dialog('#dialog');
+var inst2 = new mdui.Dialog('#example-4');
+var $ = mdui.$;
+var tab = new mdui.Tab('#example4-tab');
+var czcs=0;
+var zjxxend="\n";
+    var cjcs=0;
+   var $ = mdui.$;
+var inst = new mdui.Dialog('#dialog');
+   var zjxx="";
+   var zxxxsz1=[0,0,0,0,0,0,0,0,0,0];
+   var zxxxsz2=[0,0,0,0,0,0,0,0,0,0];
+    const gailv = [
+    [1,3,'王者蔷薇'],
+    [4,7, '王者涂鸦'],
+    [8,11, '王者之魄'],
+    [12,16, '王者之击'],
+    [17,21, '炫金天龙'],
+    [22,26, '炫金武士'],
+    [27,36, '雷神-星空'],
+    [37,46, '龙啸'],
+    [47,146, 'Cop-357赤龙'],
+    [147,1000, '神秘道具'],
+   
+];
+/*
+王者蔷薇0.3
+王者涂鸦0.3
+王者之魄0.4
+王者之击0.5
+炫金天龙0.5
+炫金武士0.5
+雷神-星空1
+龙啸1
+Cop-357赤龙10
+神秘道具85.5
+*/
+function PTTSendClick1()
+{
+    cjcs=cjcs+1;
+    zjxxend="\n";
+    $("#cjcs").text(cjcs);
+    zjxx="";
+  var sjs= Math.ceil(Math.random()*1000);
+  
+  var syzjxx="";
+  for(j = 0; j < gailv.length; j++) {
+   var zxs=gailv[j][0]
+   var zds=gailv[j][1]
+  
+   if(sjs>=zxs&&sjs<=zds)
+   {
+  zjxx=gailv[j][2];
+zxxxsz2[j]=zxxxsz2[j]+1;
+
+// method
+$("#zjxxx").text(zjxx);
+  inst.open();
+
+   }
+   
+  
+} 
+
+
+
+for(gx=0;gx<17;gx++)
+   {
+    zjxxend=zjxxend+gailv[gx][2]+"X"+zxxxsz2[gx]+"\n";
+    console.log(zxxxsz2[gx])
+   }
+   $("#zjxxb").text(zjxxend);
+
+}
+
+ function PTTSendClick10()
+ {
+    cjcs=cjcs+10;
+    zjxxend="";
+    $("#cjcs").text(cjcs);
+    zxxxsz1=[0,0,0,0,0,0,0,0,0,0];
+    zjxx="";
+for(var s=0;s<10;s++)
+{
+    var sjs= Math.ceil(Math.random()*1000);
+  
+  var syzjxx="";
+  for(j = 0; j < gailv.length; j++) {
+   var zxs=gailv[j][0]
+   var zds=gailv[j][1]
+  
+   if(sjs>=zxs&&sjs<=zds)
+   {
+    
+    zxxxsz1[j]=zxxxsz1[j]+1;
+    zxxxsz2[j]=zxxxsz2[j]+1;
+
+   }}
+}
+
+for(xxh=0;xxh<zxxxsz1.length;xxh++)
+{
+    if(zxxxsz1[xxh]!=0)
+    {
+        zjxx=zjxx+gailv[xxh][2]+"X"+zxxxsz1[xxh]+"\n";
+    }
+}
+$("#zjxxx").text(zjxx);
+  inst.open();
+  
+for(gx=0;gx<10;gx++)
+   {
+    zjxxend=zjxxend+gailv[gx][2]+"X"+zxxxsz2[gx]+"\n";
+    console.log(zxxxsz2[gx])
+   }
+   $("#zjxxb").text(zjxxend);
+ }
+
+
+
+
+</script>
+
+
+</html>
