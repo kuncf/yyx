@@ -6,9 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>王者夺宝模拟器</title>
 <style>
+  @import url("https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css");
+body {
+  background: linear-gradient(-45deg, #1a4c4a, #1a264c, #1a364c, #4c1a1a);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+/* style="background-color: #1a364c;background-image: linear-gradient(to bottom , #1a364c, #122331);height: 100%;" */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .jiangchi{
 width: 80%;
-    background-color: #1a364c;
+    /* background-color: #1a364c; */
     padding: 0;
     margin: 0;
     margin: auto;
@@ -19,7 +38,7 @@ width: 80%;
     padding: 0;
     width: 19.5%;
     min-width: 50px;
-   
+   margin-top: 10px;
 }
 .cjan{
     width: 20%;
@@ -36,15 +55,36 @@ html{
             white-space: pre;
         
         }
-
+        .str_wrap{
+			padding-left: 3em;
+			padding-right: 3em;
+			background: #080808;
+			height: 20px;
+			line-height: 3em;
+			font-size: 1.2em;
+     
+		}
+    .str_wrap a{
+      color: azure;
+      font-size: 14px;
+      margin-left:40px ;
+    }
 </style>
 
-
 <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+<link rel="stylesheet" href="css/liMarquee.css">
+
+<script src="js/jquery.liMarquee.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" />
 <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
 </head>
-<body  style="background-color: #1a364c;background-image: linear-gradient(to bottom , #1a364c, #122331);height: 100%;">
+<body >
+    
+    <div class="str1 str_wrap" style="position: fixed;left: 0;top: 0;background-color:#1b1b1b;color:rgb(184, 212, 251);height:20px;line-height:30px;cursor: pointer;">
+    <a href="https://www.douyin.com/user/MS4wLjABAAAA5whHwaTt0KwOJeXjKfter3Bpv4nxLDQXSbx0gw9uykqTKq3Avav2AJCpPi2KfKyU"> 关注抖音CF仰泳信 模拟器最新咨询第一手消息</a>
+  <a href="https://pengkun6b.github.io/zhcdd/cfjjrgmncj.html">竞技荣光模拟器</a> 
+  <a href="https://pengkun6b.github.io/cfmncj/csaymoni.html">传说暗裔序列号模拟器</a> 
+  </div>
     <br><br>
     <div class="jiangchi">
         &nbsp;<img src="img/db/redbonebg.png" alt=""><br><br>
@@ -109,6 +149,10 @@ html{
 </body>
 <script>
 
+
+$('.str1').liMarquee();
+
+alert("由于官网未公布具体概率所以依照官网公布大概概率制作，新版本更新了也会马上出的~~\n大家记得关注我哦 CF仰泳信\n\n声明:\n本页面仅做为模拟概率使用，无任何盈利和消费，抽中的道具也不会发往仓库。请大家理性消费。如有侵权联系即删~")
 
 var inst = new mdui.Dialog('#dialog');
 var inst2 = new mdui.Dialog('#example-4');
