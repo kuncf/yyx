@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+ 
+body {
+  background: linear-gradient(-45deg, #2b7b79, #2f3b64, #1a364c, #6f2d2d);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+  height: 100vh;
+}
+/* style="background-color: #1a364c;background-image: linear-gradient(to bottom , #1a364c, #122331);height: 100%;" */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+    .jctp{
+       width: 180px;
+   height: 100px;
+    }
+    .jccenter{
+        display: flex;
+        justify-content: space-between;
+    }
+    .jcbody{
+        width: 915px;
+        margin: auto;
+    }
+    .gmbtn{
+        width: 160px;
+        margin-top: 30px;
+    }
+    .btnn{
+        cursor: pointer;
+        
+    }
+   .lbsbox{
+    background-image: url('img/lh/lbsbg.png');
+    width: 242px;
+    height: 28px;
+    background-size: cover;
+    color: rgb(211, 255, 145);
+    line-height: 25px;
+    padding-left: 30px;
+    font-size: 14px;
+    margin-top: 30px;
+   }
+</style>
+
+
+<script src="js/jquery.liMarquee.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" />
+<script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
+
+</head>
+<body class="mdui-theme-primary-indigo mdui-theme-accent-blue">
+    <div class="jcbody">
+        <div class="lbsbox">拥有蓝宝石: <span id="lbsnum">0</span> </div>
+        <br>
+<div class="jctop">
+<img src="img/lh/jc0.png" class="jctp" alt="">
+<img src="img/lh/jc1.png" class="jctp" alt="">
+<img src="img/lh/jc2.png" class="jctp" alt="">
+<img src="img/lh/jc3.png" class="jctp" alt="">
+<img src="img/lh/jc4.png" class="jctp" alt="">
+</div>
+<div class="jccenter">
+<div class="jcleft">
+    <img src="img/lh/jc13.png" class="jctp" alt=""><br>
+    <img src="img/lh/jc12.png" class="jctp" alt="">
+</div>
+<div class="ccenter">
+    <br>
+   
+    <button class="mdui-btn gmbtn  mdui-color-theme-accent btnn mdui-ripple">获取1个蓝宝石</button>
+    <button class="mdui-btn gmbtn mdui-color-theme-accent btnn mdui-ripple">获取11个蓝宝石</button>
+
+
+</div>
+<div class="jcright">
+    <img src="img/lh/jc5.png" class="jctp" alt=""><br>
+<img src="img/lh/jc6.png" class="jctp" alt="">
+</div>
+
+
+</div>
+<div class="jcbottom">
+
+    
+<img src="img/lh/jc11.png" class="jctp" alt="">
+<img src="img/lh/jc10.png" class="jctp" alt="">
+<img src="img/lh/jc9.png" class="jctp" alt="">
+<img src="img/lh/jc8.png" class="jctp" alt="">
+<img src="img/lh/jc7.png" class="jctp" alt="">
+</div>
+
+
+
+    </div>
+</body>
+</html>
