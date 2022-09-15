@@ -8,7 +8,11 @@
 
 <style>
  
+ /* @import url("https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css"); */
+
 body {
+   
+   
   background: linear-gradient(-45deg, #2b7b79, #2f3b64, #1a364c, #6f2d2d);
   background-size: 400% 400%;
   animation: gradient 8s ease infinite;
@@ -40,11 +44,12 @@ body {
     }
     .gmbtn{
         width: 160px;
-        margin-top: 30px;
+  
+        
     }
     .btnn{
         cursor: pointer;
-        
+        transition-duration: 0.1s;
     }
    .lbsbox{
     background-image: url('img/lh/lbsbg.png');
@@ -57,17 +62,45 @@ body {
     font-size: 14px;
     margin-top: 30px;
    }
+   .gbbtn{
+        height: 40px;
+        cursor: pointer;
+    }
+    .titbtn{
+        margin-top: 30px;
+        height: 28px;
+    }
+ .jctit{
+    display: flex;
+    justify-content: space-between;
+ }
+ .btnn:hover{
+    box-shadow: 0 0 2px rgb(151, 151, 151);
+ }
 </style>
 
-
-<script src="js/jquery.liMarquee.js"></script>
+<script src="js/jquery-2.1.1.min.js"></script>
+<!-- <script src="js/jquery.liMarquee.js"></script> -->
 <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" />
 <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
 
 </head>
 <body class="mdui-theme-primary-indigo mdui-theme-accent-blue">
     <div class="jcbody">
-        <div class="lbsbox">拥有蓝宝石: <span id="lbsnum">0</span> </div>
+      <div class="jctit">
+<div>  <div class="lbsbox">拥有蓝宝石: <span id="keynum">0</span> </div></div>
+        <div>
+
+            <img src="img/lh/zjbtn.png" class="titbtn btnn" alt="">
+            <img src="img/lh/zcbtn.png" class="titbtn btnn" alt="">
+
+
+        </div>
+      </div>
+
+
+
+
         <br>
 <div class="jctop">
 <img src="img/lh/jc0.png" class="jctp" alt="">
@@ -81,11 +114,12 @@ body {
     <img src="img/lh/jc13.png" class="jctp" alt=""><br>
     <img src="img/lh/jc12.png" class="jctp" alt="">
 </div>
-<div class="ccenter">
+<div class="ccenter" style="padding-top: 18px;">
+    <br><div style="color:white ;text-align: center;">累计“充值”&nbsp;<span id="ljcz" style="color: rgb(255, 51, 0);">0</span>&nbsp;个蓝宝石</div><br>
+    <button class="mdui-btn gmbtn  mdui-color-theme-accent btnn mdui-ripple" onclick="KeyAdd(1);Czcss(1)">获取1个蓝宝石</button>
+    <button class="mdui-btn gmbtn mdui-color-theme-accent btnn mdui-ripple"  onclick="KeyAdd(11);Czcss(10)">获取11个蓝宝石</button>
     <br>
-   
-    <button class="mdui-btn gmbtn  mdui-color-theme-accent btnn mdui-ripple">获取1个蓝宝石</button>
-    <button class="mdui-btn gmbtn mdui-color-theme-accent btnn mdui-ripple">获取11个蓝宝石</button>
+    <button class="mdui-btn  mdui-color-blue-900 btnn btnncj mdui-ripple" style="width:324px ;height:48px;margin-top:20px"  onclick="PTTSendClick1()">花费1个蓝宝石抽1次</button>
 
 
 </div>
@@ -109,5 +143,307 @@ body {
 
 
     </div>
+
+<!-- 提示弹窗 -->
+<div class="mdui-dialog" id="dialog">
+    <div class="mdui-dialog-title" style="background-image:url('img/db/tiptit.png') ; color:orange;font-size:15px;text-align: center;background-size:cover;height: 40px;line-height: 45px;padding: 0;">提&nbsp;示</div>
+    <div class="mdui-dialog-content" id="zjxx" style="background-color: #1c1d1f;color: white;white-space: pre;line-height: 30px;text-align: center;min-height: 100px;justify-content:center;padding-top: 80px;padding-bottom: 80px; letter-spacing: 1px;">You'll lose all photos and media!</div>
+    <div class="mdui-dialog-actions"  style="background-color: #1c1d1f;">
+      <center>
+      <img src="img/db/gbbtn.png" class="gbbtn btnn" mdui-dialog-close alt="">
+  </center>
+    </div>
+</div>
+<!-- 提示弹窗 -->
+
+
 </body>
+
+<script src="https://howlerjs.com/assets/howler.js/dist/howler.min.js"></script>
+
+<script>
+    var inst = new mdui.Dialog('#dialog');
+    var inst2 = new mdui.Dialog('#example-4');
+    var $ = mdui.$;
+    var tab = new mdui.Tab('#example4-tab');
+    var czcs=0;
+    
+    
+    function Czcss(num){
+    czcs=czcs+num;
+    $("#ljcz").text(czcs);
+    
+    }
+    //刷新充值次数
+    $('#example-4').on('open.mdui.dialog', function () {
+      tab.handleUpdate();
+    });
+    //初始化弹
+    var keynum=0;
+    // 定义钥匙数量
+    var bnum=0;
+    // 定义暗裔币数量
+    var cjcs=0;
+    //定义抽奖次数
+    var aybnum=0;
+    //定义暗裔币数量
+    var aybxnum=0;
+    //定义暗裔宝箱数量
+    var aybxxh=0;
+    //定义消耗暗裔宝箱数量
+    const aybxgailv = [
+        [1,1.1,'王者之石X10',0],
+        [2,3, '传说暗裔随机序列号版幸运签',0],
+        [4,6, '抽奖钥匙',0],
+        [7,10, '暗裔币X5',0]];
+        //定义暗裔宝箱概率
+    
+    function Sxaybx(){
+    
+    $("#aybxnum").text(aybxnum);
+    }
+    //刷新暗裔宝箱数量方法
+    
+    
+    
+    
+    var zjxxend="\n";
+        var cjcs=0;
+       var $ = mdui.$;
+       var fjbts=false;
+       var zjxx="";
+       var zxxxsz1=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+       //用于抽奖显示
+       var zxxxsz2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+       //用于计数总共获得
+       var zxxxsz3=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+       //用于计数剩余
+    
+       const gailv = [
+        [1,10,'王者之绝'],
+        [11,30, '王者-春'],
+        [31,60, '王者之灵'],
+        [61,95, '觉醒版超新星-悦享王者零-华冠丽服'],
+        [96,130, 'Barrett-朱雀'],
+        [131,190, '炫金骑士'],
+        [191,270, '黑龙吞噬者'],
+        [271,370, '泰迪娃娃'],
+        [371,470, 'FR-F2-炫彩'],
+        [471,600, '手雷-炫彩'],
+        [601,1820, '王者之石1个'],
+        [1821,5820, '觉醒宝石5个'],
+        [5821,8820, '属性变更券5个'],
+        [8821,9820, '交易专用钥匙5个'],
+        [9821,9980, '暗裔币X50'],
+        [9981,10000, '暗裔币X100'],
+    
+    ];
+    
+    // 音频效果
+
+    var soundhover = new Howl({
+  src: ['sound/hover.mp3']
+});
+var soundclick = new Howl({
+  src: ['sound/click.mp3']
+});
+
+jQuery(function($){
+    $(".btnn").hover(function () {
+     
+        soundhover.play(); 
+    }, function () {
+        // out
+    }
+   );
+   $(".btnn").click(function () {
+     
+     soundclick.play(); 
+ }
+);
+
+});
+ // 音频效果
+    
+    
+    function ckkx(){
+        var kxjlu="";
+    for(var j=0;j<4;j++)
+    {
+    kxjlu=kxjlu+aybxgailv[j][2]+"  共开箱获得 "+aybxgailv[j][3]+" 份\n";
+    
+    }
+    
+    $("#zjxx").text("共获得"+zxxxsz2[10]+"个暗裔宝箱，一共开启"+aybxxh+"次箱，获得:\n\n"+kxjlu);
+      inst.open();
+    
+    
+    
+    
+    }
+    
+    // 定义奖品名称以及概率
+    
+    // 定义奖品名称以及概率
+  //  alert("更新:\n\n初始钥匙设为0，更新计数“充值”次数~~\n\n调查:\n有人想要王者夺宝 王者轮回的模拟吗可以去我抖音 CF仰泳信 评论一下，我看看人多吗，人多就做。\n\n声明:\n本页面仅做为模拟概率使用，无任何盈利和消费，抽中的道具也不会发往仓库。请大家理性消费。如有侵权联系即删~")
+    
+    
+    
+    function KeyAdd(addnum){
+       
+    keynum=keynum+addnum;
+    $('#keynum').text(keynum);
+    $('#Msgtit').text("提示");
+    if(addnum>0)
+    {
+    $('#zjxx').text("您已成功添加"+addnum+"个蓝宝石！");
+    if(fjbts)
+    {
+    
+    }
+    else
+    {
+    inst.open();
+    fjbts=false;
+    }
+    }
+    Gxzcx();
+    }
+    
+    
+    
+    function PTTSendClick1()
+    {
+        Gxzcx();
+        if(keynum>0)
+        {
+    KeyAdd(-1);
+        cjcs=cjcs+1;
+        zjxxend="\n";
+        $("#cjcs").text(cjcs);
+        zjxx="";
+      var sjs= Math.ceil(Math.random()*10000);
+      
+      var syzjxx="";
+      for(j = 0; j < gailv.length; j++) {
+       var zxs=gailv[j][0]
+       var zds=gailv[j][1]
+      
+       if(sjs>=zxs&&sjs<=zds)
+       {
+      zjxx=gailv[j][2];
+    zxxxsz2[j]=zxxxsz2[j]+1;
+    zxxxsz3[j]=zxxxsz3[j]+1;
+    
+    if(j==10)
+    {
+        aybxnum=aybxnum+1;
+    Sxaybx()
+    }
+    if(j==11)
+    {
+        aybnum=aybnum+5;
+        $("#ljayb").text(aybnum);
+        $("#syayb").text(aybnum);
+    }
+    
+    if(j==15)
+    {
+        aybnum=aybnum+100;
+        $("#ljayb").text(aybnum);
+        $("#syayb").text(aybnum);
+    }
+    
+    if(j==12)
+    {
+        aybnum=aybnum+10;
+        $("#ljayb").text(aybnum);
+        $("#syayb").text(aybnum);
+    }
+    
+    if(j==13)
+    {
+        aybnum=aybnum+20;
+        $("#ljayb").text(aybnum);
+        $("#syayb").text(aybnum);
+    }
+    
+    if(j==14)
+    {
+        aybnum=aybnum+50;
+        $("#ljayb").text(aybnum);
+        $("#syayb").text(aybnum);
+    }
+    Gxzcx()
+    // method
+    $("#zjxx").text(zjxx);
+      inst.open();
+    
+       }
+       
+      
+    } 
+    
+    
+    
+    for(gx=0;gx<17;gx++)
+       {
+        zjxxend=zjxxend+gailv[gx][2]+"X"+zxxxsz2[gx]+"\n";
+      
+       }
+       $("#zjxxb").text(zjxxend);
+    }
+    else{
+        $('#zjxx').text("您当前的钥匙不足抽奖1次~");
+    inst.open();
+    
+    }
+    }
+    
+   
+    
+    // 充值钥匙方法
+    
+    function Gxzcx()
+    {
+    for(var j=0;j<11;j++){
+    $("#zg"+j).text(zxxxsz2[j]);
+    $("#sy"+j).text(zxxxsz3[j]);
+    console.log(j+"    "+gailv[j][2]+"剩余"+zxxxsz3[j]+"总共"+zxxxsz2[j])
+    
+    
+    }
+    
+    }
+    
+    function fjys(pid){
+    if(zxxxsz3[pid]<1)
+    {
+        alert("您当前的"+gailv[pid][2]+"不足1个~");
+    
+    }
+    else{
+        var b=confirm("是否分解1个"+gailv[pid][2]+"换取"+gailv[pid][3]+"把钥匙")//按确认和取消输出不同的内容
+                    if(b==true){
+                   zxxxsz3[pid]=zxxxsz3[pid]-1;
+                   Gxzcx()
+                   fjbts=true;
+                   
+                   KeyAdd(gailv[pid][3])
+                   alert("您已成功分解1个"+gailv[pid][2]+"获得"+gailv[pid][3]+"把钥匙")
+                    }else{
+    
+                    }
+    }
+    
+    
+    
+    
+    }
+    
+    </script>
+    
+  
+
+
 </html>
