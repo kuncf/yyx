@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工坊赏金令模拟开箱</title>
+
+    <style>
+.btnn{
+    height: 40px;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 20px;
+    max-width: 500px;
+}
+.headbox{
+    width: 100%;
+  
+  
+}
+*{
+    color: white;
+}
+body{
+    padding: 0;
+    margin: 0;
+   
+}
+a{
+    color: red;
+    transition-duration: 0.3s;
+}
+a:hover{
+    color: darkred;
+}
+.drq{
+    max-width: 950px;
+    width: 100%;
+    margin: auto;
+    background-color: #36100f;
+    padding-bottom: 60px;
+   
+}
+.czbtn{
+    width: 25%;
+    cursor: pointer;
+}
+.dsadsa{
+    margin: 0;
+    padding: 0;
+}
+.dsadsa td{
+    padding: 0;
+    margin: 0;
+    line-height: 25px;
+}
+
+.centerbox{
+  background-image: url('img/boxbg.png');
+  width: 90%;
+  background-size:100% 100%;
+
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+padding-top: 60px;
+padding-bottom: 60px;
+}
+.kxbtn{
+  background-image: url('img/kxbtn.png');
+  width: 180px;
+  height: 50px;
+  border: 0px;
+  background-color: transparent;
+  background-size:100% 100%;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+.kxbtn:hover{
+transform: scale(1.05);
+}
+.boximg{
+  width: 180px;
+}
+.boxbox{
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.jlimg{
+  width: 500px;
+}
+.glimg{
+  width: 100%;
+  margin: auto;
+}
+.numbox{
+  margin: 5px;
+  font-size: 12px;
+}
+.numtit{
+  color: rgb(255, 157, 0);
+}
+    </style>
+
+<!-- 导入MDUI CSS以及JS -->
+    <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css"/>
+    <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <link rel="stylesheet" href="css/liMarquee.css">
+    <script src="js/jquery.liMarquee.js"></script>
+</head>
+<body style="background-color: #c8c9cb;" class="mdui-theme-primary-deep-orange">
+  <div class="str1 str_wrap" style="position: fixed;left: 0;top: 0;background-color:#1b1b1b;color:rgb(184, 212, 251);height:20px;line-height:30px;cursor: pointer;">
+    <a href="https://www.douyin.com/user/MS4wLjABAAAA5whHwaTt0KwOJeXjKfter3Bpv4nxLDQXSbx0gw9uykqTKq3Avav2AJCpPi2KfKyU"> 关注抖音CF仰泳信 模拟器最新咨询第一手消息</a>
+  &nbsp;&nbsp;  &nbsp;    <a href="https://pengkun6b.github.io/cfmncj/lunhui.html">王者轮回模拟器</a> 
+  &nbsp;&nbsp;  &nbsp;  <a href="https://pengkun6b.github.io/cfmncj/duobao3.html">新王者夺宝模拟器</a> 
+  &nbsp;&nbsp;  &nbsp;     <a href="https://pengkun6b.github.io/zhcdd/cfjjrgmncj.html">竞技荣光模拟器</a> 
+  &nbsp;&nbsp;  &nbsp; <a href="https://pengkun6b.github.io/cfmncj/csaymoni.html">传说暗裔序列号模拟器</a> 
+  </div>
+
+<div class="drq">
+    <div class="mdui-dialog" id="dialog" style="color: white;background-color:#12161c ">
+        <div class="mdui-dialog-title" id="Msgtit" style="color:rgb(255, 145, 2);">中奖信息</div>
+        <div class="mdui-dialog-content" id="zjxx" style="color: white;white-space: pre;line-height: 30px;">You'll lose all photos and media!</div>
+        <div class="mdui-dialog-actions">
+          <button class="mdui-btn mdui-ripple" mdui-dialog-cancel  style="color:rgb(255, 145, 2);">确定</button>
+      
+        </div>
+      </div>
+    <div class="headbox">
+        
+        <center><img src="img/titback.jpg"  style="width: 100%;" alt="">
+       <div class="centerbox">
+<div class="boxbox">
+  
+<img src="img/bx1.png"  mdui-tooltip="{content: '&lt;img src=&quot;img/jl1.png&quot; class=&quot;jlimg&quot;>', position: 'top'}" class="boximg" alt=""> <br>
+
+<button class="kxbtn" onclick="Cj1()"></button>
+<div class="numbox">累计第 <span class="numtit" id="numbox1">0</span> 个</div>
+
+</div>
+<div class="boxbox">
+  <img src="img/bx2.png"  mdui-tooltip="{content: '&lt;img src=&quot;img/jl2.png&quot; class=&quot;jlimg&quot;>', position: 'top'}"  class="boximg" alt=""> <br>
+  <button class="kxbtn"  onclick="Cj2()"></button>
+  <div class="numbox">累计第 <span class="numtit" id="numbox2">0</span> 个</div>
+  
+  </div>
+  <div class="boxbox">
+    <img src="img/bx3.png"  mdui-tooltip="{content: '&lt;img src=&quot;img/jl3.png&quot; class=&quot;jlimg&quot;>', position: 'top'}"  class="boximg" alt=""> <br>
+    <button class="kxbtn"  onclick="Cj3()"></button>
+    <div class="numbox">累计第 <span class="numtit" id="numbox3">0</span> 个</div>
+    
+    </div>
+    <div class="boxbox">
+      <img src="img/bx4.png"  mdui-tooltip="{content: '&lt;img src=&quot;img/jl4.png&quot; class=&quot;jlimg&quot;>', position: 'top'}"  class="boximg" alt=""> <br>
+      <button class="kxbtn"  onclick="Cj4()"></button>
+      <div class="numbox">累计第 <span class="numtit" id="numbox4">0</span> 个</div>
+      
+      </div>
+  
+
+
+
+       </div>
+       <br>
+       <button class="kxbtn" style="  background-image: url('img/glbtn.png');"  mdui-dialog="{target: '#example-4'}"> 查看概率</button>
+
+      <button class="kxbtn" style="  background-image: url('img/jlbtn.png');"   mdui-dialog="{target: '#example-5'}"> 中奖记录</button>
+<br>
+<br>
+     
+</center>
+</div>
+</div>
+
+
+
+
+
+ 
+  <div class="mdui-dialog" style="background-color: #3d1313;" id="example-4">
+    <div class="mdui-tab mdui-tab-full-width" id="example4-tab">
+      <a href="#example4-tab1" class="mdui-ripple">王者宝箱</a>
+      <a href="#example4-tab2" class="mdui-ripple">交易所臻藏宝箱</a>
+      <a href="#example4-tab3" class="mdui-ripple">幸运宝箱</a>
+      <a href="#example4-tab4" class="mdui-ripple">期限英雄级宝箱</a>
+    </div>
+    <div id="example4-tab1" class="mdui-p-a-2">
+     <img src="img/gl1.png" class="glimg" alt="">
+    </div>
+    <div id="example4-tab2" class="mdui-p-a-2">
+      <img src="img/gl2.png" class="glimg" alt="">
+    </div>
+    <div id="example4-tab3" class="mdui-p-a-2">
+      <img src="img/gl3.png" class="glimg" alt="">
+    </div>
+    <div id="example4-tab4" class="mdui-p-a-2">
+      <img src="img/gl4.png" class="glimg" alt="">
+    </div>
+  </div>
+  <div class="mdui-dialog" style="background-color: #3d1313;overflow: scroll;min-height: 600px;" id="example-5"  >
+    <div class="mdui-tab mdui-tab-full-width" id="example5-tab">
+      <a href="#example5-tab1" class="mdui-ripple">王者宝箱</a>
+      <a href="#example5-tab2" class="mdui-ripple">交易所臻藏宝箱</a>
+      <a href="#example5-tab3" class="mdui-ripple">幸运宝箱</a>
+      <a href="#example5-tab4" class="mdui-ripple">期限英雄级宝箱</a>
+    </div>
+    <div id="example5-tab1" style="white-space:pre;line-height: 22px;padding: 0;font-size: 14px;" class="mdui-p-a-2">
+     <div id="zjjxx0"></div>
+    </div>
+    <div id="example5-tab2" style="white-space:pre;line-height: 22px;padding: 0;font-size: 14px;" class="mdui-p-a-2">
+      <div id="zjjxx1"></div>
+    </div>
+    <div id="example5-tab3" style="white-space:pre;line-height: 22px;padding: 0;font-size: 14px;" class="mdui-p-a-2">
+      <div id="zjjxx2"></div>
+    </div>
+    <div id="example5-tab4" style="white-space:pre;line-height: 22px;padding: 0;font-size: 14px;" class="mdui-p-a-2">
+      <div id="zjjxx3"></div>
+    </div>
+  </div>
+
+
+<script>
+
+
+
+  //初始化弹窗
+  $('.str1').liMarquee();
+  var $ = mdui.$;
+  var inst = new mdui.Dialog('#dialog');
+var tab = new mdui.Tab('#example4-tab');
+var tab = new mdui.Tab('#example5-tab');
+$('#example-4').on('open.mdui.dialog', function () {
+  tab.handleUpdate();
+});
+$('#example-5').on('open.mdui.dialog', function () {
+  tab.handleUpdate();
+});
+const gailv1 = [
+    [1,2,'王者炫',48],
+    [3,5, '王者之霆',24],
+    [6,9, '王者樱-热浪之夏',14],
+    [10,16, '觉醒版王者之影',12],
+    [17,23, '觉醒版王者之锋',12],
+    [24,104, '王者炫 碎片X10',7],
+    [105,255, '王者之霆 碎片X10',5],
+    [256,506, '王者樱-热浪之夏 碎片X10',4],
+    [507,757, '觉醒版王者之影 碎片X10',4],
+    [758,1000, '觉醒版王者之锋 碎片X10',1],
+   
+
+];
+
+const gailv2 = [
+    [1,2,'98K-星神音效卡（不可交易）',48],
+    [3,4, '炼狱-迷你小钢（不可交易）',24],
+    [5,16, '98K-星神紫橙光效（不可交易）',14],
+    [17,28, '夏日水手玩偶（不可交易）',12],
+    [29,40, '夏日DJ玩偶（不可交易）',12],
+    [41,120, '98K-星神音效卡（不可交易） 碎片X10',7],
+    [121,200, '炼狱-迷你小钢（不可交易） 碎片X10',5],
+    [201,400, '98K-星神紫橙光效（不可交易） 碎片X10',4],
+    [401,700, '夏日水手玩偶（不可交易） 碎片X10',4],
+    [700,1000, '夏日DJ玩偶（不可交易） 碎片X10',1],
+   
+
+];
+
+
+const gailv3 = [
+    [1,10,'兰-梨园特工',48],
+    [11,30, '黑骑士-地狱火皮肤',24],
+    [31,130, 'M4A1-雷神音效卡（不可交易）（30天）',14],
+    [131,230, 'AK47-火麒麟音效卡（不可交易）（30天）',12],
+    [231,330, 'Barrett-毁灭音效卡（不可交易）（30天）',12],
+    [331,830, '兰-梨园特工 碎片X10',7],
+    [831,1830, '黑骑士-地狱火皮肤 碎片X10',5],
+    [1831,4330, 'M4A1-雷神音效卡（不可交易）（30天） 碎片X10',4],
+    [4331,7130, 'AK47-火麒麟音效卡（不可交易）（30天） 碎片X10',4],
+    [7131,10000, 'Barrett-毁灭音效卡（不可交易） 碎片X10',1],
+   
+
+];
+
+const gailv4 = 
+    ['98K-星神（7天）',
+    "Scar Light-白虎（7天）",
+    "HK417-朱雀（7天）",
+    "M4A1-青龙（7天）",
+    "Barrett-朱雀（7天）",
+    "加特林-炼狱（7天）",
+    "M4A1-黑骑士（7天）",
+    "QBZ03-金色蔷薇（7天）",
+    "沙鹰-天神（7天）",
+    "麒麟刺（7天）"]
+
+var cjcs=[0,0,0,0];
+var zjxxsz=["","","",""]
+function gxcjcs(num,zjnr)
+{
+cjcs[num]=cjcs[num]+1;
+zjxxsz[num]=zjxxsz[num]+"\n第"+cjcs[num]+"箱:   "+zjnr;
+var numm=num+1;
+$("#numbox"+numm).text(cjcs[num]);
+gxzjxx()
+
+
+}
+
+function gxzjxx(){
+for(var i=0;i<4;i++)
+{
+if(zjxxsz[i]=="")
+{
+  $("#zjjxx"+i).text("暂无中奖信息");
+
+}
+else{
+  $("#zjjxx"+i).text(zjxxsz[i]);
+}
+
+
+}
+
+}
+
+
+gxzjxx()
+
+var zjxx="";
+function Cj1()
+{
+   // Gxzcx();
+  
+  var sjs= Math.ceil(Math.random()*1000);
+  
+  var syzjxx="";
+  for(j = 0; j < gailv1.length; j++) {
+   var zxs=gailv1[j][0]
+   var zds=gailv1[j][1]
+  
+   if(sjs>=zxs&&sjs<=zds)
+   {
+  zjxx=gailv1[j][2];
+// zxxxsz2[j]=zxxxsz2[j]+1;
+// zxxxsz3[j]=zxxxsz3[j]+1;
+
+// Gxzcx()
+// method
+gxcjcs(0,zjxx)
+$("#zjxx").text(zjxx);
+  inst.open();
+
+   }
+   
+  
+} 
+
+
+
+// for(gx=0;gx<17;gx++)
+//    {
+//     zjxxend=zjxxend+gailv[gx][2]+"X"+zxxxsz2[gx]+"\n";
+  
+//    }
+
+}
+
+function Cj2()
+{
+   // Gxzcx();
+  
+  var sjs= Math.ceil(Math.random()*1000);
+  
+  var syzjxx="";
+  for(j = 0; j < gailv1.length; j++) {
+   var zxs=gailv2[j][0]
+   var zds=gailv2[j][1]
+  
+   if(sjs>=zxs&&sjs<=zds)
+   {
+  zjxx=gailv2[j][2];
+// zxxxsz2[j]=zxxxsz2[j]+1;
+// zxxxsz3[j]=zxxxsz3[j]+1;
+
+// Gxzcx()
+// method
+gxcjcs(1,zjxx)
+$("#zjxx").text(zjxx);
+  inst.open();
+
+   }
+   
+  
+} 
+
+
+
+// for(gx=0;gx<17;gx++)
+//    {
+//     zjxxend=zjxxend+gailv[gx][2]+"X"+zxxxsz2[gx]+"\n";
+  
+//    }
+   $("#zjxxb").text(zjxxend);
+}
+
+
+function Cj3()
+{
+   // Gxzcx();
+  
+  var sjs= Math.ceil(Math.random()*10000);
+  
+  var syzjxx="";
+  for(j = 0; j < gailv1.length; j++) {
+   var zxs=gailv3[j][0]
+   var zds=gailv3[j][1]
+  
+   if(sjs>=zxs&&sjs<=zds)
+   {
+  zjxx=gailv3[j][2];
+// zxxxsz2[j]=zxxxsz2[j]+1;
+// zxxxsz3[j]=zxxxsz3[j]+1;
+
+// Gxzcx()
+// method
+gxcjcs(2,zjxx)
+$("#zjxx").text(zjxx);
+  inst.open();
+
+   }
+   
+  
+} 
+
+
+
+// for(gx=0;gx<17;gx++)
+//    {
+//     zjxxend=zjxxend+gailv[gx][2]+"X"+zxxxsz2[gx]+"\n";
+  
+//    }
+   $("#zjxxb").text(zjxxend);
+}
+
+function Cj4()
+{
+   // Gxzcx();
+  
+  var sjs= Math.ceil(Math.random()*10)-1;
+  
+  var syzjxx="";
+  console.log(sjs)
+  zjxx=gailv4[sjs];
+// zxxxsz2[j]=zxxxsz2[j]+1;
+// zxxxsz3[j]=zxxxsz3[j]+1;
+
+// Gxzcx()
+// method
+gxcjcs(3,zjxx)
+$("#zjxx").text(zjxx);
+  inst.open();
+
+   }
+   
+  
+
+
+
+
+// for(gx=0;gx<17;gx++)
+//    {
+//     zjxxend=zjxxend+gailv[gx][2]+"X"+zxxxsz2[gx]+"\n";
+  
+//    }
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>
