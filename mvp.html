@@ -168,7 +168,7 @@ margin-left: 40px;
             <br><br>
             <br><span href="#"  mdui-dialog="{target: '#example-4'}" style="text-decoration:underline;color:rgb(195, 219, 255);cursor: pointer;">查看概率&nbsp;&nbsp;&nbsp;查看中奖信息</span>
           
-            <br><br><span style="font-size: 20px;">您当前还剩下&nbsp;<span id="keynum" style="font-weight: bold;color:rgb(195, 219, 255);">0</span>&nbsp;把钥匙</span> &nbsp;<span href="#"  mdui-dialog="{target: '#zcx'}" style="text-decoration:underline;color:rgb(195, 219, 255);cursor: pointer;">查看暂存箱</span><br><br>
+            <br><br><span style="font-size: 20px;">您当前还剩下&nbsp;<span id="keynum" style="font-weight: bold;color:rgb(195, 219, 255);">0</span>&nbsp;把钥匙</span> &nbsp;<span href="#"  mdui-dialog="{target: '#zcx'}" style="text-decoration:underline;color:rgb(195, 219, 255);cursor: pointer;" onclick=" Gxzcx()">查看暂存箱</span><br><br>
       <img src="mvpfc/czbtn1.png" class="czbtn" onclick="KeyAdd(1);Czcs(1)"/>
     <img src="mvpfc/czbtn2.png" class="czbtn" onclick="KeyAdd(11);Czcs(10)"/>
 
@@ -400,15 +400,15 @@ var zjxxend="\n";
    var zxxxsz3=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
    //用于计数剩余
 const gailv = [
-    [1,19,'雷神-宠儿-2019MVP皮肤',0],
-    [20,39, '毁灭-BEAN-2020MVP 皮肤',0],
-    [40,79, '语音包四选一自选券',0],
-    [80,129, '修罗-冠军之魂',0],
-    [129,159, '荣耀之怒',0],
-    [160,189, '荣耀之魄',0],
-    [190,229, '荣耀之锋',0],
-    [230,329, '职业选手',0],
-    [330,499, '随机MVP名片喷图',0],
+    [1,19,'雷神-宠儿-2019MVP皮肤',15],
+    [20,39, '毁灭-BEAN-2020MVP 皮肤',15],
+    [40,79, '语音包四选一自选券',8],
+    [80,129, '修罗-冠军之魂',6],
+    [129,159, '荣耀之怒',10],
+    [160,189, '荣耀之魄',10],
+    [190,229, '荣耀之锋',8],
+    [230,329, '职业选手',3],
+    [330,499, '随机MVP名片喷图',1],
     [500,999, 'MVP宝箱',0],
     [1000,1999, '积分*20',0],
     [2000,5999, '积分*10',0],
@@ -653,7 +653,7 @@ for(gx=0;gx<15;gx++)
 
 function Gxzcx()
 {
-for(var j=0;j<11;j++){
+for(var j=0;j<10;j++){
 $("#zg"+j).text(zxxxsz2[j]);
 $("#sy"+j).text(zxxxsz3[j]);
 console.log(j+"    "+gailv[j][2]+"剩余"+zxxxsz3[j]+"总共"+zxxxsz2[j])
