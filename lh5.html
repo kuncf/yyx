@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王者夺宝模拟器</title>
+
+<style>
+ 
+ /* @import url("https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css"); */
+
+body {
+   
+   
+  background: linear-gradient(-45deg, #2b7b79, #2f3b64, #1a364c, #6f2d2d);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+  height: 100vh;
+}
+/* style="background-color: #1a364c;background-image: linear-gradient(to bottom , #1a364c, #122331);height: 100%;" */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 40% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fg {
+  0% {
+    background-color: rgb(128, 77, 29,20%) ;
+    border: solid rgb(128, 77, 29,20%) 2px;
+    
+   box-shadow: 0 0 5px rgb(255, 166, 0,20%);
+   opacity:0.3;
+  }
+  50% {
+    background-color: rgb(255, 209, 123) ;
+    border: solid rgb(255, 209, 123) 2px;
+   box-shadow: 0 0 10px rgb(255, 209, 123);
+   opacity:1;
+  }
+  100% {
+    background-color: rgb(128, 77, 29,20%) ;
+    border: solid rgb(128, 77, 29,20%) 2px;
+   box-shadow: 0 0 5px rgb(255, 166, 0,20%);
+   opacity:0.3;
+  }
+}
+
+
+
+
+    .jctp{
+       width: 180px;
+   height: 100px;
+ transition-duration: 0.3s;
+    }
+    .jccenter{
+        display: flex;
+        justify-content: space-between;
+    }
+    .jcbody{
+        width: 915px;
+        margin: auto;
+    }
+    .gmbtn{
+        width: 160px;
+  
+        
+    }
+    .btnn{
+        cursor: pointer;
+        transition-duration: 0.1s;
+    }
+   .lbsbox{
+    background-image: url('img/lh5/lbsbg.png');
+    width: 242px;
+    height: 28px;
+    background-size: cover;
+    color: rgb(211, 255, 145);
+    line-height: 25px;
+    padding-left: 30px;
+    font-size: 14px;
+    margin-top: 30px;
+   }
+   .gbbtn{
+        height: 40px;
+        cursor: pointer;
+    }
+    .titbtn{
+        margin-top: 30px;
+        height: 28px;
+    }
+ .jctit{
+    display: flex;
+    justify-content: space-between;
+ }
+ .btnn:hover{
+    box-shadow: 0 0 2px rgb(151, 151, 151);
+ }
+ .jcwh{
+        width: 30%;
+        margin: 10px;
+        min-width: 80px;
+        transform:rotateY(0deg);
+   
+        transition-duration: 0.6s;
+        animation: fg 4s ease infinite;
+    }
+    .zztp{
+        height: 0;
+        transition-duration: 0.5s;
+    }
+    .zzbox{
+        display: inline;
+        padding-bottom: 80px;
+    }
+    .zzbox:hover .zztp{
+     height: 400px;
+    }
+    .str_wrap{
+			padding-left: 3em;
+			padding-right: 3em;
+			background: #080808;
+			height: 20px;
+			line-height: 3em;
+			font-size: 1.2em;
+     
+		}
+    .str_wrap a{
+      color: azure;
+      font-size: 14px;
+      margin-left:40px ;
+    }
+</style>
+<link rel="stylesheet" href="css/liMarquee.css">
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/jquery.liMarquee.js"></script> 
+<link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" />
+<script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
+
+</head>
+<body class="mdui-theme-primary-indigo mdui-theme-accent-blue">
+    <div class="str1 str_wrap" style="position: fixed;left: 0;top: 0;background-color:#1b1b1b;color:rgb(184, 212, 251);height:20px;line-height:30px;cursor: pointer;">
+        <a href="https://www.douyin.com/user/MS4wLjABAAAA5whHwaTt0KwOJeXjKfter3Bpv4nxLDQXSbx0gw9uykqTKq3Avav2AJCpPi2KfKyU"> 关注抖音CF仰泳信 模拟器最新咨询第一手消息</a>
+     
+        <a href="https://pengkun6b.github.io/cfmncj/zy.html">模拟器菜单</a> 
+        <a href="https://pengkun6b.github.io/cfmncj/zy.html">模拟器菜单</a> 
+
+        <a href="https://pengkun6b.github.io/cfmncj/zy.html">模拟器菜单</a> 
+
+        <a href="https://pengkun6b.github.io/cfmncj/zy.html">模拟器菜单</a> 
+      </div>
+      <br><br>
+    <div class="jcbody">
+      <div class="jctit">
+<div>  <div class="lbsbox">拥有蓝宝石: <span id="keynum">0</span> </div></div>
+        <div>
+
+            <img src="img/lh5/zjbtn.png" onclick="Ckzjxx()" class="titbtn btnn" alt="">
+            <img src="img/lh5/zcbtn.png"  mdui-dialog="{target: '#zcx'}"  class="titbtn btnn" alt="">
+
+
+        </div>
+      </div>
+
+
+
+
+        <br>
+<div class="jctop">
+<img src="img/lh5/jc0.png" id="jctp0" class="jctp" alt="">
+<img src="img/lh5/jc1.png"  id="jctp1"  class="jctp" alt="">
+<img src="img/lh5/jc2.png" id="jctp2"  class="jctp" alt="">
+<img src="img/lh5/jc3.png" id="jctp3"  class="jctp" alt="">
+<img src="img/lh5/jc4.png" id="jctp4"  class="jctp" alt="">
+</div>
+<div class="jccenter">
+<div class="jcleft">
+    <img src="img/lh5/jc13.png"  id="jctp13"  class="jctp" alt=""><br>
+    <img src="img/lh5/jc12.png"  id="jctp12"  class="jctp" alt="">
+</div>
+<div class="ccenter" style="padding-top: 18px;">
+    <br><div style="color:white ;text-align: center;">累计“充值”&nbsp;<span id="ljcz" style="color: rgb(255, 51, 0);">0</span>&nbsp;个蓝宝石</div><br>
+    <button class="mdui-btn gmbtn  mdui-color-theme-accent btnn mdui-ripple" onclick="KeyAdd(1);Czcss(1)">获取1个蓝宝石</button>
+    <button class="mdui-btn gmbtn mdui-color-theme-accent btnn mdui-ripple"  onclick="KeyAdd(11);Czcss(10)">获取11个蓝宝石</button>
+    <br>
+    <button class="mdui-btn  mdui-color-blue-900 btnn btnncj mdui-ripple mdui-btn-raised" style="width:324px ;height:48px;margin-top:20px" id="cjbtn"  onclick="Cj();">花费1个蓝宝石抽1次</button>
+
+
+</div>
+<div class="jcright">
+    <img src="img/lh5/jc5.png"  id="jctp5"  class="jctp" alt=""><br>
+<img src="img/lh5/jc6.png"  id="jctp6"  class="jctp" alt="">
+</div>
+
+
+</div>
+<div class="jcbottom">
+
+    
+<img src="img/lh5/jc11.png"  id="jctp11"  class="jctp" alt="">
+<img src="img/lh5/jc10.png" id="jctp10"  class="jctp" alt="">
+<img src="img/lh5/jc9.png" id="jctp9"  class="jctp" alt="">
+<img src="img/lh5/jc8.png" id="jctp8"  class="jctp" alt="">
+<img src="img/lh5/jc7.png" id="jctp7"  class="jctp" alt="">
+</div>
+<center>
+    <br><a onclick="Ckgl()" class="btnn" style="text-decoration:underline ;color:rgb(194, 234, 255);padding:10px;">查看概率</a>
+<br><br>
+    <div class="zzbox">
+        <a class="btnn" style="text-decoration:underline ;color:rgb(194, 234, 255);padding:10px;">打赏作者~</a>
+<br><br><img src="img/zz.png" class="zztp" alt="">
+
+    </div>
+</center>
+
+
+
+    </div>
+
+<!-- 提示弹窗 -->
+<div class="mdui-dialog" id="dialog">
+    <div class="mdui-dialog-title" style="background-image:url('img/db/tiptit.png') ; color:orange;font-size:15px;text-align: center;background-size:cover;height: 40px;line-height: 45px;padding: 0;">提&nbsp;示</div>
+    <div class="mdui-dialog-content" id="zjxx" style="background-color: #1c1d1f;color: white;white-space: pre;line-height: 30px;text-align: center;min-height: 100px;justify-content:center;padding-top: 40px;padding-bottom: 40px; letter-spacing: 1px;">You'll lose all photos and media!</div>
+    <div class="mdui-dialog-actions"  style="background-color: #1c1d1f;">
+      <center>
+      <img src="img/db/gbbtn.png" class="gbbtn btnn" mdui-dialog-close alt="">
+  </center>
+    </div>
+</div>
+<!-- 提示弹窗 -->
+<!-- 中奖弹窗 -->
+
+<div class="mdui-dialog" id="dialog222">
+    <div class="mdui-dialog-title" style="background-image:url('img/db/tiptit.png') ; color:orange;font-size:15px;text-align: center;background-size:cover;height: 40px;line-height: 45px;padding: 0;">中&nbsp;奖&nbsp;信&nbsp;息</div>
+    <div class="mdui-dialog-content" style="background-color: #1c1d1f;">
+      <center>
+          <br><br>
+<img src="img/db/jcwh.png" id="dczjtp" class="jcwh" alt="">
+
+</center>
+    </div>
+    <div class="mdui-dialog-actions"  style="background-color: #1c1d1f;">
+      <center>
+      <img src="img/db/gbbtn.png" class="gbbtn btnn" mdui-dialog-close alt="">
+  </center>
+    </div>
+</div>
+<!-- 中奖弹窗 -->
+
+
+<!-- 暂存箱弹窗 -->
+
+
+<div class="mdui-dialog" id="zcx"  style="overflow:scroll">
+    <h3 style="color: black;margin-left: 20px;">暂存箱</h4>
+    <table class="mdui-table mdui-table-hoverable dsadsa">
+      <thead>
+      <tr>
+       
+        <th>名称</th>
+        <th>共获得数量</th>
+        <th>剩余数量</th>
+        <th>分解可得钥匙</th>
+        <th>操作</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td id="zcxname0">王者之决</td>
+        <td id="zg0" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy0" style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="fjkeynum0">48</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple"  onclick="fjys(0)" style="color:red">分解</button></td>
+      </tr>
+      <tr>
+        <td id="zcxname1">鹰</td>
+        <td id="zg1" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy1" style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="fjkeynum1">24</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple"   onclick="fjys(1)"   style="color:red">分解</button></td>
+      </tr>
+      <tr>
+        <td id="zcxname2">王者星神</td>
+        <td id="zg2" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy2" style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="fjkeynum2">14</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple"   onclick="fjys(2)" style="color:red">分解</button></td>
+      </tr>
+      <tr>
+        <td id="zcxname3">觉醒版超新星-悦享</td>
+        <td id="zg3" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy3"  style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="fjkeynum3">12</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple" onclick="fjys(3)"  style="color:red">分解</button></td>
+      </tr>
+      <tr>
+        <td  id="zcxname4">Scar Light-白虎</td>
+        <td id="zg4" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy4"  style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="fjkeynum4">12</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple"  onclick="fjys(4)"  style="color:red">分解</button></td>
+      </tr>
+      <tr>
+        <td  id="zcxname5">炫金火麒麟</td>
+        <td id="zg5" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy5"  style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="fjkeynum5">7</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple"  onclick="fjys(5)"  style="color:red">分解</button></td>
+      </tr>
+      <tr>
+        <td  id="zcxname6">M4A1-黑骑士</td>
+        <td id="zg6" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy6" style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="fjkeynum6">5</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple"  onclick="fjys(6)" style="color:red">分解</button></td>
+      </tr>
+      <tr>
+        <td  id="zcxname7">A背包套装-手雷包</td>
+        <td id="zg7" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy7" style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="fjkeynum7">4</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple"  onclick="fjys(7)" style="color:red">分解</button></td>
+      </tr>
+      <tr>
+        <td  id="zcxname8">超能力少女兑换券</td>
+        <td id="zg8" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy8" style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="fjkeynum8">4</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple" onclick="fjys(8)"  style="color:red">分解</button></td>
+      </tr>
+      <tr>
+        <td  id="zcxname9">王者星神原始光效</td>
+        <td id="zg9" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy9" style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="fjkeynum9">1</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple"  onclick="fjys(9)" style="color:red">分解</button></td>
+      </tr>
+      <tr>
+        <td  id="zcxname10">王者星神原始光效</td>
+        <td id="zg10" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy10" style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="fjkeynum10">1</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple"  onclick="fjys(10)" style="color:red">分解</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+<!-- 暂存箱弹窗 -->
+</body>
+
+<script src="https://howlerjs.com/assets/howler.js/dist/howler.min.js"></script>
+
+<script>
+        $('.str1').liMarquee();
+    var inst = new mdui.Dialog('#dialog');
+    var inst2 = new mdui.Dialog('#example-4');
+    var $ = mdui.$;
+    var tab = new mdui.Tab('#example4-tab');
+    var czcs=0;
+    var btnbool=true;
+var inst222 = new mdui.Dialog('#dialog222');
+    var lbssz=[1,1,2,3,6,9,13,21,34,44,56,76,99,133];
+    var lbszxhnum=0;
+    //蓝宝石数组
+
+
+    function Czcss(num){
+    czcs=czcs+num;
+    $("#ljcz").text(czcs);
+    
+    }
+    //刷新充值次数
+    $('#example-4').on('open.mdui.dialog', function () {
+      tab.handleUpdate();
+    });
+    //初始化弹
+    var keynum=0;
+    // 定义钥匙数量
+    var bnum=0;
+    // 定义暗裔币数量
+    var cjcs=0;
+    //定义抽奖次数
+   
+    var zjtext="";
+   
+    
+  
+ 
+    
+    
+    
+    var zjxxend="\n";
+        var cjcs=0;
+        var dycc=1;
+       var $ = mdui.$;
+       var fjbts=false;
+       var zjxx="";
+       var cjwks=true;
+       var zxxxsz1=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+       //用于抽奖显示
+       var zxxxsz2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+       //用于计数总共获得
+       var zxxxsz3=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+       //用于计数剩余
+    
+       const gailv = [
+        [1,10,'王者凤吟',18],
+        [11,30, '王者-迷迭香',12],
+        [31,60, '炼狱-悦蓝',10],
+        [61,100, 'AWM-裁决音效卡',8],
+        [101,150, '炫金修罗',7],
+        [151,200, '修罗耀金皮肤',6],
+        [201,300, '无影-霓裳皮肤',5],
+        [301,700, 'M4A1-小黄鸡',4],
+        [701,1200, '毛瑟-玄龙',2],
+        [1201,1800, '手雷-玄龙',2],
+        [1801,3000, '王者之石1个',1],
+        [3001,4500, '觉醒宝石5个',0],
+        [4501,7000, '属性变更券5个',0],
+        [7001,10000, '交易专用钥匙5个',0],
+  
+    
+    ];
+
+
+var strsb=""
+
+for (let index = 0; index < gailv.length; index++) {
+  strsb=strsb+gailv[index][2]+"    "+(gailv[index][1]-gailv[index][0]+1)/100+"%\\n";
+  
+}
+console.log(strsb)
+
+
+    var gltext="王者凤吟    0.1%\n王者-迷迭香    0.2%\n炼狱-悦蓝    0.3%\nAWM-裁决音效卡    0.4%\n炫金修罗    0.5%\n修罗耀金皮肤    0.5%\n无影-霓裳皮肤    1%\nM4A1-小黄鸡    4%\n毛瑟-玄龙    5%\n手雷-玄龙    6%\n王者之石1个    12%\n觉醒宝石5个    15%\n属性变更券5个    25%\n交易专用钥匙5个    30%\n"
+    /**
+   王者之绝 0.1%
+   王者-春 0.1%
+   王者之灵 0.3%
+   王者零-华冠丽服 0.5%
+   Barrett-朱雀 2%
+   炫金骑士 2%
+   黑龙吞噬者 3%
+   泰迪娃娃 3%
+   FR-F2-炫彩 4%
+   手雷-炫彩 6%
+   王者之石1个 15%
+   觉醒宝石5个15%
+   属性变更券5个24.5%
+   交易专用钥匙5个24.5%
+    **/
+    // 音频效果
+
+    var soundhover = new Howl({
+  src: ['sound/hover.mp3']
+});
+var soundclick = new Howl({
+  src: ['sound/click.mp3']
+});
+
+var soundturn = new Howl({
+  src: ['sound/turn.mp3']
+});
+
+var soundjp1 = new Howl({
+  src: ['sound/jp1.mp3']
+});
+jQuery(function($){
+    $(".btnn").hover(function () {
+     
+        soundhover.play(); 
+    }, function () {
+        // out
+    }
+   );
+   $(".btnn").click(function () {
+     
+     soundclick.play(); 
+ }
+);
+
+});
+ // 音频效果
+    
+    
+   
+    // 定义奖品名称以及概率
+    
+    // 定义奖品名称以及概率
+  alert("更新:\n暂存箱、分解、宝石递增功能~\n\n抖音 CF仰泳信 提供建议和解答问题\n\n声明:\n本页面仅做为模拟概率使用，无任何盈利和消费，抽中的道具也不会发往仓库。请大家理性消费。如有侵权联系即删~")
+    
+  var dhcs=0;
+  
+  var strzj="";
+var truezj=99;
+//初始化 排除信息 以及奖品id
+var dqgh=14;
+var xzgh=0;
+
+
+var lbsxhnum=1;
+
+
+
+function Cshzcx(){
+  for(var i=0;i<11;i++)
+  {
+$("#zcxname"+i).text(gailv[i][2])
+
+$("#fjkeynum"+i).text(gailv[i][3])
+
+  }
+}
+Cshzcx();
+
+
+
+
+function Gxlbscj(){
+    
+console.log(lbssz[lbsxhnum])
+$("#cjbtn").text("消耗"+lbssz[lbsxhnum]+"个蓝宝石抽1次");
+lbsxhnum++;
+
+
+}
+
+function Cj(){
+if(keynum>=lbssz[lbsxhnum-1])
+{
+    
+
+    $("#cjbtn").attr("disabled",true)
+    if(strzj.length<97)
+    {
+        if(Pccj()==9999)
+{
+    Cj();
+}
+else{
+  
+dhcs=14+truezj-xzgh+1+dycc;
+var dhyc=80;
+Cjdh();
+if(dycc==1)
+    {
+dycc=0
+    }
+//  $("#jctp"+truezj).css("box-shadow","0 0 10px rgb(255, 145, 0)")
+}
+    }
+    else{
+        alert("你已全部抽完")
+    }}
+    else{
+        alert("您当前蓝宝石不足"+lbssz[lbsxhnum-1]+"颗！")
+    }
+}
+
+
+
+
+
+
+function Cjdh()
+{
+    if(dhcs>0)
+    {
+       if(dhcs>6)
+       {
+        dhyc=80
+       }
+       else{
+        var sb=7-dhcs;
+        dhyc=80*sb;
+       }
+
+        setTimeout(function(){
+            qcdh();
+   dhcs=dhcs-1;
+   if(
+    dqgh>13
+   )
+   {
+    dqgh=-1;
+   }
+   dqgh++;
+   $("#jctp"+dqgh).css("box-shadow","0 0 20px rgb(255, 145, 0)")
+soundturn.play();
+   Cjdh();
+  },dhyc)
+
+    }
+else{
+    btnbool=true;
+    xzgh=dqgh;
+  
+    console.log(gailv[truezj][2]+"    "+gailv[dqgh][2]);
+    cjcs++;
+    zjtext=zjtext+"第"+cjcs+"抽："+gailv[dqgh][2]+"\n";
+    console.log(zjtext);
+  
+setTimeout(function(){
+    $("#cjbtn").removeAttr("disabled")
+    $("#dczjtp").attr("src","img/lh5/jc"+dqgh+".png");
+    inst222.open();
+    $("#jctp"+dqgh).attr("src","img/lh5/zjc"+dqgh+".png")
+    soundjp1.play();
+    Gxlbscj();
+    zxxxsz3[dqgh]=1;
+    zxxxsz2[dqgh]=1;
+    lbszxhnum=lbszxhnum+lbssz[lbsxhnum-2];
+    KeyAdd(0-lbssz[lbsxhnum-2])
+},300)
+}
+
+
+
+
+
+
+
+
+
+}
+function qcdh(){
+    for(i=0;i<14;i++)
+    {
+        $("#jctp"+i).css("box-shadow","0 0 0px rgb(255, 145, 0)")
+    }
+}
+
+
+
+
+
+function Pccj(){
+    var sjs= Math.ceil(Math.random()*10000);
+// 获取随机数值
+for(j = 0; j < gailv.length; j++) {
+       var zxs=gailv[j][0]
+       var zds=gailv[j][1]
+    //   获取当前遍历数组区间
+       if(sjs>=zxs&&sjs<=zds)
+       {
+if(strzj.includes(gailv[j][2]))
+{
+  return 9999;
+   break;
+}
+else{
+  truezj=j;
+    strzj=strzj+ gailv[j][2]+"\n";
+    return j;
+}
+
+
+       }
+    //    如果正是当前区间的事件
+      
+    } 
+    // 遍历判断区间
+    
+
+
+
+
+
+
+}
+
+
+function Ckzjxx(){
+  
+    if(zjtext=="")
+    {
+        $('#zjxx').text("您当前未抽取任何奖品");
+
+    }
+    else{
+
+        $('#zjxx').text("您当前共消耗"+lbszxhnum+"个蓝宝石\n"+zjtext);
+    }
+    inst.open();
+
+}
+  
+    function Ckgl(){
+        $('#zjxx').text(gltext);
+        inst.open();
+    }
+    
+    function KeyAdd(addnum){
+       
+    keynum=keynum+addnum;
+    
+    $('#keynum').text(keynum);
+    $('#Msgtit').text("提示");
+    if(addnum>0)
+    {
+    $('#zjxx').text("您已成功添加"+addnum+"个蓝宝石！");
+    if(fjbts||addnum==11)
+    {
+    
+    }
+    else
+    {
+    inst.open();
+    fjbts=false;
+    }
+    }
+    
+    Gxzcx();
+    }
+    
+    
+    
+    // 充值钥匙方法
+    
+    function Gxzcx()
+    {
+    for(var j=0;j<12;j++){
+    $("#zg"+j).text(zxxxsz2[j]);
+    $("#sy"+j).text(zxxxsz3[j]);
+    console.log(j+"    "+gailv[j][2]+"剩余"+zxxxsz3[j]+"总共"+zxxxsz2[j])
+    
+    
+    }
+    
+    }
+    
+    function fjys(pid){
+    if(zxxxsz3[pid]<1)
+    {
+        alert("您当前的"+gailv[pid][2]+"不足1个~");
+    
+    }
+    else{
+        var b=confirm("是否分解1个"+gailv[pid][2]+"换取"+gailv[pid][3]+"个蓝宝石")//按确认和取消输出不同的内容
+                    if(b==true){
+                   zxxxsz3[pid]=zxxxsz3[pid]-1;
+                   Gxzcx()
+                   fjbts=true;
+                   
+                   KeyAdd(gailv[pid][3])
+                   alert("您已成功分解1个"+gailv[pid][2]+"获得"+gailv[pid][3]+"个蓝宝石")
+                    }else{
+    
+                    }
+    }
+    
+    
+    
+    
+    }
+    
+    </script>
+    
+  
+
+
+</html>
