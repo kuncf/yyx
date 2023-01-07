@@ -158,9 +158,21 @@ margin-left: 40px;
     &nbsp;&nbsp;  &nbsp;    <a href="https://kuncf.github.io/cf/">模拟器菜单</a> 
   </div> 
 <div class="drq">
-    <div class="mdui-dialog" id="dialog" style="color: white;background-color:#12161c ">
+    <div class="mdui-dialog" id="dialog" style="color: white;background-color:#12161c;overflow:auto; height:600px;max-height: 1000px;">
         <div class="mdui-dialog-title" id="Msgtit" style="color:rgb(255, 145, 2);">标题</div>
-        <div class="mdui-dialog-content" id="zjxx" style="color: white;white-space: pre;line-height: 30px;">You'll lose all photos and media!</div>
+        <div class="mdui-dialog-content" style="color: white;overflow:scroll;clear:both;white-space: pre;line-height: 25px;">
+        <span id="zjxx0"></span>
+        <span id="zjxx1"></span>
+        <span id="zjxx2"></span>
+        <span id="zjxx3"></span>
+        <span id="zjxx4"></span>
+        <span id="zjxx5"></span>
+        <span id="zjxx6"></span>
+        <span id="zjxx7"></span>
+        <span id="zjxx8"></span>
+        <span id="zjxx9"></span>
+      
+        </div>
         <div class="mdui-dialog-actions">
           <button class="mdui-btn mdui-ripple" mdui-dialog-cancel  style="color:rgb(255, 145, 2);">确定</button>
       
@@ -184,7 +196,7 @@ margin-left: 40px;
     <img src="cshg/cjbtn1.png"  class="czbtn" onclick="PTTSendClick1();"/>
     <img src="cshg/cjbtn2.png" class="czbtn" onclick="PTTSendClick10();"/>
   
-    <div  style="color: rgb(83, 73, 67);margin-top: 1%;"> 当前CF点累计:&nbsp;<span id="ljcf"  style="color: rgb(147, 72, 43);">0</span>&nbsp;</div>
+    <div  style="color: rgb(83, 73, 67);margin-top: 1%;font-size: 12px;"> 当前CF点累计:&nbsp;<span id="ljcf"  style="color: rgb(147, 72, 43);">0</span>&nbsp;当前幸运值:&nbsp;<span id="ljxyz"  style="color: rgb(147, 72, 43);">0</span>&nbsp;</div>
   </div>
     <br>
            <br><br>
@@ -370,7 +382,7 @@ var jyzt=0;
 function Czcs(num){
 czcs=czcs+num;
 $("#ljcz").text(czcs);
-
+$("#ljxyz").text(xyznum);
 }
 //刷新充值次数
 $('#example-4').on('open.mdui.dialog', function () {
@@ -397,7 +409,7 @@ $("#aybxnum").text(aybxnum);
 
 
 
-
+var slcs=0;
 var zjxxend="\n";
     var cjcs=0;
    var $ = mdui.$;
@@ -412,15 +424,15 @@ var zjxxend="\n";
 
    const gailv = [
     [1,10,'传说辉光 无序列号版',50],
-    [11,30, '王者森决（非觉醒版）',12],
-    [31,60, '斯泰尔-蝴蝶 兑换券',6],
-    [61,110, '王者龙血（非觉醒版）',10],
-    [111,160, ' 灵动武士',8],
-    [161,230, '炫金武士',4],
-    [231,310, '加特林-炼狱',3],
-    [311,400, 'Barrett-金色蔷薇',3],
-    [401,500, '白泽玩偶兑换券',2],
-    [501,600, '唐刀-九五至尊',2],
+    [11,30, '王者森决（非觉醒版）',24],
+    [31,60, '斯泰尔-蝴蝶 兑换券',20],
+    [61,110, '王者龙血（非觉醒版）',14],
+    [111,160, ' 灵动武士',14],
+    [161,230, '炫金武士',7],
+    [231,310, '加特林-炼狱',6],
+    [311,400, 'Barrett-金色蔷薇',5],
+    [401,500, '白泽玩偶兑换券',3],
+    [501,600, '唐刀-九五至尊',3],
     [601,980, '属性抽取券x1或王者之石x10二选一',0],
     [981,1180, '10000 CF点',0],
     [1181,1880, '5000 CF点',0],
@@ -431,7 +443,6 @@ var zjxxend="\n";
     [6001,10000, '积分x1',0],
    
  ];
-
 //  传说辉光 无序列号版 0.10%
 // 王者森决（非觉醒版） 0.20%
 // 斯泰尔-蝴蝶 兑换券 0.30%
@@ -451,6 +462,25 @@ var zjxxend="\n";
 // 5积分 4.00%
 // 1积分 40.00%
 
+var xyznum=0;
+const xyzgl=[
+  [1,10,100],
+  [11,50,50],
+  [51,300,20],
+  [301,800,10],
+  [801,1800,5],
+  [1801,4800,2],
+  [4801,10000,1],
+]
+// 幸运值概率
+// 100	0.10%
+// 50	0.40%
+// 20	2.50%
+// 10	5.00%
+// 5	10.00%
+// 2	30.00%
+// 1	52.00%
+
 for(var i=0;i<10;i++)
 {
 $("#zcxname"+i).text(gailv[i][2]);
@@ -464,29 +494,13 @@ $("#zcxkeynum"+i).text(gailv[i][3]);
 
 
 
-function ckkx(){
-    var kxjlu="";
-for(var j=0;j<4;j++)
-{
-kxjlu=kxjlu+aybxgailv[j][2]+"  共开箱获得 "+aybxgailv[j][3]+" 份\n";
-
-}
-
-$("#zjxx").text("共获得"+zxxxsz2[10]+"个暗裔宝箱，一共开启"+aybxxh+"次箱，获得:\n\n"+kxjlu);
-  inst.open();
-
-
-
-
-}
-
 // 定义奖品名称以及概率
 
 // 定义奖品名称以及概率
-alert("关注抖音 CF仰泳信\n\n声明:\n本页面仅做为模拟概率使用，无任何盈利和消费，抽中的道具也不会发往仓库。请大家理性消费。如有侵权联系即删~")
+alert("关注抖音 CF仰泳信\n\n已更新幸运值系统，十连动画。\n修正暂存箱分解钥匙\n\n声明:\n本页面仅做为模拟概率使用，无任何盈利和消费，抽中的道具也不会发往仓库。请大家理性消费。如有侵权联系即删~")
 
-
-
+var slzj="";
+var slzjsz=["","","","","","","","","","",]
 function KeyAdd(addnum){
    
 keynum=keynum+addnum;
@@ -494,7 +508,7 @@ $('#keynum').text(keynum);
 $('#Msgtit').text("提示");
 if(addnum>0)
 {
-$('#zjxx').text("您已成功添加"+addnum+"把钥匙！");
+$('#zjxx0').text("您已成功添加"+addnum+"把钥匙！");
 if(fjbts)
 {
 
@@ -520,8 +534,16 @@ KeyAdd(-1);
     zjxxend="\n";
     $("#cjcs").text(cjcs);
     zjxx="";
-  var sjs= Math.ceil(Math.random()*10000);
-  
+    var sjs= Math.ceil(Math.random()*10000);
+    if(sjs-xyznum*5>0)
+    {
+      sjs=sjs-xyznum*5;
+    }
+    else
+    {
+      sjs=1;
+    }
+  var dqxyz=0;
   var syzjxx="";
   for(j = 0; j < gailv.length; j++) {
    var zxs=gailv[j][0]
@@ -532,8 +554,22 @@ KeyAdd(-1);
   zjxx=gailv[j][2];
 zxxxsz2[j]=zxxxsz2[j]+1;
 zxxxsz3[j]=zxxxsz3[j]+1;
+var sjss= Math.ceil(Math.random()*10000);
+  
+for(jjj = 0; jjj < xyzgl.length; jjj++) {
+   var zxss=xyzgl[jjj][0]
+   var zdss=xyzgl[jjj][1]
+  
+   if(sjss>=zxss&&sjss<=zdss)
+   {
+  dqxyz=xyzgl[jjj][2];
+   }
+  }
 
-
+  if(j<10)
+  {
+    xyznum=0;
+  }
 if(j==11)
 {
   cfnum=cfnum+10000;
@@ -588,15 +624,26 @@ if(j==17)
 }
 Gxzcx()
 // method
-$("#zjxx").text(zjxx);
-  inst.open();
 
+inst.open();
+$('#zjxx0').text("");
+$('#zjxx1').text("");
+$('#zjxx2').text("");
+$('#zjxx3').text("");
+$('#zjxx4').text("");
+$('#zjxx5').text("");
+$('#zjxx6').text("");
+$('#zjxx7').text("");
+$('#zjxx8').text("");
+$('#zjxx9').text("");
+$("#zjxx0").text(dqxyz+"幸运值  "+zjxx);
    }
    
   
 } 
-
-
+xyznum=xyznum+dqxyz;
+console.log("总幸运值"+xyznum)
+$("#ljxyz").text(xyznum);
 
 for(gx=0;gx<18;gx++)
    {
@@ -606,15 +653,54 @@ for(gx=0;gx<18;gx++)
    $("#zjxxb").text(zjxxend);
 }
 else{
-    $('#zjxx').text("您当前的钥匙不足抽奖1次~");
+  
 inst.open();
+$('#zjxx0').text("");
+$('#zjxx1').text("");
+$('#zjxx2').text("");
+$('#zjxx3').text("");
+$('#zjxx4').text("");
+$('#zjxx5').text("");
+$('#zjxx6').text("");
+$('#zjxx7').text("");
+$('#zjxx8').text("");
+$('#zjxx9').text("");
+    $('#zjxx0').text("您当前的钥匙不足抽奖1次~");
+    $("#ljxyz").text(xyznum);
 
 }
 }
+function slyc(){
+if(slcs<11)
+{
+  setTimeout(function(){
+   // console.log(slzjsz[slcs]);
 
+   $("#zjxx"+slcs).text(slzjsz[slcs]);
+   $("#ljxyz").text(xyznum);
+    slcs++;
+  slyc();
+  },600)
+ 
+ 
+}
+else{
+  slcs=0;
+
+}
+
+
+
+}
  function PTTSendClick10()
  {
  
+slzj="";
+slcs=0;
+ 
+  $('#zjxx0').text("");
+   Gxzcx()
+   $("#zjxxb").text(zjxxend);
     if(keynum>9)
     {
 KeyAdd(-10);
@@ -625,7 +711,15 @@ KeyAdd(-10);
     zjxx="";
 for(var s=0;s<10;s++)
 {
-    var sjs= Math.ceil(Math.random()*10000);
+  var sjs= Math.ceil(Math.random()*10000);
+    if(sjs-xyznum*5>0)
+    {
+      sjs=sjs-xyznum*5;
+    }
+    else
+    {
+      sjs=1;
+    }
     //暗调概率 记得调回来
   
   var syzjxx="";
@@ -639,7 +733,34 @@ for(var s=0;s<10;s++)
     zxxxsz1[j]=zxxxsz1[j]+1;
     zxxxsz2[j]=zxxxsz2[j]+1;
     zxxxsz3[j]=zxxxsz3[j]+1;
-
+    
+  //  setTimeout(function(){
+  //   $("#zjxx"+s).text(slzjsz[s])
+  //   console.log(s)
+  //  },1000) 
+ 
+   // alert(slzj)
+   
+var sjss= Math.ceil(Math.random()*10000);
+  
+  for(jjj = 0; jjj < xyzgl.length; jjj++) {
+     var zxss=xyzgl[jjj][0]
+     var zdss=xyzgl[jjj][1]
+    
+     if(sjss>=zxss&&sjss<=zdss)
+     {
+  //  dqxyz=xyzgl[jjj][2];
+    slzj=slzj+xyzgl[jjj][2]+"幸运值    "+gailv[j][2]+"\n"
+   slzjsz[s]=xyzgl[jjj][2]+"幸运值    "+gailv[j][2];
+   xyznum=xyznum+xyzgl[jjj][2];
+   $("#ljxyz").text(xyznum);
+     }
+    }
+  
+    if(j<10)
+    {
+      xyznum=0;
+    }
     if(j==11)
 {
   cfnum=cfnum+10000;
@@ -698,20 +819,41 @@ for(xxh=0;xxh<zxxxsz1.length;xxh++)
         zjxx=zjxx+gailv[xxh][2]+"   X"+zxxxsz1[xxh]+"\n";
     }
 }
-$("#zjxx").text(zjxx);
-  inst.open();
   
-for(gx=0;gx<gailv.length;gx++)
-   {
-    zjxxend=zjxxend+gailv[gx][2]+"    共"+zxxxsz2[gx]+"个\n";
-    console.log(zxxxsz2[gx])
-   }
-   Gxzcx()
-   $("#zjxxb").text(zjxxend);
+// for(gx=0;gx<gailv.length;gx++)
+//    {
+//     zjxxend=zjxxend+gailv[gx][2]+"    共"+zxxxsz2[gx]+"个\n";
+//     console.log(zxxxsz2[gx])
+//    }
+
+inst.open();
+$('#zjxx0').text("");
+$('#zjxx1').text("");
+$('#zjxx2').text("");
+$('#zjxx3').text("");
+$('#zjxx4').text("");
+$('#zjxx5').text("");
+$('#zjxx6').text("");
+$('#zjxx7').text("");
+$('#zjxx8').text("");
+$('#zjxx9').text("");
+
+slyc();
+$("#ljxyz").text(xyznum);
  }
  else{
-    $('#zjxx').text("您当前的钥匙不足抽奖10次~");
+    $('#zjxx0').text("您当前的钥匙不足抽奖10次~");
     inst.open();
+
+$('#zjxx1').text("");
+$('#zjxx2').text("");
+$('#zjxx3').text("");
+$('#zjxx4').text("");
+$('#zjxx5').text("");
+$('#zjxx6').text("");
+$('#zjxx7').text("");
+$('#zjxx8').text("");
+$('#zjxx9').text("");
  }
  }
 
@@ -723,7 +865,7 @@ function Gxzcx()
 for(var j=0;j<10;j++){
 $("#zg"+j).text(zxxxsz2[j]);
 $("#sy"+j).text(zxxxsz3[j]);
-console.log(j+"    "+gailv[j][2]+"剩余"+zxxxsz3[j]+"总共"+zxxxsz2[j])
+// console.log(j+"    "+gailv[j][2]+"剩余"+zxxxsz3[j]+"总共"+zxxxsz2[j])
 
 
 }
