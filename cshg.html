@@ -535,14 +535,16 @@ KeyAdd(-1);
     $("#cjcs").text(cjcs);
     zjxx="";
     var sjs= Math.ceil(Math.random()*10000);
-    if(sjs-xyznum*5>0)
+    if(sjs-(xyznum*2)>0)
     {
-      sjs=sjs-xyznum*5;
+      sjs=sjs-(xyznum*2);
     }
     else
     {
       sjs=1;
     }
+    console.log("当前随机数"+sjs)
+    // alert(sjs)
   var dqxyz=0;
   var syzjxx="";
   for(j = 0; j < gailv.length; j++) {
@@ -642,7 +644,7 @@ $("#zjxx0").text(dqxyz+"幸运值  "+zjxx);
   
 } 
 xyznum=xyznum+dqxyz;
-console.log("总幸运值"+xyznum)
+// console.log("总幸运值"+xyznum)
 $("#ljxyz").text(xyznum);
 
 for(gx=0;gx<18;gx++)
@@ -680,7 +682,7 @@ if(slcs<11)
    $("#ljxyz").text(xyznum);
     slcs++;
   slyc();
-  },600)
+  },500)
  
  
 }
@@ -692,6 +694,9 @@ else{
 
 
 }
+
+var ysjs=0;
+
  function PTTSendClick10()
  {
  
@@ -712,14 +717,16 @@ KeyAdd(-10);
 for(var s=0;s<10;s++)
 {
   var sjs= Math.ceil(Math.random()*10000);
-    if(sjs-xyznum*5>0)
+  ysjs=sjs;
+    if(sjs-(xyznum*2)>0)
     {
-      sjs=sjs-xyznum*5;
+      sjs=sjs-(xyznum*2);
     }
     else
     {
       sjs=1;
     }
+    console.log(ysjs+"-"+xyznum+"*2="+sjs)
     //暗调概率 记得调回来
   
   var syzjxx="";
@@ -820,12 +827,12 @@ for(xxh=0;xxh<zxxxsz1.length;xxh++)
     }
 }
   
-// for(gx=0;gx<gailv.length;gx++)
-//    {
-//     zjxxend=zjxxend+gailv[gx][2]+"    共"+zxxxsz2[gx]+"个\n";
-//     console.log(zxxxsz2[gx])
-//    }
-
+ for(gx=0;gx<gailv.length;gx++)
+    {
+     zjxxend=zjxxend+gailv[gx][2]+"    共"+zxxxsz2[gx]+"个\n";
+    //  console.log(zxxxsz2[gx])
+    }
+    console.log("-----------------------------------------------------------")
 inst.open();
 $('#zjxx0').text("");
 $('#zjxx1').text("");
