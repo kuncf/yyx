@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超越降临模拟抽奖</title>
+
+    <style>
+.btnn{
+    height: 40px;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 20px;
+    max-width: 500px;
+}
+.headbox{
+    width: 100%;
+  
+  
+}
+*{
+    color: white;
+}
+body{
+    padding: 0;
+    margin: 0;
+   
+}
+a{
+    color: lightblue;
+    transition-duration: 0.3s;
+}
+a:hover{
+    color: rgb(248, 25, 13);
+}
+.drq{
+    max-width: 950px;
+    width: 100%;
+    margin: auto;
+    /* background: linear-gradient(-45deg,#141b2d, #151f32,#15213b,#243a63,#233046, #15213b, #151f32, #141b2d); */
+    /* background: linear-gradient(to right, #f6d365 0%, #fda085 100%);
+     */
+     background-image: url("cyjl/bg2.jpg");
+     background-size: 100% 100%;
+    padding-bottom: 60px;
+   
+}
+.czbtn{
+    width: 22%;
+    cursor: pointer;
+}
+.dsadsa{
+    margin: 0;
+    padding: 0;
+}
+.dsadsa td{
+    padding: 0;
+    margin: 0;
+    line-height: 25px;
+    
+}
+.TopMenu{
+  width: 180px;
+  height: 40px;
+  background-color: white;
+  position: fixed;
+    right: -140px;
+    top: 100px;
+    z-index: 1;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    border-radius: 5px;
+}
+.Menuimg{
+
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  color: rgb(77, 77, 77);
+/* padding-left:  5px; */
+  transition-duration: 0.3s;
+  line-height: 40px;
+  font-size: 14px;
+  cursor: pointer;
+   border-top-left-radius: 5px; 
+   border-bottom-left-radius: 5px; 
+box-shadow: #a0a0a0 0 0 5px;
+    text-align: center;
+}
+.TopMenu:hover{
+  right: 0px;
+}
+.TopMenu:hover .Menuimg{
+transform: scale(1.02);
+transform: rotate(90deg);
+border-top-left-radius: 0px; 
+box-shadow: #a0a0a0 0 0 0px;
+
+}
+.TopMenu:hover .Menu{
+  /* transform: scale(1); */
+margin-left: 0;
+}
+.Menu{
+  background-color: white;
+  width: 160px;
+  line-height: 32px;
+  padding-left: 20px;
+border-bottom: #bbbbbb solid 1px; 
+margin-left: 40px;
+}
+.Menu a{
+  color: rgb(71, 71, 71);
+  font-size: 13px;
+  text-decoration: none;
+}.Menu:hover{
+  background-color: rgb(236, 236, 236);
+}
+    </style>
+
+<!-- 导入MDUI CSS以及JS -->
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css"/>
+    <script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <link rel="stylesheet" href="css/liMarquee.css">
+    <script src="js/jquery.liMarquee.js"></script>
+</head>
+<body style="background-color: #c8c9cb;" class="mdui-theme-primary-teal ">
+  <div class="TopMenu">
+<div class="Menuimg"> <span style="font-size:20px;color: rgb(77, 77, 77);"><i class="fa fa-align-left" style="color: rgb(77, 77, 77);" aria-hidden="true"></i></span></div>
+<div class="MenuBox">
+  <div class="Menu" style="transition-duration:0.2s ;"> <a href="https://kuncf.github.io/cf/">模拟器菜单</a> </div>
+  <div class="Menu" style="transition-duration:0.2s ;"><a href="https://pengkun6b.github.io/cfmncj/sjlmn.html">工坊赏金令开箱模拟器</a></div>
+  <div class="Menu"  style="transition-duration:0.2.5s ;"><a href="https://pengkun6b.github.io/cfmncj/lunhui.html">王者轮回模拟器</a> </div>
+  <div class="Menu"  style="transition-duration:0.3s ;"><a href="https://pengkun6b.github.io/cfmncj/duobao3.html">新王者夺宝模拟器</a> </div>
+  <div class="Menu" style="transition-duration:0.4s ;"><a href="https://pengkun6b.github.io/zhcdd/cfjjrgmncj.html">竞技荣光模拟器</a> </div>
+  <div class="Menu" style="transition-duration:0.5s ;"><a href="https://pengkun6b.github.io/cfmncj/csaymoni.html">传说暗裔序列号模拟器</a> </div>
+  <div class="Menu" style="transition-duration:0.6s ;color: rgb(0, 104, 69);">关注抖音CF仰泳信 看模拟器/活动最新咨讯</div>
+</div>
+
+
+  </div>
+   <div class="str1 str_wrap" style="position: fixed;left: 0;top: 0;background-color:#1b1b1b;color:rgb(184, 212, 251);height:20px;line-height:30px;cursor: pointer;z-index: 0;">
+    <a href="https://www.douyin.com/user/MS4wLjABAAAA5whHwaTt0KwOJeXjKfter3Bpv4nxLDQXSbx0gw9uykqTKq3Avav2AJCpPi2KfKyU"> 关注抖音CF仰泳信 模拟器最新咨询第一手消息</a>
+    &nbsp;&nbsp;  &nbsp; 暂存箱分解、开箱、等功能正在制作中... 
+    &nbsp;&nbsp;  &nbsp;    <a href="https://kuncf.github.io/cf/">模拟器菜单</a> 
+    &nbsp;&nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;     <a href="https://www.douyin.com/user/MS4wLjABAAAA5whHwaTt0KwOJeXjKfter3Bpv4nxLDQXSbx0gw9uykqTKq3Avav2AJCpPi2KfKyU"> 关注抖音CF仰泳信 模拟器最新咨询第一手消息</a>
+    &nbsp;&nbsp;  &nbsp; 暂存箱分解、开箱、等功能正在制作中... 
+    &nbsp;&nbsp;  &nbsp;    <a href="https://kuncf.github.io/cf/">模拟器菜单</a> 
+    &nbsp;&nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;     <a href="https://www.douyin.com/user/MS4wLjABAAAA5whHwaTt0KwOJeXjKfter3Bpv4nxLDQXSbx0gw9uykqTKq3Avav2AJCpPi2KfKyU"> 关注抖音CF仰泳信 模拟器最新咨询第一手消息</a>
+    &nbsp;&nbsp;  &nbsp; 暂存箱分解、开箱、等功能正在制作中... 
+    &nbsp;&nbsp;  &nbsp;    <a href="https://kuncf.github.io/cf/">模拟器菜单</a> 
+    &nbsp;&nbsp;  &nbsp;  &nbsp;&nbsp;  &nbsp;     <a href="https://www.douyin.com/user/MS4wLjABAAAA5whHwaTt0KwOJeXjKfter3Bpv4nxLDQXSbx0gw9uykqTKq3Avav2AJCpPi2KfKyU"> 关注抖音CF仰泳信 模拟器最新咨询第一手消息</a>
+    &nbsp;&nbsp;  &nbsp; 暂存箱分解、开箱、等功能正在制作中... 
+    &nbsp;&nbsp;  &nbsp;    <a href="https://kuncf.github.io/cf/">模拟器菜单</a> 
+  </div> 
+<div class="drq">
+    <div class="mdui-dialog" id="dialog" style="color: #ffe5a1;background-color:#12161c;overflow:auto; height:600px;max-height: 1000px;">
+        <div class="mdui-dialog-title" id="Msgtit" style="color:#ffcf56;">标题</div>
+        <div class="mdui-dialog-content" style="color: #ffe5a1;overflow:scroll;clear:both;white-space: pre;line-height: 25px;">
+        <span id="zjxx0"  style="color: #ffe5a1"></span>
+        <span id="zjxx1"  style="color: #ffe5a1"></span>
+        <span id="zjxx2"  style="color: #ffe5a1"></span>
+        <span id="zjxx3"  style="color: #ffe5a1"></span>
+        <span id="zjxx4"  style="color: #ffe5a1"></span>
+        <span id="zjxx5"  style="color: #ffe5a1"></span>
+        <span id="zjxx6"  style="color: #ffe5a1"></span>
+        <span id="zjxx7"  style="color: #ffe5a1"></span>
+        <span id="zjxx8"  style="color: #ffe5a1"></span>
+        <span id="zjxx9"  style="color: #ffe5a1"></span>
+      
+        </div>
+        <div class="mdui-dialog-actions">
+          <button class="mdui-btn mdui-ripple" mdui-dialog-cancel  style="color:#ffcf56;">确定</button>
+      
+        </div>
+      </div>
+    <div class="headbox">
+        
+        <center><img src="cyjl/bzz.jpg" style="width: 100%;" alt="">
+            <br><br>
+            <br><span href="#"  mdui-dialog="{target: '#example-4'}" style="text-decoration:underline;color:#e3c990;cursor: pointer;">查看概率&nbsp;&nbsp;&nbsp;查看中奖信息</span>
+          
+            <br><br><span style="font-size: 16px;color: #ffe5a1;">您当前还剩下&nbsp;<span id="keynum" style="font-weight: bold;color:#ffffff;">0</span>&nbsp;把钥匙</span> &nbsp;<span href="#"  mdui-dialog="{target: '#zcx'}" style="text-decoration:underline;color:#e3c990;cursor: pointer;" onclick=" Gxzcx()">查看暂存箱</span><br><br>
+      <img src="cyjl/czbtn1.png" class="czbtn" onclick="KeyAdd(1);Czcs(1)"/>
+    <img src="cyjl/czbtn2.png" class="czbtn" onclick="KeyAdd(11);Czcs(10)"/>
+
+    <br><br><span style="color: #ffe5a1;">累计“充值”&nbsp;<span id="ljcz" style="color: #ffffff;">0</span>&nbsp;把钥匙</span>
+    <br><br><img src="cyjl/jc.png" style="width: 90%;max-width: 820px;" alt="">
+    <br><br>
+
+<div style="">
+    <img src="cyjl/cjbtn1.png"  class="czbtn" onclick="PTTSendClick1();"/>
+    <img src="cyjl/cjbtn2.png" class="czbtn" onclick="PTTSendClick10();"/>
+  
+    <div  style="color: rgb(83, 73, 67);margin-top: 1%;font-size: 12px;display: none;"> 当前CF点累计:&nbsp;<span id="ljcf"  style="color: rgb(147, 72, 43);">0</span>&nbsp;当前幸运值:&nbsp;<span id="ljxyz"  style="color: rgb(147, 72, 43);">0</span>&nbsp;</div>
+  </div>
+    <br>
+           <br><br>
+   
+    <br><br>
+    <div  style="color:#ffe5a1;">当前积分累计:&nbsp;<span id="ljayb" style="color: #ffffff;">0</span>&nbsp;,当前剩余可使用积分:&nbsp;<span  style="color: #ffffff;" id="syayb">0</span>&nbsp;</div>
+    <!-- <div style="margin-top:20px ;">当前经验值累计:&nbsp;<span id="jyzt" style="color: rgb(255, 106, 0);">0</span>&nbsp;,当前共:&nbsp;<span  style="color: rgb(255, 106, 0);" id="djt">0</span>&nbsp;</div> -->
+
+
+    <br><img src="cyjl/aybdhjc.jpg" style="width: 100%;max-width: 820px;" alt="">
+
+    <br><br>
+  
+<br><br>
+ <br><br>
+<br>
+<br>
+   
+<br>
+<br>
+     
+</center>
+</div>
+</div>
+
+
+
+
+
+
+<div class="mdui-dialog" id="zcx"  style="overflow:scroll">
+    <h3 style="color: black;margin-left: 20px;">暂存箱</h4>
+    <table class="mdui-table mdui-table-hoverable dsadsa">
+      <thead>
+      <tr>
+       
+        <th>名称</th>
+        <th>共获得数量</th>
+        <th>剩余数量</th>
+        <th>分解可得钥匙</th>
+        <th>操作</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td id="zcxname0">传说暗裔无序列号版</td>
+        <td id="zg0" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy0" style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="zcxkeynum0">48</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple"  onclick="fjys(0)" style="color:red">分解</button></td>
+      </tr>
+      <tr>
+        <td id="zcxname1">鹰</td>
+        <td id="zg1" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy1" style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="zcxkeynum1">24</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple"   onclick="fjys(1)"   style="color:red">分解</button></td>
+      </tr>
+      <tr>
+        <td id="zcxname2">王者星神</td>
+        <td id="zg2" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy2" style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="zcxkeynum2">14</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple"   onclick="fjys(2)" style="color:red">分解</button></td>
+      </tr>
+      <tr>
+        <td id="zcxname3">觉醒版超新星-悦享</td>
+        <td id="zg3" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy3"  style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="zcxkeynum3">12</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple" onclick="fjys(3)"  style="color:red">分解</button></td>
+      </tr>
+      <tr>
+        <td id="zcxname4">Scar Light-白虎</td>
+        <td id="zg4" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy4"  style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="zcxkeynum4">12</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple"  onclick="fjys(4)"  style="color:red">分解</button></td>
+      </tr>
+      <tr>
+        <td id="zcxname5">炫金火麒麟</td>
+        <td id="zg5" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy5"  style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="zcxkeynum5">7</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple"  onclick="fjys(5)"  style="color:red">分解</button></td>
+      </tr>
+      <tr>
+        <td id="zcxname6">M4A1-黑骑士</td>
+        <td id="zg6" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy6" style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="zcxkeynum6">5</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple"  onclick="fjys(6)" style="color:red">分解</button></td>
+      </tr>
+      <tr>
+        <td id="zcxname7">A背包套装-手雷包</td>
+        <td id="zg7" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy7" style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="zcxkeynum7">4</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple"  onclick="fjys(7)" style="color:red">分解</button></td>
+      </tr>
+      <tr>
+        <td id="zcxname8">超能力少女兑换券</td>
+        <td id="zg8" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy8" style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="zcxkeynum8">4</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple" onclick="fjys(8)"  style="color:red">分解</button></td>
+      </tr>
+      <tr>
+        <td id="zcxname9">王者星神原始光效</td>
+        <td id="zg9" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy9" style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="zcxkeynum9">1</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple"  onclick="fjys(9)" style="color:red">分解</button></td>
+      </tr> 
+      <tr>
+        <td id="zcxname10">sb</td>
+        <td id="zg10" style="color:rgb(163, 44, 0);font-size: 16px;">0</td>
+        <td id="sy10" style="color:rgb(255, 0, 0);font-size: 16px;">0</td>
+        <td id="zcxkeynum10">1</td>
+        <td><button class="mdui-btn mdui-color-theme-accent mdui-ripple"  onclick="fjys(10)" style="color:red">分解</button></td>
+      </tr> 
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mdui-container" >
+   
+    <div class="mdui-dialog" id="example-4" style="background-color:#202020 ;min-height: 400px;">
+      <div class="mdui-tab mdui-tab-full-width" id="example4-tab">
+        <a href="#example4-tab1" class="mdui-ripple" style="color: #ffe5a1;">查看概率</a>
+        <a href="#example4-tab2" class="mdui-ripple" style="color: #ffe5a1;">查看中奖信息</a>
+
+      </div>
+      <div id="example4-tab1" class="mdui-p-a-2" style="line-height: 20px; overflow: scroll;min-height: 600px;color: #286d66;">
+        沙漠玫瑰 0.10%<br> 
+Barrett-电竞装甲 0.20%<br> 
+尼泊尔-电竞装甲 0.30%<br> 
+柯尔特-电竞装甲 0.40%<br> 
+KAC-圣炎切割者III 0.50%<br> 
+孙尚香玩偶-兑换券 0.50%<br> 
+恶棍-电竞装甲 1.00%<br> 
+烟雾弹-电竞装甲 1.00%<br> 
+闪光弹-电竞装甲 1.00%<br> 
+王者之石x1 4.20%<br> 
+CF积分x100 0.20%<br> 
+CF积分x50 0.60%<br> 
+CF积分x20 20.00%<br> 
+CF积分x10 40.00%<br> 
+CF积分x5 30.00%<br> 
+      </div>
+      <div id="example4-tab2" class="mdui-p-a-2">
+        <div style="font-size:15px;color:#286d66;line-height: 23px;overflow: scroll;min-height: 600px;">中奖信息:
+            <div style="color: #286d66;">您已抽了<span id="cjcs" style="color:  #28998e;">0</span>次，共获得: <span id="zjxxb" style="white-space: pre;color: #286d66;"></span></div>
+        
+           </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- <div class="mdui-dialogzxj" id="example-4">
+    <div class="mdui-tab mdui-tab-full-width" id="example4-tab">
+      <a href="#example4-tab1" class="mdui-ripple">抽奖池概率</a>
+      <a href="#example4-tab2" class="mdui-ripple">暗裔宝箱概率</a>
+    
+    </div>
+    <div id="example4-tab1" class="mdui-p-a-2">
+        <img src="cyjl/cjgl.jpg" style="width: 90%;max-width: 820px;" alt="">
+    </div>
+    <div id="example4-tab2" class="mdui-p-a-2">
+       
+    </div>
+ 
+  </div> -->
+</body>
+
+
+<script>
+    $('.str1').liMarquee();
+var inst = new mdui.Dialog('#dialog');
+var inst2 = new mdui.Dialog('#example-4');
+var $ = mdui.$;
+var tab = new mdui.Tab('#example4-tab');
+var czcs=0;
+var jyzt=0;
+
+function Czcs(num){
+czcs=czcs+num;
+$("#ljcz").text(czcs);
+
+}
+//刷新充值次数
+$('#example-4').on('open.mdui.dialog', function () {
+  tab.handleUpdate();
+});
+//初始化弹
+var keynum=0;
+// 定义钥匙数量
+var bnum=0;
+// 定义积分数量
+var cjcs=0;
+//定义抽奖次数
+var aybnum=0;
+//定义积分数量
+var aybxnum=0;
+//定义暗裔宝箱数量
+var aybxxh=0;
+//定义消耗暗裔宝箱数量
+function Sxaybx(){
+
+$("#aybxnum").text(aybxnum);
+}
+//刷新暗裔宝箱数量方法
+
+
+
+var slcs=0;
+var zjxxend="\n";
+    var cjcs=0;
+   var $ = mdui.$;
+   var fjbts=false;
+   var zjxx="";
+   var zxxxsz1=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+   //用于抽奖显示
+   var zxxxsz2=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+   //用于计数总共获得
+   var zxxxsz3=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+   //用于计数剩余
+
+   const gailv = [
+    [1,10,'荒漠琉璃',10],
+    [11,30, '月兔特工',10],
+    [31,60, 'M4A1-黑骑士',5],
+    [61,100, '试炼破坏者Ⅲ',4],
+    [101,150, '征服者-超越',3],
+    [151,200, '乱世-超越',3],
+    [201,300, '黄金迷你深渊冰龙',2],
+    [301,400, '黄金迷你裂空之翼',2],
+    [401,500, '黄金虚空之锤',2],
+    [501,920, '黄金芭蕉扇',2],
+    [20,20,'艾比眼镜',1],
+    [921,940, '100积分',0],
+    [941,1000, '50积分',0],
+    [1001,3000, '20积分',0],
+    [3001,7000, '10积分',0],
+    [7000,10000, '5积分',0],
+   
+ ];
+//  荒漠琉璃   0.15%
+// 月兔特工   0.15%
+// M4A1-黑骑士  0.40% 
+// 试炼破坏者Ⅲ   0.50%
+// 征服者-超越   0.60%
+// 乱世-超越   0.60%
+// 黄金迷你深渊冰龙   0.80%
+// 黄金迷你裂空之翼   0.80%
+// 黄金虚空之锤   0.80%
+// 黄金芭蕉扇   0.80%
+// 艾比眼镜   1.50%
+// 100积分   0.20%
+// 50积分   2.70%
+// 20积分   20.00%
+// 10积分   30.00%
+// 5积分   40.00%
+
+// var xyznum=0;
+const xyzgl=[
+  [1,10,0],
+  [11,50,0],
+  [51,300,0],
+  [301,800,0],
+  [801,1800,0],
+  [1801,4800,0],
+  [4801,10000,0],
+]
+// 幸运值概率
+// 100	0.10%
+// 50	0.40%
+// 20	2.50%
+// 10	5.00%
+// 5	10.00%
+// 2	30.00%
+// 1	52.00%
+
+for(var i=0;i<11;i++)
+{
+$("#zcxname"+i).text(gailv[i][2]);
+$("#zcxkeynum"+i).text(gailv[i][3]);
+console.log($("#zcxname").text()+i)
+
+
+
+}
+
+
+
+
+// 定义奖品名称以及概率
+
+// 定义奖品名称以及概率
+alert("关注抖音 CF仰泳信\n\n已更新幸运值系统，十连动画。\n修正暂存箱分解钥匙\n\n声明:\n本页面仅做为模拟概率使用，无任何盈利和消费，抽中的道具也不会发往仓库。请大家理性消费。如有侵权联系即删~")
+
+var slzj="";
+var slzjsz=["","","","","","","","","","",]
+function KeyAdd(addnum){
+   
+keynum=keynum+addnum;
+$('#keynum').text(keynum);
+$('#Msgtit').text("提示");
+if(addnum>0)
+{
+$('#zjxx0').text("您已成功添加"+addnum+"把钥匙！");
+if(fjbts)
+{
+
+}
+else
+{
+//inst.open();
+fjbts=false;
+}
+}
+Gxzcx();
+}
+
+var cfnum=0;
+
+function PTTSendClick1()
+{
+    Gxzcx();
+    if(keynum>0)
+    {
+KeyAdd(-1);
+    cjcs=cjcs+1;
+    zjxxend="\n";
+    $("#cjcs").text(cjcs);
+    zjxx="";
+    var sjs= Math.ceil(Math.random()*10000);
+   
+    console.log("当前随机数"+sjs)
+    // alert(sjs)
+  for(j = 0; j < gailv.length; j++) {
+   var zxs=gailv[j][0]
+   var zds=gailv[j][1]
+  
+   if(sjs>=zxs&&sjs<=zds)
+   {
+  zjxx=gailv[j][2];
+zxxxsz2[j]=zxxxsz2[j]+1;
+zxxxsz3[j]=zxxxsz3[j]+1;
+  
+
+  if(j==11)
+{
+    aybnum=aybnum+100;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+}
+
+
+
+if(j==12)
+{
+    aybnum=aybnum+50;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+}
+
+if(j==13)
+{
+    aybnum=aybnum+20;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+}
+
+if(j==14)
+{
+    aybnum=aybnum+10;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+}
+if(j==15)
+{
+  aybnum=aybnum+5;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+
+}
+Gxzcx()
+// method
+
+inst.open();
+$('#zjxx0').text("");
+$('#zjxx1').text("");
+$('#zjxx2').text("");
+$('#zjxx3').text("");
+$('#zjxx4').text("");
+$('#zjxx5').text("");
+$('#zjxx6').text("");
+$('#zjxx7').text("");
+$('#zjxx8').text("");
+$('#zjxx9').text("");
+$("#zjxx0").text(zjxx);
+   }
+   
+  
+} 
+
+for(gx=0;gx<15;gx++)
+   {
+    zjxxend=zjxxend+gailv[gx][2]+"X"+zxxxsz2[gx]+"\n";
+  
+   }
+   $("#zjxxb").text(zjxxend);
+}
+else{
+  
+inst.open();
+$('#zjxx0').text("");
+$('#zjxx1').text("");
+$('#zjxx2').text("");
+$('#zjxx3').text("");
+$('#zjxx4').text("");
+$('#zjxx5').text("");
+$('#zjxx6').text("");
+$('#zjxx7').text("");
+$('#zjxx8').text("");
+$('#zjxx9').text("");
+    $('#zjxx0').text("您当前的钥匙不足抽奖1次~");
+   
+
+}
+}
+function slyc(){
+if(slcs<11)
+{
+  setTimeout(function(){
+   // console.log(slzjsz[slcs]);
+
+   $("#zjxx"+slcs).text(slzjsz[slcs]);
+   console.log(slcs+slzjsz[slcs]+gailv[slcs][2])
+    slcs++;
+  slyc();
+  },400)
+ 
+ 
+}
+else{
+  slcs=0;
+
+}
+
+
+
+}
+
+var ysjs=0;
+
+ function PTTSendClick10()
+ {
+ 
+slzj="";
+slcs=0;
+ 
+  $('#zjxx0').text("");
+   Gxzcx()
+   $("#zjxxb").text(zjxxend);
+    if(keynum>9)
+    {
+KeyAdd(-10);
+    cjcs=cjcs+10;
+    zjxxend="";
+    $("#cjcs").text(cjcs);
+    zxxxsz1=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    zjxx="";
+for(var s=0;s<10;s++)
+{
+  var sjs= Math.ceil(Math.random()*10000);
+
+   // console.log(ysjs+"-"+xyznum+"*2="+sjs)
+    //暗调概率 记得调回来
+    
+  var syzjxx="";
+  for(j = 0; j < gailv.length; j++) {
+   var zxs=gailv[j][0]
+   var zds=gailv[j][1]
+  
+   if(sjs>=zxs&&sjs<=zds)
+   {
+    
+    zxxxsz1[j]=zxxxsz1[j]+1;
+    zxxxsz2[j]=zxxxsz2[j]+1;
+    zxxxsz3[j]=zxxxsz3[j]+1;
+slzjsz[s]=gailv[j][2]
+   
+console.log(sjs+" "+zxs+" "+zds)
+if(j==11)
+{
+    aybnum=aybnum+100;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+}
+
+
+
+if(j==12)
+{
+    aybnum=aybnum+50;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+}
+
+if(j==13)
+{
+    aybnum=aybnum+20;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+}
+
+if(j==14)
+{
+    aybnum=aybnum+10;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+}
+if(j==15)
+{
+  aybnum=aybnum+5;
+    $("#ljayb").text(aybnum);
+    $("#syayb").text(aybnum);
+
+}
+   }}
+}
+
+for(xxh=0;xxh<zxxxsz1.length;xxh++)
+{
+    if(zxxxsz1[xxh]!=0)
+    {
+        zjxx=zjxx+gailv[xxh][2]+"   X"+zxxxsz1[xxh]+"\n";
+    }
+}
+  
+ for(gx=0;gx<gailv.length;gx++)
+    {
+     zjxxend=zjxxend+gailv[gx][2]+"    共"+zxxxsz2[gx]+"个\n";
+    //  console.log(zxxxsz2[gx])
+    }
+    $("#zjxxb").text(zjxxend);
+  //  console.log("-----------------------------------------------------------")
+inst.open();
+$('#zjxx0').text("");
+$('#zjxx1').text("");
+$('#zjxx2').text("");
+$('#zjxx3').text("");
+$('#zjxx4').text("");
+$('#zjxx5').text("");
+$('#zjxx6').text("");
+$('#zjxx7').text("");
+$('#zjxx8').text("");
+$('#zjxx9').text("");
+
+slyc();
+ }
+ else{
+    $('#zjxx0').text("您当前的钥匙不足抽奖10次~");
+    inst.open();
+
+$('#zjxx1').text("");
+$('#zjxx2').text("");
+$('#zjxx3').text("");
+$('#zjxx4').text("");
+$('#zjxx5').text("");
+$('#zjxx6').text("");
+$('#zjxx7').text("");
+$('#zjxx8').text("");
+$('#zjxx9').text("");
+ }
+ }
+
+
+// 充值钥匙方法
+
+function Gxzcx()
+{
+for(var j=0;j<10;j++){
+$("#zg"+j).text(zxxxsz2[j]);
+$("#sy"+j).text(zxxxsz3[j]);
+// console.log(j+"    "+gailv[j][2]+"剩余"+zxxxsz3[j]+"总共"+zxxxsz2[j])
+
+
+}
+
+}
+
+function fjys(pid){
+if(zxxxsz3[pid]<1)
+{
+    alert("您当前的"+gailv[pid][2]+"不足1个~");
+
+}
+else{
+    var b=confirm("是否分解1个"+gailv[pid][2]+"换取"+gailv[pid][3]+"把钥匙")//按确认和取消输出不同的内容
+                if(b==true){
+               zxxxsz3[pid]=zxxxsz3[pid]-1;
+               Gxzcx()
+               fjbts=true;
+               
+               KeyAdd(gailv[pid][3])
+               alert("您已成功分解1个"+gailv[pid][2]+"获得"+gailv[pid][3]+"把钥匙")
+                }else{
+
+                }
+}
+
+
+
+
+}
+
+</script>
+</html>
