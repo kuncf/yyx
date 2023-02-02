@@ -196,13 +196,13 @@ margin-left: 40px;
     <img src="csnd/cjbtn1.png"  class="czbtn" onclick="PTTSendClick1();"/>
     <img src="csnd/cjbtn2.png" class="czbtn" onclick="PTTSendClick10();"/>
   
-    <div  style="color: rgb(83, 73, 67);margin-top: 1%;font-size: 12px;"> 当前CF点累计:&nbsp;<span id="ljcf"  style="color: rgb(147, 72, 43);">0</span>&nbsp;当前幸运值:&nbsp;<span id="ljxyz"  style="color: rgb(147, 72, 43);">0</span>&nbsp;</div>
+    <div  style="color: rgb(83, 73, 67);margin-top: 1%;font-size: 12px;display: none;"> 当前CF点累计:&nbsp;<span id="ljcf"  style="color: rgb(147, 72, 43);">0</span>&nbsp;当前幸运值:&nbsp;<span id="ljxyz"  style="color: rgb(147, 72, 43);display: none;">0</span>&nbsp;</div>
   </div>
     <br>
            <br><br>
    
     <br><br>
-    <div  style="color: rgb(83, 73, 67);">当前积分累计:&nbsp;<span id="ljayb" style="color: rgb(147, 72, 43);">0</span>&nbsp;,当前剩余可使用积分:&nbsp;<span  style="color: rgb(147, 72, 43);" id="syayb">0</span>&nbsp;</div>
+    <div  style="color: rgb(83, 73, 67);">当前圣灵币累计:&nbsp;<span id="ljayb" style="color: rgb(147, 72, 43);">0</span>&nbsp;,当前剩余可使用圣灵币:&nbsp;<span  style="color: rgb(147, 72, 43);" id="syayb">0</span>&nbsp;</div>
     <!-- <div style="margin-top:20px ;">当前经验值累计:&nbsp;<span id="jyzt" style="color: rgb(255, 106, 0);">0</span>&nbsp;,当前共:&nbsp;<span  style="color: rgb(255, 106, 0);" id="djt">0</span>&nbsp;</div> -->
 
 
@@ -324,22 +324,22 @@ margin-left: 40px;
 
       </div>
       <div id="example4-tab1" class="mdui-p-a-2" style="line-height: 20px; overflow: scroll;min-height: 600px;">
-        传说圣灵 无序列号版 0.1% <br>
-        传说女帝 0.1% <br>
-        王者霜心 0.15%<br>
-        王者沙漠玫瑰 0.15%<br>
-        觉醒版王者之决 0.2%<br>
-        炫金骑士 0.7%<br>
-        Barrett-极光 0.8%<br>
-        AN94-超新星 0.8%<br>
-        运动护目镜 4%<br>
-        超级对讲机 5%<br>
-        王者之石头X1 10%<br>
-        圣灵币X100 0.1%<br>
-        圣灵币X50 0.5%<br>
-        圣灵币X20 1.4%<br>
-        圣灵币X10 33%<br>
-        圣灵币X5 43%<br>
+      传说圣灵 无序列号版 0.1% <br>
+传说女帝 0.1% <br>
+ 王者霜心 0.2%<br>
+王者沙漠玫瑰 0.3%<br>
+ 觉醒版王者之决 0.3%<br>
+炫金骑士 0.5%<br>
+Barrett-极光 0.6%<br>
+AN94-超新星 0.9%<br>
+ 运动护目镜 1.5%<br>
+超级对讲机 1.55%<br>
+ 王者之石X1 8.1%<br>
+ 圣灵币X100 0.1%<br>
+ 圣灵币X50 0.80%<br>
+圣灵币X20 10%<br>
+ 圣灵币X10 35%<br>
+ 圣灵币X5 40%<br>
       </div>
       <div id="example4-tab2" class="mdui-p-a-2">
         <div style="font-size:15px;color:white;line-height: 23px;overflow: scroll;min-height: 600px;">中奖信息:
@@ -390,11 +390,11 @@ $('#example-4').on('open.mdui.dialog', function () {
 var keynum=0;
 // 定义钥匙数量
 var bnum=0;
-// 定义积分数量
+// 定义圣灵币数量
 var cjcs=0;
 //定义抽奖次数
 var aybnum=0;
-//定义积分数量
+//定义圣灵币数量
 var aybxnum=0;
 //定义暗裔宝箱数量
 var aybxxh=0;
@@ -423,38 +423,38 @@ var zjxxend="\n";
    const gailv = [
     [1,10,'传说圣灵 无序列号版',50],
     [11,20, '传说女帝',45],
-    [21,35, '王者霜心',20],
-    [36,50, '王者沙漠玫瑰',14],
-    [51,70, ' 觉醒版王者之决',14],
-    [71,140, '炫金骑士',7],
-    [141,220, 'Barrett-极光',6],
-    [221,300, 'AN94-超新星',6],
-    [301,700, '运动护目镜',1],
-    [701,1200, '超级对讲机',1],
-    [1201,2200, '王者之石X1',0],
-    [2201,2210, '圣灵币X100',0],
-    [2211,2260, '圣灵币X50',0],
-    [2261,2400, '圣灵币X20',0],
-    [2401,5700, '圣灵币X10',0],
-    [5701,10000, '圣灵币X5',0]
+    [21,40, '王者霜心',20],
+    [41,70, '王者沙漠玫瑰',14],
+    [71,100, ' 觉醒版王者之决',14],
+    [101,150, '炫金骑士',7],
+    [151,210, 'Barrett-极光',6],
+    [211,300, 'AN94-超新星',6],
+    [301,450, '运动护目镜',1],
+    [451,600, '超级对讲机',1],
+    [601,1410, '王者之石X1',0],
+    [1411,1420, '圣灵币X100',0],
+    [1421,1500, '圣灵币X50',0],
+    [1501,2500, '圣灵币X20',0],
+    [2501,6000, '圣灵币X10',0],
+    [6001,10000, '圣灵币X5',0]
    
  ];
 //  传说圣灵 无序列号版 0.1%
 // 传说女帝 0.1%
-// 王者霜心 0.15%
-// 王者沙漠玫瑰 0.15%
-// 觉醒版王者之决 0.2%
-// 炫金骑士 0.7%
-// Barrett-极光 0.8%
-// AN94-超新星 0.8%
-// 运动护目镜 4%
-// 超级对讲机 5%
-// 王者之石头X1 10%
+// 王者霜心 0.2%
+// 王者沙漠玫瑰 0.3%
+// 觉醒版王者之决 0.3%
+// 炫金骑士 0.5%
+// Barrett-极光 0.6%
+// AN94-超新星 0.9%
+// 运动护目镜 1.5%
+// 超级对讲机 1.55%
+// 王者之石头X1 8.1%
 // 圣灵币X100 0.1%
-// 圣灵币X50 0.5%
-// 圣灵币X20 1.4%
-// 圣灵币X10 33%
-// 圣灵币X5 43%
+// 圣灵币X50 0.80%
+// 圣灵币X20 10%
+// 圣灵币X10 35%
+// 圣灵币X5 40%
 
 var xyznum=0;
 const xyzgl=[
@@ -491,7 +491,7 @@ $("#zcxkeynum"+i).text(gailv[i][3]);
 // 定义奖品名称以及概率
 
 // 定义奖品名称以及概率
-alert("关注抖音 CF仰泳信\n\n已更新幸运值系统，十连动画。\n修正暂存箱分解钥匙\n\n声明:\n本页面仅做为模拟概率使用，无任何盈利和消费，抽中的道具也不会发往仓库。请大家理性消费。如有侵权联系即删~")
+alert("关注抖音 CF仰泳信\n\n已删除幸运值系统，十连动画。\n修正概率和圣灵币兑换显示\n\n声明:\n本页面仅做为模拟概率使用，无任何盈利和消费，抽中的道具也不会发往仓库。请大家理性消费。如有侵权联系即删~")
 
 var slzj="";
 var slzjsz=["","","","","","","","","","",]
@@ -529,9 +529,9 @@ KeyAdd(-1);
     $("#cjcs").text(cjcs);
     zjxx="";
     var sjs= Math.ceil(Math.random()*10000);
-    if(sjs-(xyznum*2)>0)
+    if(sjs-(0*2)>0)
     {
-      sjs=sjs-(xyznum*2);
+      sjs=sjs-(0*2);
     }
     else
     {
@@ -619,7 +619,7 @@ $('#zjxx6').text("");
 $('#zjxx7').text("");
 $('#zjxx8').text("");
 $('#zjxx9').text("");
-$("#zjxx0").text(dqxyz+"幸运值  "+zjxx);
+$("#zjxx0").text(zjxx);
    }
    
   
@@ -699,9 +699,9 @@ for(var s=0;s<10;s++)
 {
   var sjs= Math.ceil(Math.random()*10000);
   ysjs=sjs;
-    if(sjs-(xyznum*2)>0)
+    if(sjs-(0*2)>0)
     {
-      sjs=sjs-(xyznum*2);
+      sjs=sjs-(0*2);
     }
     else
     {
@@ -738,8 +738,8 @@ var sjss= Math.ceil(Math.random()*10000);
      if(sjss>=zxss&&sjss<=zdss)
      {
   //  dqxyz=xyzgl[jjj][2];
-    slzj=slzj+xyzgl[jjj][2]+"幸运值    "+gailv[j][2]+"\n"
-   slzjsz[s]=xyzgl[jjj][2]+"幸运值    "+gailv[j][2];
+    slzj=slzj+gailv[j][2]+"\n"
+   slzjsz[s]=gailv[j][2];
    xyznum=xyznum+xyzgl[jjj][2];
    $("#ljxyz").text(xyznum);
      }
