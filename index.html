@@ -7,6 +7,9 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <!-- GOOGLE FONT -->
+
+<link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css"/>
+<script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
 <!-- CSS LIBRARY -->
@@ -96,7 +99,7 @@
         </div>
         <div class="post-body"><span class="cat">点击开始模拟</span>
           <div class="post-title">
-            <h4><a href="https://kuncf.github.io/cf/pl21.html"  target="_blank">冠军柯尔特 冠军小刀模拟器</a></h4>
+            <h4><a href="https://kuncf.github.io/cf/pl21.html"  target="_blank" >冠军柯尔特 冠军小刀模拟器</a></h4>
           </div>
           <div class="post-meta"><span class="post-date">2023-1-10</span></div>
         </div></a>
@@ -464,6 +467,18 @@
 </div>
 <!-- END / PAGE WRAP --> 
 <!-- LOAD JQUERY --> 
+<div class="mdui-dialog" id="dialoggs" style="color: white;background-color:#12161c;overflow:auto; height:600px;max-height: 1000px;" overlay="false">
+  <div class="mdui-dialog-title" id="Msgtit" style="color:rgb(255, 145, 2);">关注抖音CF仰泳信</div>
+  <div class="mdui-dialog-content" style="color: white;overflow:scroll;white-space: pre-warp;line-height: 20px;">
+    <img src="img/ggwzz.png" alt="" style="width:100%">
+   
+  </div>
+  <div class="mdui-dialog-actions">
+    <button class="mdui-btn mdui-ripple" mdui-dialog-cancel  style="color:rgb(255, 145, 2);">确定</button>
+
+  </div>
+</div>
+
 <script type="text/javascript" src="js/lib/jquery-1.11.2.min.js"></script> 
 <script type="text/javascript" src="js/lib/jquery.owl.carousel.js"></script> 
 <script type="text/javascript" src="js/lib/jquery.tweet.min.js"></script> 
@@ -471,4 +486,11 @@
 <script type="text/javascript" src="js/lib/retina.min.js"></script> 
 <script type="text/javascript" src="js/scripts.js"></script>
 </body>
+<script>
+  var instgs = new mdui.Dialog('#dialoggs',{
+  history:false,
+
+});
+instgs.open();
+</script>
 </html>
