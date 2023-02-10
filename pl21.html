@@ -405,13 +405,17 @@ N9语音包兑换券 0.15%  <br>
     $('.str1').liMarquee();
 var inst = new mdui.Dialog('#dialog');
 var instgs = new mdui.Dialog('#dialoggs');
-instgs.open();
+
 var inst2 = new mdui.Dialog('#example-4');
 var $ = mdui.$;
 var tab = new mdui.Tab('#example4-tab');
 var czcs=0;
 var jyzt=0;
 
+
+window.onload=function(){
+  instgs.open();
+}
 function Czcs(num){
 czcs=czcs+num;
 $("#ljcz").text(czcs);
