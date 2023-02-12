@@ -354,11 +354,35 @@ body {
     </table>
   </div>
 <!-- 暂存箱弹窗 -->
+
+
+<div class="mdui-dialog" id="dialoggs" style="color: white;background-color:#12161c;overflow:auto; height:600px;max-height: 1000px;" overlay="false">
+  <div class="mdui-dialog-title" id="Msgtit" style="color:rgb(255, 145, 2);">关注抖音CF仰泳信</div>
+  <div class="mdui-dialog-content" style="color: white;overflow:scroll;white-space: pre-warp;line-height: 20px;">
+    <img src="img/gg1.png" alt="" style="width:100%">
+   
+  <br>
+  <p> <h3> 声明:</h3>本页面仅做为模拟概率使用，无任何盈利和消费，抽中的道具也不会发往仓库。请大家理性消费。如有侵权联系即删~</span>
+ 
+  </div>
+  <div class="mdui-dialog-actions">
+    <button class="mdui-btn mdui-ripple" mdui-dialog-cancel  style="color:rgb(255, 145, 2);">确定</button>
+
+  </div>
+</div>
 </body>
 
 <script src="https://howlerjs.com/assets/howler.js/dist/howler.min.js"></script>
 
 <script>
+  var instgs = new mdui.Dialog('#dialoggs',{
+  history:false,
+
+});
+window.onload=function(){
+  instgs.open();
+}
+
         $('.str1').liMarquee();
     var inst = new mdui.Dialog('#dialog');
     var inst2 = new mdui.Dialog('#example-4');
@@ -509,8 +533,7 @@ jQuery(function($){
     // 定义奖品名称以及概率
     
     // 定义奖品名称以及概率
-  alert("更新:\n暂存箱、分解、宝石递增功能~\n\n抖音 CF仰泳信 提供建议和解答问题\n\n声明:\n本页面仅做为模拟概率使用，无任何盈利和消费，抽中的道具也不会发往仓库。请大家理性消费。如有侵权联系即删~")
-    
+
   var dhcs=0;
   
   var strzj="";
