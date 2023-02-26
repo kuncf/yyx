@@ -14,7 +14,7 @@ const Pgailv = [
     ['M4A1-黑骑士', 0.7, 4],
     ['五虎将玩偶自选', 1, 2],
     ['五虎上将宝箱', 7.3, 0],
-    ['疯狂骰子', 0.1, 0],
+    ['疯狂骰子', 30, 0],
     ['五虎币x100', 0.1, 0],
     ['五虎币x50', 2, 0],
     ['五虎币x20', 4.50, 0],
@@ -121,7 +121,10 @@ function PTTSendClick1() {
             if (sjs >= zxs && sjs <= zds) {
                 $("#dczjxx").text(gailvArr[j][0]);
                 SetjlZcx(j);
-            
+                if (j == 12) {
+                    tznum = tznum + 1;
+                    $("#tznum").text(tznum)
+                }
                 if (j == 13) {
                     jfnum = jfnum + 100;
                 }
@@ -168,7 +171,10 @@ function PTTSendClick10() {
                 if (sjs >= zxs && sjs <= zds) {
                     SetjlZcx(j);
                     $("#jlname" + index).text(gailvArr[j][0]);
-               
+                    if (j == 12) {
+                        tznum = tznum + 1;
+                        $("#tznum").text(tznum)
+                    }
                     if (j == 13) {
                         jfnum = jfnum + 100;
                     }
@@ -203,21 +209,28 @@ function PTTSendClick10() {
 //十连方法
 
 var hzldh=[
-    ["Knife-冠军之刃",4800,true],
-    ["QBZ03-冠军之薇皮肤",4800,true],
-    ["柯尔特-冠军之特",3600,true],
-    ["火麒麟-冠军之心皮肤",2000,true],
-    ["毁灭-冠军之怒皮肤",2000,true],
-    ["雷神-冠军之魄皮肤",2000,true],
-    ["修罗-冠军之魂皮肤",1200,true],
-    ["黄金猫猫手套-白鲨",2400,true],
-    ["擎天-惨叫迹",2400,true],
-    ["选手语音包兑换券四选一",2400,true],
-    ["职业选手",900,true],]
+    ["M4A1-战神赵云",888,true],
+    ["毁灭-战神张飞",888,true],
+    ["火麒麟-战神关羽",888,true],
+    ["黑骑士-战神马超",888,true],
+    ["M200-幻神-黄忠皮肤",1088,true],
+    ["M200-幻神",1688,true],
+    ["M4A1-雷神",488,true],
+    ["Barrett-毁灭",488,true],
+    ["AK47-火麒麟",488,true],
+    ["M4A1-黑骑士",488,true],
+    ["赵云玩偶（不可交易）",188,true],
+    ["张飞玩偶（不可交易）",188,true],
+    ["关羽玩偶（不可交易）",188,true],
+    ["马超玩偶（不可交易）",188,true],
+    ["黄忠玩偶（不可交易）",188,true],
+    ["属性变更券x1",5,true],
+    ["交易专用钥匙x1",5,true],
+]
    // hzlnum=9000;
 function amsExchange(pid){
 var sb=pid-1;
-if(hzlnum>=hzldh[sb][1]&&hzldh[sb][2])
+if(jfnum>=hzldh[sb][1]&&hzldh[sb][2])
 {
 $("#dhbtn"+pid).addClass("gray");
 let time = new Date()
@@ -225,10 +238,10 @@ let time = new Date()
         ksz[1] = "模拟大区一区";
         ksz[2] = hzldh[sb][0];
         zjjlt.push(ksz);
-        $("##getGiftContent_all").prepend("<tr><td>" + time.toLocaleString() + "</td><td>" + ksz[1] + "</td><td>" + ksz[2] + "</td></tr>");
-        hzlnum=hzlnum-hzldh[sb][1];
-        $(".jf_3782").text(hzlnum);
-        hzldh[sb][2]=false;
+        $("#milo-lotteryRecordContainer1").prepend("<tr><td>" + time.toLocaleString() + "</td><td>" + ksz[1] + "</td><td>" + ksz[2] + "</td></tr>");
+        jfnum=jfnum-hzldh[sb][1];
+    Sxjf();
+        hzldh[sb][2]=true;
         $("#xtxx").text("恭喜获得礼包：" + ksz[2]);
         Showwd("#xttc");
 }
@@ -434,3 +447,102 @@ function closeDialog(){
 //             zcxbcdk = false;
 //         }
 //     })
+
+
+
+/*********疯狂骰子部分**** */
+var tzgailv = [
+    [0, 10, 10],
+    [11, 30, 6],
+    [31, 60, 4],
+    [61, 100, 3]
+  ]
+  var tznum=0;
+  function Crazy(ctype) {
+    if (ctype == 1) {
+      if (keynum <= 0) {
+        // mdui.snackbar({
+        //   message: "您当前的钥匙不足1个或者疯狂骰子不足！"
+        // });
+        $("#xtxx").text("您当前的钥匙不足1个或者疯狂骰子不足！");
+        Showwd("#xttc");
+      }
+      else {
+        //钥匙骰子
+if(tznum>0)
+{
+  var sjs = Math.ceil(Math.random() * 100);
+
+for (let index = 0; index < tzgailv.length; index++) {
+
+  if (sjs >= tzgailv[index][0] && sjs <= tzgailv[index][1]) {
+
+    $("#xtxx").text("恭喜获得礼包："+tzgailv[index][2]+"个钥匙！");
+    Showwd("#xttc");
+KeyAdd(tzgailv[index][2]-1);
+tznum = tznum - 1;
+    $("#tznum").text(tznum);
+  }
+
+}
+}
+else
+{
+//   mdui.snackbar({
+//           message: "您当前的疯狂骰子不足！"
+//         });
+$("#xtxx").text("您当前的疯狂骰子不足！");
+Showwd("#xttc");
+}
+      }
+    }
+
+
+
+    if (ctype == 2) {
+      if (jfnum <= 9) {
+        // mdui.snackbar({
+        //   message: "您当前的五虎币不足10个或者疯狂骰子不足！"
+        // });
+        $("#xtxx").text("您当前的五虎币不足10个或者疯狂骰子不足！");
+        Showwd("#xttc");
+      }
+      else {
+      //钥匙骰子
+     
+      if(tznum>0)
+      {
+        var sjs = Math.ceil(Math.random() * 1000);
+
+        for (let index = 0; index < tzgailv.length; index++) {
+
+if (sjs >= tzgailv[index][0] && sjs <= tzgailv[index][1]) {
+
+    $("#xtxx").text("恭喜获得礼包："+tzgailv[index][2]*10+"个五虎币！");
+    Showwd("#xttc");
+jfnum = jfnum + (tzgailv[index][2]*10)-10;
+         Sxjf();
+       
+            tznum = tznum - 1;
+            $("#tznum").text(tznum);
+         
+          
+}
+
+}
+      }
+      else
+      {
+        // mdui.snackbar({
+        //   message: "您当前的疯狂骰子不足！"
+        // });
+        $("#xtxx").text("您当前的疯狂骰子不足！");
+        Showwd("#xttc");
+      }
+
+            
+      }
+    }
+
+  }
+/*********疯狂骰子部分**** */
