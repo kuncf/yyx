@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta content="all" name="robots">
+    <meta content="Tencent-CP" name="author"/>
+    <meta content="Tencent" name="Copyright"/>
+    <meta content="腾讯游戏《穿越火线》下载官方网站。300万人同时在线，三亿鼠标的枪战梦想。《穿越火线》追求的不仅仅是开枪的爽快感，而是来自相互合作及默契带来的战略意义。最新活动尽在CF官方网站。"
+          name="Description">
+    <meta content="穿越火线,穿越火线官网,穿越火线游戏下载,穿越火线下载,穿越火线官方下载,CF官网,CF下载,CF视频,穿越火线官方下载, CF官网下载专区,QQ穿越火线官方网站,穿越火线体验服,穿越火线视频,穿越火线官方网站,CrossFire,FPS网络游戏,RPK,腾讯游戏,免费,黄金AK,百城联赛,WCG,冠军杯,生化模式,幽灵模式,生化幽灵,斯沃特,赛斯,奥摩,猎狐者,保卫者,潜伏者,飞虎队,腾讯,腾讯游戏"
+          name="Keywords">
+    <title>五虎集结-穿越火线官方网站-腾讯游戏</title>
+    <link href="static/css/index.css" rel="stylesheet" type="text/css"/>
+    <!--//game.gtimg.cn/images/actdaoju/act/a20230207fivetigers/-->
+
+
+    <style>
+        .pop{
+             display: none; 
+            /* visibility: visible; */
+            position: fixed;
+            z-index: 99;
+            left: 50%;
+            top: 50%;
+        }
+        .pop{
+            margin-left: -375px;
+            margin-top: -344px;
+        }
+        .pop2{
+            margin-top: -460px;
+        }
+        #zhezhao{
+            position: fixed;
+     display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 98;
+        background-color: #000;
+        -moz-opacity: 0.9;
+        opacity: 0.5;
+        filter: alpha(opacity=100);
+        }
+        .amsdialog_modal {
+            left: 50%;
+            top: 50%;
+            margin-left: -205px;
+            margin-top: -65px;
+            min-width: 400px;
+            max-width: 100%;
+            background-color: white;
+    
+            font-size: 14px;
+            z-index: 100008;
+            display: block;
+            position: fixed;
+        }
+        div.amsdialog_header {
+            line-height: 30px;
+            color: #fff;
+            background-color: #2196F3;
+            padding: 0px 5px;
+            font-size: 16px;
+        }
+    
+        a.amsdialog_close {
+            float: right;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+    
+        .amsdialog_cmain {
+            padding: 5px;
+            min-height: 50px;
+            font-size: 14px;
+            color: #000;
+        }
+    
+        
+        a {
+            color: white;
+            cursor: pointer;
+        }
+        div.amsdialog_footer a.amsdialog_btn.amsdialog_bconfirm {
+            background-color: #2096f3;
+        }
+    
+        div.amsdialog_footer {
+            line-height: 40px;
+            text-align: right;
+        }
+    
+        div.amsdialog_footer a.amsdialog_btn {
+            line-height: 30px;
+            display: inline-block;
+            min-width: 100px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 3px;
+            margin: 0px 5px;
+        }
+        #getGiftContent a{
+    background-color: red;
+        }
+        #fjystb tr{
+    height: 39px;
+    text-align: center;
+    line-height: 38px;
+    color: white;
+    border: 0;
+    margin: 0;
+        }
+        .gailvtable tr{
+    /* height: 32px; */
+    text-align: center;
+    line-height: 28.98px;
+    padding-top: 2px;
+    color: white;
+    border: 0;
+    margin: 0;
+    padding: 0;
+        }
+        .gailvtable th{
+            width: 316px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+    
+        .fjysb1{
+            width: 200px;
+        }
+        .fjysb2{
+            width: 53px;
+        }
+        
+        .Setinput {
+            background: transparent;
+            color: white;
+            border: 0;
+            text-align: center;
+            transition-duration: 0.2s;
+        }
+    
+        .Setinput:hover {
+            transform: scale(1.04);
+        }
+    
+        .Setinput:focus {
+            transform: scale(1.1);
+            border: 1px solid black;
+    
+        }
+    
+        .sbbtn {
+            width: 200px;
+            line-height: 40px;
+            margin: 8px;
+            cursor: pointer;
+            transition-duration: 0.2s;
+        }
+    
+        .sbbtn:hover {
+            opacity: 0.9;
+        }
+     html{
+        width: 100%;
+     }
+     body{
+        width: 100%;
+        max-width: 100%;
+     }
+     .gg_box{
+        background-color: white;
+        width: 100%;
+        text-align: center;
+         
+     }
+     .dia-con a{
+        background-color: red;
+     }
+    </style>	
+    
+</head>
+<body>
+
+    <div class="midas_minipay_dialog_mask" id="zhezhao" style="display: none;">
+    </div>
+    <!-- 遮罩div -->
+  <!-- 系统消息弹窗 -->
+  <div class="amsdialog_modal" style="display: none;" id="xttc">
+    <div class="amsdialog_header" style="width:auto;"><a class="amsdialog_close"
+            href="javascript:closeDialog()">×</a><span>系统消息</span></div>
+    <div class="amsdialog_content">
+        <div class="amsdialog_cmain" style="max-height: 480px; overflow: hidden auto; width: 400px;" id="xtxx">
+            抱歉，您的钥匙数量不足。
+        </div>
+        <div class="amsdialog_footer"><a href="javascript:closeDialog()" class="amsdialog_btn amsdialog_bconfirm"
+                style="display: inline-block;">确认</a><a href="javascript:void(0)"
+                class="amsdialog_btn amsdialog_bcancel" style="display: none;">取消</a></div>
+    </div>
+</div>
+<!-- 系统消息弹窗 -->
+
+
+
+<div class="wrap">
+    <div class="wrap1">
+        <div class="container">
+            <div class="head">
+                <h1 class="hide">五虎集结</h1>
+                <video class="hd_video" id="myVideo" loop="" muted="" data-autoplay="" autoplay="autoplay">
+		         
+		        </video>
+                <a class="logocf sp db" href="#" onclick="PTTSendClick('btn','logocf','穿越火线');" title="穿越火线">穿越火线</a>
+                <a class="logodjc sp db" href="#" onclick="PTTSendClick('btn','logodjc','道聚城');"
+                   title="道聚城">道聚城</a>
+                <div class="boxlogina">
+                    <!--登录前状态 Start-->
+                    <div class="login" id="unlogin" style="display: block;">
+                        欢迎您，22000092， 广东电信一区 勇敢的斯沃特<a href="javascript:void(0)"></a>
+
+                        <a href="javascript:void(0)">[更改绑定]</a>
+                        <a href="javascript:void(0)" onclick="Showwd('#showMyGiftContent1')">[礼包记录]</a>
+                        <a href="javascript:void(0)">[代金券记录]</a>
+                        <a href="javascript:void(0)">[注销]</a>
+                    </div>
+                    <!--登录前状态 End-->
+                    <!--登录后状态 Start-->
+             
+                    <!--登录后状态 End-->
+                </div>
+            </div>
+            <div class="content">
+                <div class="box1">
+                    <h2 class="tit1 sp db">五虎抽奖</h2>
+                    <div class="bxtxtdj c">
+                        <a href="javascript:TGDialogS('pop4');" onclick="PTTSendClick('btn','djq','代金券记录');">代金券记录</a>
+                        <p>您拥有的代金券：<span class="jf_2327">xxx</span></p>
+                    </div>
+                    <div class="threbigbtn">
+                        <a class="btnbuy1 db" href="javascript:KeyAdd(1);"
+                           >获取1钥匙</a>
+                        <a class="btnbuy2 db" href="javascript:KeyAdd(11);"
+                           >获取11钥匙</a>
+                        <a class="btnbuy3 db" href="javascript:KeyAdd(110);"
+                           >获取110钥匙</a>
+                    </div>
+                    <div class="boxlottery">
+                        <div class="boxlotbtn">
+                            <a class="btnone sp db" 
+                               onclick="PTTSendClick1();">抽一次</a>
+                            <a class="btnten sp db" 
+                               onclick="PTTSendClick10();">抽十次</a>
+                        </div>
+                        <p class="lottxt">我的钥匙：<span class="jf_5445" id="Keynum">0</span><br/></p>
+                        <a class="btnlotsaizi btnlocfc" href="javascript:;"><img
+                                alt="" class="lotfc lotfc0"
+                                src="static/picture/lotfc4.png"/></a>
+                        <a class="btnlotbaox btnlocfc" href="javascript:;"><img
+                                alt="" class="lotfc"
+                                src="static/picture/lotfc2.png"/></a>
+                        <a class="btnlotwano btnlocfc" href="javascript:;"
+                           onclick="PTTSendClick('btn','btnlotwano','人物');"><img
+                                alt="" class="lotfc lotfc1"
+                                src="static/picture/lotfc3.png"/></a>
+                    </div>
+                    <div class="boxzcmd">
+                        <div class="boxbx">
+                            <h2 class="titbx sp db">暂存箱</h2>
+                            <div class="bgbxbx">
+                                <p class="bxrule">1.分解道具获得钥匙<br/>2.将暂存箱道具发送至游戏内仓库</p>
+                                <a class="btnckbx sp db" href="javascript:Showwd('#showMyGiftContent2');"
+                                 >查看暂存箱</a>
+                            </div>
+                        </div>
+                        <div class="bxmd">
+                            <h2 class="titmd sp db">获奖名单</h2>
+                            <div class="bgbxmd">
+                                <div id="milo-broadcast">
+                                    <ul class="listhjmd" id="milo-broadcast-container">
+                                        <!--                                    <li>2993475** 获得 加特林-炼狱</li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                            <script id="milo-broadcast-tpl" type="text/html">
+                                {@ for(var i = 0; i < data.length; i++) { @}
+                                <li>
+                                    <div style="width: 50%;">恭喜玩家 {{data[i].iUin ? data[i].iUin :
+                                        'xxxx'}}
+                                    </div>
+                                    <div style="width: 50%;"> 获得了 {{data[i].sPackageName ? data[i].sPackageName : ''}}
+                                    </div>
+                                </li>
+                                {@ } @}
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="box2">
+                    <h2 class="tit2 sp db">五虎币兑换</h2>
+                    <div class="txtjflp">
+                        <p class="txtjifen">当前拥有五虎币：<span class="jf_5450" id="jftext">0</span></p>
+                        <p class="txtlingp">当前拥有五虎上将令牌：<span class="jf_5458">0</span></p>
+                    </div>
+                    <ul class="listdh">
+                        <li>
+                            <img alt="" src="static/picture/djdh1.png"/>
+                            <p class="txtdh">M4A1-战神赵云</p>
+                            <a class="btndh sp btnexchange" href="javascript:amsExchange(1);"
+                               onclick="PTTSendClick('btn','btndh1','五虎币兑换');"><span>888五虎币兑换</span></a>
+                            <a class="btndh btndhcard sp exchangelp1" href="javascript:amsExchangeLp(1);"
+                               onclick="PTTSendClick('btn','btndhcard1','令牌兑换');"><span>3五虎上将令牌兑换</span></a>
+                        </li>
+                        <li>
+                            <img alt="" src="static/picture/djdh2.png"/>
+                            <p class="txtdh">毁灭-战神张飞</p>
+                            <a class="btndh sp btnexchange" href="javascript:amsExchange(2);"
+                               onclick="PTTSendClick('btn','btndh2','五虎币兑换');"><span>888五虎币兑换</span></a>
+                            <a class="btndh btndhcard sp exchangelp2" href="javascript:amsExchangeLp(2);"
+                               onclick="PTTSendClick('btn','btndhcard2','令牌兑换');"><span>3五虎上将令牌兑换</span></a>
+                        </li>
+                        <li>
+                            <img alt="" src="static/picture/djdh3.png"/>
+                            <p class="txtdh">火麒麟-战神关羽</p>
+                            <a class="btndh sp btnexchange" href="javascript:amsExchange(3);"
+                               onclick="PTTSendClick('btn','btndh3','五虎币兑换');"><span>888五虎币兑换</span></a>
+                            <a class="btndh btndhcard sp exchangelp3" href="javascript:amsExchangeLp(3);"
+                               onclick="PTTSendClick('btn','btndhcard3','令牌兑换');"><span>3五虎上将令牌兑换</span></a>
+                        </li>
+                        <li>
+                            <img alt="" src="static/picture/djdh4.png"/>
+                            <p class="txtdh">黑骑士-战神马超</p>
+                            <a class="btndh sp btnexchange" href="javascript:amsExchange(4);"
+                               onclick="PTTSendClick('btn','btndh4','五虎币兑换');"><span>888五虎币兑换</span></a>
+                            <a class="btndh btndhcard sp exchangelp4" href="javascript:amsExchangeLp(4);"
+                               onclick="PTTSendClick('btn','btndhcard4','令牌兑换');"><span>3五虎上将令牌兑换</span></a>
+                        </li>
+                        <li>
+                            <img alt="" src="static/picture/djdh5.png"/>
+                            <p class="txtdh">M200-幻神-黄忠皮肤</p>
+                            <a class="btndh sp btnexchange" href="javascript:amsExchange(5);"
+                               onclick="PTTSendClick('btn','btndh5','五虎币兑换');"><span>1088五虎币兑换</span></a>
+                            <a class="btndh btndhcard sp exchangelp5" href="javascript:amsExchangeLp(5);"
+                               onclick="PTTSendClick('btn','btndhcard5','令牌兑换');"><span>3五虎上将令牌兑换</span></a>
+                        </li>
+                        <li>
+                            <img alt="" src="static/picture/djdh6.png"/>
+                            <p>M200-幻神</p>
+                            <a class="btndh sp btnexchange" href="javascript:amsExchange(6);"
+                               onclick="PTTSendClick('btn','btndh6','五虎币兑换');"><span>1688五虎币兑换</span></a>
+                            <a class="btndh btndhcard sp exchangelp6" href="javascript:amsExchangeLp(6);"
+                               onclick="PTTSendClick('btn','btndhcard6','令牌兑换');"><span>5五虎上将令牌兑换</span></a>
+                        </li>
+                        <li>
+                            <img alt="" src="static/picture/djdh7.png"/>
+                            <p>M4A1-雷神</p>
+                            <a class="btndh sp btnexchange" href="javascript:amsExchange(7);"
+                               onclick="PTTSendClick('btn','btndh7','五虎币兑换');"><span>488五虎币兑换</span></a>
+                            <a class="btndh btndhcard exchangelp7 sp" href="javascript:amsExchangeLp(7);"
+                               onclick="PTTSendClick('btn','btndhcard7','令牌兑换');"><span>1五虎上将令牌兑换</span></a>
+                        </li>
+                        <li>
+                            <img alt="" src="static/picture/djdh8.png"/>
+                            <p>Barrett-毁灭</p>
+                            <a class="btndh sp btnexchange" href="javascript:amsExchange(8);"
+                               onclick="PTTSendClick('btn','btndh8','五虎币兑换');"><span>488五虎币兑换</span></a>
+                            <a class="btndh btndhcard exchangelp8 sp" href="javascript:amsExchangeLp(8);"
+                               onclick="PTTSendClick('btn','btndhcard8','令牌兑换');"><span>1五虎上将令牌兑换</span></a>
+                        </li>
+                        <li>
+                            <img alt="" src="static/picture/djdh9.png"/>
+                            <p>AK47-火麒麟</p>
+                            <a class="btndh sp btnexchange" href="javascript:amsExchange(9);"
+                               onclick="PTTSendClick('btn','btndh9','五虎币兑换');"><span>488五虎币兑换</span></a>
+                            <a class="btndh btndhcard exchangelp9 sp" href="javascript:amsExchangeLp(9);"
+                               onclick="PTTSendClick('btn','btndhcard9','令牌兑换');"><span>1五虎上将令牌兑换</span></a>
+                        </li>
+                        <li>
+                            <img alt="" src="static/picture/djdh10.png"/>
+                            <p>M4A1-黑骑士</p>
+                            <a class="btndh sp btnexchange" href="javascript:amsExchange(10);"
+                               onclick="PTTSendClick('btn','btndh10','五虎币兑换');"><span>488五虎币兑换</span></a>
+                            <a class="btndh btndhcard sp exchangelp10" href="javascript:amsExchangeLp(10);"
+                               onclick="PTTSendClick('btn','btndhcard10','令牌兑换');"><span>1五虎上将令牌兑换</span></a>
+                        </li>
+                        <li>
+                            <img alt="" src="static/picture/djdh11.png"/>
+                            <p>赵云玩偶（不可交易）</p>
+                            <a class="btndh sp btnexchange" href="javascript:amsExchange(11);"
+                               onclick="PTTSendClick('btn','btndh11','五虎币兑换');"><span>188五虎币兑换</span></a>
+                        </li>
+                        <li>
+                            <img alt="" src="static/picture/djdh12.png"/>
+                            <p>张飞玩偶（不可交易）</p>
+                            <a class="btndh sp btnexchange" href="javascript:amsExchange(12);"
+                               onclick="PTTSendClick('btn','btndh12','五虎币兑换');"><span>188五虎币兑换</span></a>
+                        </li>
+                        <li>
+                            <img alt="" src="static/picture/djdh13.png"/>
+                            <p>关羽玩偶（不可交易）</p>
+                            <a class="btndh sp btnexchange" href="javascript:amsExchange(13);"
+                               onclick="PTTSendClick('btn','btndh13','五虎币兑换');"><span>188五虎币兑换</span></a>
+                        </li>
+                        <li>
+                            <img alt="" src="static/picture/djdh14.png"/>
+                            <p>马超玩偶（不可交易）</p>
+                            <a class="btndh sp btnexchange" href="javascript:amsExchange(14);"
+                               onclick="PTTSendClick('btn','btndh14','五虎币兑换');"><span>188五虎币兑换</span></a>
+                        </li>
+                        <li>
+                            <img alt="" src="static/picture/djdh15.png"/>
+                            <p>黄忠玩偶（不可交易）</p>
+                            <a class="btndh sp btnexchange" href="javascript:amsExchange(15);"
+                               onclick="PTTSendClick('btn','btndh15','五虎币兑换');"><span>188五虎币兑换</span></a>
+                        </li>
+                        <li>
+                            <img alt="" src="static/picture/djdh16.png"/>
+                            <p>属性变更券x1</p>
+                            <a class="btndh sp btnexchange" href="javascript:amsExchange(16);"
+                               onclick="PTTSendClick('btn','btndh15','五虎币兑换');"><span>5五虎币兑换</span></a>
+                        </li>
+                        <li>
+                            <img alt="" src="static/picture/djdh17.png"/>
+                            <p>交易专用钥匙x1</p>
+                            <a class="btndh sp btnexchange" href="javascript:amsExchange(17);"
+                               onclick="PTTSendClick('btn','btndh15','五虎币兑换');"><span>5五虎币兑换</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box3">
+                    <h2 class="tit3 sp db">疯狂色子</h2>
+            <p class="txtsz">注：本骰子只会掷出3,4,6,10点数，根据消耗道具获得对应奖励</p>
+                    <div class="bgbxsz">
+                        <img alt="" class="saizi"
+                             src="static/picture/saizi.png"/>
+                        <img src="static/picture/lotfc1.png" alt="" class="sazifc"/>
+                    </div>
+                    <p class="txtsz1">疯狂骰子个数:<span class="jf_5449">XXX</span></p>
+                    <div class="boxsazibtn">
+                        <a class="btnxhone sp db" href="javascript:amsChouTz(1);"
+                           onclick="PTTSendClick('btn','btnxhone','消耗1个钥匙抽奖');">消耗1个钥匙抽奖</a>
+                        <a class="btnxhten sp db" href="javascript:amsChouTz(2);"
+                           onclick="PTTSendClick('btn','btnxhten','消耗10五虎币抽奖');">消耗10五虎币抽奖</a>
+                    </div>
+                </div>
+                <div class="box4">
+                    <h2 class="tit4 sp db">令牌配对 战友集结</h2>
+                    <p class="p4txt2">单Q限接受4次令牌赠送（不论种类）；赠送令牌无次数限制（可赠送次数为您开启五虎上将宝箱获得对应令牌的个数；好友方接受赠送时将扣除赠送方令牌和次数）</p>
+                    <p class="p4txt1">以下5种令牌可在五虎上将宝箱中概率获得</p>
+                    <ul class="bgling">
+                        <li>
+                            <p class="curryytxt">您当前拥有数:<span class="jf_5451">xx</span></p>
+                            <p class="curryytxt">剩余可赠送次数:<span class="jf_5472">xx</span></p>
+                            <img alt="赵云令牌" src="static/picture/ling1.png"/>
+                            <a class="btnxuanz sp db" href="javascript:amsSelectNum(1);"
+                               onclick="PTTSendClick('btn','btnxuanz1','选择');">选择</a>
+                        </li>
+                        <li>
+                            <p class="curryytxt">您当前拥有数:<span class="jf_5452">xx</span></p>
+                            <p class="curryytxt">剩余可赠送次数:<span class="jf_5473">xx</span></p>
+                            <img alt="张飞令牌" src="static/picture/ling2.png"/>
+                            <a class="btnxuanz sp db" href="javascript:amsSelectNum(2);"
+                               onclick="PTTSendClick('btn','btnxuanz2','选择');">选择</a>
+                        </li>
+                        <li>
+                            <p class="curryytxt">您当前拥有数:<span class="jf_5454">xx</span></p>
+                            <p class="curryytxt">剩余可赠送次数:<span class="jf_5474">xx</span></p>
+                            <img alt="关羽令牌" src="static/picture/ling3.png"/>
+                            <a class="btnxuanz sp db" href="javascript:amsSelectNum(3);"
+                               onclick="PTTSendClick('btn','btnxuanz3','选择');">选择</a>
+                        </li>
+                        <li>
+                            <p class="curryytxt">您当前拥有数:<span class="jf_5456">xx</span></p>
+                            <p class="curryytxt">剩余可赠送次数:<span class="jf_5475">xx</span></p>
+                            <img alt="马超令牌" src="static/picture/ling4.png"/>
+                            <a class="btnxuanz sp db" href="javascript:amsSelectNum(4);"
+                               onclick="PTTSendClick('btn','btnxuanz4','选择');">选择</a>
+                        </li>
+                        <li>
+                            <p class="curryytxt">您当前拥有数:<span class="jf_5457">xx</span></p>
+                            <p class="curryytxt">剩余可赠送次数:<span class="jf_5476">xx</span></p>
+                            <img alt="黄忠令牌" src="static/picture/ling5.png"/>
+                            <a class="btnxuanz sp db" href="javascript:amsSelectNum(5);"
+                               onclick="PTTSendClick('btn','btnxuanz5','选择');">选择</a>
+                        </li>
+                    </ul>
+                    <div class="bxlingdown">
+                        <div class="bglingyxz">
+                            <h3>已选择令牌</h3>
+                            <img alt="" class="select_img">
+                            <p class="select_lp"></p>
+                        </div>
+                        <div class="bxlingbtns">
+                            <div class="bxlingbtnsbx">
+                                <a class="btnshare sp db" href="javascript:giveF();"
+                                   onclick="PTTSendClick('btn','btnshare','分享该令牌给好友');">分享该令牌给好友</a>
+                                <a class="btnyq sp db" href="javascript:getF();"
+                                   onclick="PTTSendClick('btn','btnyq','邀请好友赠送令牌');">邀请好友赠送令牌</a>
+                                <a class="btnzs sp db" href="javascript:supportGiveF();"
+                                   onclick="PTTSendClick('btn','btnzs','确认授权为赠送推荐');">确认授权为赠送推荐</a>
+                                <a class="btnsq sp db" href="javascript:supportGetF();"
+                                   onclick="PTTSendClick('btn','btnsq','确认授权为索取推荐');">确认授权为索取推荐</a>
+                            </div>
+                            <img alt="" class="picling"
+                                 src="static/picture/picling.png"/>
+                            <a class="btnduihuan sp db" href="javascript:amsExchangeFive();"
+                               onclick="PTTSendClick('btn','btnduihuan','立即兑换');">立即兑换</a>
+                            <p class="txtdhcard">消耗赵云，张飞，关羽，马超，黄忠令牌各1，可兑换五虎上将令牌x1，<br/>单Q限兑5次</p>
+                        </div>
+                        <div class="bxtuijianl">
+                            <h3>推荐栏</h3>
+                            <div class="bxtjl">
+                                <table class="tabtjl">
+                                    <thead>
+                                    <tr class="trth">
+                                        <th class="wd127">QQ</th>
+                                        <th class="wd101">昵称</th>
+                                        <th class="wd101">令牌</th>
+                                <th class="wd133"><a class="refresh" href="javascript:get_support_list(1,1)">刷新</a></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="support_list">
+                                    <!--                                                                        <tr>-->
+                                    <!--                                                                            <td>xxx</td>-->
+                                    <!--                                                                            <td>xxx</td>-->
+                                    <!--                                                                            <td><a class="btngive sp db" href="javascript:;"-->
+                                    <!--                                                                                   onclick="PTTSendClick('btn','btnrequest1','我要索取');">我要赠送</a></td>-->
+                                    <!--                                                                        </tr>-->
+                                    <!--                                                                        <tr>-->
+                                    <!--                                        <td>xxx</td>-->
+                                    <!--                                        <td>xxx</td>-->
+                                    <!--                                        <td><a class="btnrequest sp db" href="javascript:;"-->
+                                    <!--                                               onclick="PTTSendClick('btn','btnrequest2','我要索取');">我要索取</a></td>-->
+                                    <!--                                    </tr>-->
+                                    </tbody>
+                                </table>
+                            </div>
+<!--                            <div class="bxtxtfy" id="barcon">-->
+<!--                                <a href="javascript:;" onclick="PTTSendClick('btn','prev','上一页');">上一页</a>-->
+<!--                        <p>1/1</p>-->
+<!--                                <a href="javascript:;" onclick="PTTSendClick('btn','next','下一页');">下一页</a>-->
+<!--                            </div>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="box5">
+                    <h2 class="tit5 sp db">五虎上将集齐馈赠</h2>
+                    <p class="txtsz">玩家可点击查询仓库情况，若已拥有以下全部道具，可获赠道具集齐奖励，单Q限领1次 </p>
+                    <a class="btncxck" href="javascript:amsSelectFl();"
+                       onclick="PTTSendClick('btn','btncxck','查询仓库情况');">查询仓库情况</a>
+                    <div class="bgjlk">
+                        <ul class="listjl">
+                            <li class="fldj fl_I8569"><!--添加类名on已拥有标签显示-->
+                                <span class="bxjlimg">
+								<img alt="" src="static/picture/djjl1.png"/>
+								<p class="djname">M4A1-战神赵云</p>
+								<i class="tabtxtyy sp db">已拥有</i>
+							</span>
+                            </li>
+                            <li class="fldj fl_I8973">
+                                <span class="bxjlimg">
+								<img alt="" src="static/picture/djjl2.png"/>
+								<p class="djname">毁灭-战神张飞</p>
+								<i class="tabtxtyy sp db">已拥有</i>
+							</span>
+                            </li>
+                            <li class="fldj fl_I8975">
+                                <span class="bxjlimg">
+								<img alt="" src="static/picture/djjl3.png"/>
+								<p class="djname">火麒麟-战神关羽</p>
+								<i class="tabtxtyy sp db">已拥有</i>
+							</span>
+                            </li>
+                            <li class="fldj fl_I8666">
+                                <span class="bxjlimg">
+								<img alt="" src="static/picture/djjl4.png"/>
+								<p class="djname">黑骑士-战神马超</p>
+								<i class="tabtxtyy sp db">已拥有</i>
+							</span>
+                            </li>
+                            <li class="fldj fl_I8934">
+                                <span class="bxjlimg">
+								<img alt="" src="static/picture/djjl5.png"/>
+								<p class="djname">M200-幻神-黄忠皮肤</p>
+								<i class="tabtxtyy sp db">已拥有</i>
+							</span>
+                            </li>
+                            <li class="fldj fl_C3351">
+                                <span class="bxjlimg">
+								<img alt="" src="static/picture/djjl10.png"/>
+								<p class="djname">M200-幻神</p>
+								<i class="tabtxtyy sp db">已拥有</i>
+							</span>
+                            </li>
+                            <li class="fldj fl_C0457">
+                                <span class="bxjlimg">
+								<img alt="" src="static/picture/djjl6.png"/>
+								<p class="djname">M4A1-雷神</p>
+								<i class="tabtxtyy sp db">已拥有</i>
+							</span>
+                            </li>
+                            <li class="fldj fl_C0599">
+                                <span class="bxjlimg">
+								<img alt="" src="static/picture/djjl7.png"/>
+								<p class="djname">Barrett-毁灭</p>
+								<i class="tabtxtyy sp db">已拥有</i>
+							</span>
+                            </li>
+                            <li class="fldj fl_C0390">
+                                <span class="bxjlimg">
+								<img alt="" src="static/picture/djjl8.png"/>
+								<p class="djname">AK47-火麒麟</p>
+								<i class="tabtxtyy sp db">已拥有</i>
+							</span>
+                            </li>
+                            <li class="fldj fl_C0547">
+                                <span class="bxjlimg">
+								<img alt="" src="static/picture/djjl9.png"/>
+								<p class="djname"> M4A1-黑骑士</p>
+								<i class="tabtxtyy sp db">已拥有</i>
+							</span>
+                            </li>
+                        </ul>
+                        <div class="bxgetjl">
+                            <div class="bxgetjllf">
+                                <img alt="" class="jlk"
+                                     src="static/picture/jlk.png"/>
+                                <p>名片-五虎上将+五虎上将边框</p>
+                            </div>
+                            <div class="bxgetjlrig">
+                                <p>若10种道具均已拥有<span>可获得集齐奖励</span></p>
+                                <a class="btngetjl sp db" href="javascript:amsLqFl();"
+                                   onclick="PTTSendClick('btn','btngetjl','领取奖励');">领取奖励</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box6">
+                    <h2 class="tit6 sp db">活动规则</h2>
+                    <ul class="listrule c">
+                        <li>
+                            <span class="sp">1</span>
+                            <p>活动时间：2023年2月24日00:00-2023年3月23日23:59；</p>
+                        </li>
+                        <li>
+                            <span class="sp">2</span>
+                            <p>
+                                购买：10Q币购买复活币1个可获得1个钥匙，100Q币购买复活币10个可获得11个钥匙，仅限掌上道聚城购买可额外获得1个钥匙，单Q限1次；拥有代金券的玩家，可以使用代金券抵扣购买复活币并赠送钥匙，一次最多抵扣9个代金券，一旦代金券使用后无法退还（下单后未支付，订单被系统取消之后或手动取消之后会返还抵扣的代金券）；若玩家账号被封号则不允许进行充值行为，请玩家在解除封号后进行充值；</p>
+                        </li>
+                        <li>
+                            <span class="sp">3</span>
+                            <p>
+                                抽奖：消耗钥匙进行单抽和十连抽，抽奖获得的可分解道具存放在【暂存箱】中，可选择分解成钥匙或发往游戏仓库，已经领取到仓库的道具无法退换，请慎重（在参与活动期间请确认好绑定的大区）；唯一性道具和角色等，可重复抽到，但在同一大区内，游戏仓库无法重复到账；</p>
+                        </li>
+                        <li>
+                            <span class="sp">4</span>
+                            <p>兑换：（1）获得的五虎币可以在兑换区兑换道具，兑换会消耗对应五虎币，兑换不限次数；<br>（2）：使用五虎上将令牌可以在兑换区兑换道具，兑换会消耗对应五虎上将令牌，每个道具单Q限兑换1次；
+                            </p>
+                        </li>
+                        <li>
+                            <span class="sp">5</span>
+                            <p>五虎上将令牌兑换：消耗【赵云令牌x1，张飞令牌x1，关羽令牌x1，马超令牌x1，黄忠令牌x1】5种不同的令牌各一个可以兑换五虎上将令牌x1，兑换单Q限5次；(剩余未使用赵云令牌，张飞令牌，关羽令牌，马超令牌，黄忠令牌都将作废)</p>
+                        </li>
+                        <li>
+                            <span class="sp">6</span>
+                            <p>疯狂骰子：<br>
+                                STEP1：点击按钮选择消耗“抽奖钥匙x1”或“五虎币x10”进行抽奖，同时开启疯狂骰子<br>
+                                STEP2：开启疯狂骰子后，会有弹窗展示骰子开启的点数<br>
+                                STEP3：基于开启的点数，返还该用户相应的抽奖钥匙或五虎币<br>(如：玩家A消耗抽奖钥匙x1，开启一次疯狂骰子，点数为4，则获得奖励——抽奖钥匙x4； 玩家B消耗五虎币x10，开启一次疯狂骰子，点数为6，则获得奖励——五虎币x60)
+                            </p>
+                        </li>
+                        <li>
+                            <span class="sp">7</span>
+                            <p>
+                                五虎上将集齐馈赠：已拥有【M4A1-战神赵云，毁灭-战神张飞，火麒麟-战神关羽，黑骑士-战神马超，M200-幻神-黄忠皮肤，M200-幻神，M4A1-雷神，Barrett-毁灭，AK47-火麒麟，M4A1-黑骑士】的用户，可以领取【五虎上将加载边框+五虎上将名片】（单Q限1）；</p>
+                        </li>
+                        <li>
+                            <span class="sp">8</span>
+                            <p>
+                        分享玩法：（1）玩家可以将已获得的赵云、张飞、关羽、马超、黄忠令牌分享给好友，也可以向好友索要。分享将消耗自己拥有的令牌，例如A共拥有3张【赵云令牌】，A将其中一张【赵云令牌】分享给B，B点击接收A的分享则B的【赵云令牌】数量加一，而A将仅剩2张【赵云令牌】。（2）玩家也可通过授权推荐分享或索要令牌。（3）赠送令牌无次数限制（可赠送次数为您开启五虎上将宝箱获得对应令牌的个数；好友方接受赠送时将扣除赠送方令牌和次数，活动期间单Q总限4次成功接收赠送令牌。）</p>
+                        </li>
+                        <li>
+                            <span class="sp">9</span>
+                            <p>
+                                超过活动期限的抽奖钥匙、五虎将玩偶自选机会、五虎上将宝箱、疯狂骰子、五虎币、赵云令牌、张飞令牌、关羽令牌、马超令牌、黄忠令牌、五虎上将令牌都将作废，请及时使用。道聚城通用代金券不会作废，可以用于后续的其他活动；</p>
+                        </li>
+                        <li>
+                            <span class="sp">10</span>
+                    <p><a href="javascript:TGDialogS('popgl');" onclick="PTTSendClick('btn','gl1','本活动抽奖概率公示');"
+                          style="color: red">本活动抽奖概率公示</a>；所用‘概率’均是在大样本(大量用户)下的统计数值，与单个玩家的少量测试数据之间可能会存在一定差异。
+                            </p>
+                        </li>
+                        <li>
+                            <span class="sp">11</span>
+                            <p>仅限掌上道聚城购买可额外获得1个钥匙，单Q限1；</p>
+                        </li>
+                        <li>
+                            <span class="sp">12</span>
+                            <p>本活动与苹果公司无关；</p>
+                        </li>
+                        <li>
+                            <span class="sp">13</span>
+                            <p>
+                                参与资格、获奖资格的取消。<br/>本活动不鼓励未满18周岁的未成年用户参与。若您为不具备完全民事行为能力的未成年人，您应在监护人的陪同下阅读本规则，并取得您监护人的同意。如您监护人同意您参与本活动，应对您参与本活动期间作出的行为进行正确监督和引导，同时，您行使和履行本活动规则下的权利和义务，均视为已获得您监护人认可。请理性消费。 您若有下列任何一种行为或情况的，腾讯有权单方面取消您的参与资格、获奖资格等：<br/>a、不符合参与资格的；<br/>b、提供虚假信息的；<br/>c、虚假交易或恶意破坏活动的；<br/>d、以任何机器人软件、蜘蛛软件、爬虫软件、刷奖软件或其它任何自动方式、不正当手段等参与本活动的；<br/>e、有任何违反诚实信用、公序良俗、公平、公正等原则行为的；<br/>f、其他违反相关法规、本规则行为的。
+                            </p>
+                        </li>
+                        <li>
+                            <span class="sp">14</span>
+                            <p>纳税义务<br/>腾讯将依法履行个人所得税等相关税费代扣代缴的义务</p>
+                        </li>
+                        <li>
+                            <span class="sp">15</span>
+                            <p>免责条款<br/>如因非腾讯原因导致您在本规则约定时间内未参与活动、兑换奖品或领取奖品，或由于您提供的信息不真实不完整等导致奖品无法发放或发放错误的，由您自行承担全部损失。
+                                互联网运行存在诸多不确定性因素，如因不可抗力、网络、通讯线路故障、计算机大规模瘫痪及活动中存在大面积作弊行为等原因致使本活动出现异常情况或难以继续开展的，腾讯有权采取包括但不限于通过各种方式消除异常情况或调整、暂停、取消本活动等合理措施保障腾讯及用户的合法权益，您表示理解，由此给您造成的损失，您同意不追究腾讯的责任。
+                            </p>
+                        </li>
+                        <li>
+                            <span class="sp">16</span>
+                            <p>管辖条款<br/>本规则的成立、生效、履行、解释及纠纷解决等相关事宜，均适用中华人民共和国大陆地区法律（不包括冲突法）。若您和腾讯之间发生任何纠纷或争议应将纠纷或争议提交本规则签订地即深圳市南山区有管辖权的人民法院管辖。
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 获奖记录start -->
+<div class="pop pop1" id="showMyGiftContent1" style="position: fixed; display:none; z-index: 9999999;top: 50%;left: 50%;margin-left: -345px;">
+    <h3 class="pop_tit3 popsp db">礼包记录</h3>
+    <div class="table_con" style="overflow-y:scroll;">
+        <table cellpadding="0" cellspacing="0" class="table table4">
+            <thead>
+            <tr>
+                <th>获奖时间</th>
+                <th class="thhjsj">获奖大区</th>
+                <th>获奖礼包</th>
+            </tr>
+            </thead>
+            <tbody id="milo-lotteryRecordContainer1">
+            <!--            <tr>-->
+            <!--                <td>2022222222222</td>-->
+            <!--                <td>获奖大区</td>-->
+            <!--                <td>获奖礼包</td>-->
+            <!--            </tr>-->
+            </tbody>
+        </table>
+    </div>
+    <div class="page_box milo-paginator" id="milo-paginator1">
+    </div>
+    <p class="tip1">温馨提示：虚拟道具奖品将在24小时内发到您的游戏仓库。谢谢您的理解与支持！</p>
+    <a class="dia-close db popsp" href="javascript:closeDialog();" title="关闭">×</a>
+</div>
+<!-- 获奖记录end -->
+
+<!-- 暂存箱start -->
+<div class="pop pop1" id="showMyGiftContent2"  style="margin-top: --294px;">
+    <div class="dia-con c">
+        <div class="dia-conl" >
+            <h3 class="pop_tit1 popsp db">暂存箱</h3>
+            <div class="bgtable1"  style="overflow-y:scroll;" >
+                <table class="table table1">
+                    <thead>
+                    <tr>
+                        <th class="wd118">名称</th>
+                        <th class="wd126">领取道具</th>
+                        <th class="wd124">分解为钥匙</th>
+                    </tr>
+                    </thead>
+                    <tbody id="milo-lotteryRecordContainer2">
+                    </tbody>
+                </table>
+            </div>
+            <div class="page_box milo-paginator" id="milo-paginator2">
+            </div>
+        </div>
+        <div class="dia-conr">
+            <h3 class="pop_tit2 popsp db">武器分解表</h3>
+            <div class="table2">
+                <h4><span>道具名称</span><span>分解所获钥匙</span></h4>
+                <div class="table_con2">
+                    <p><span>M4A1-战神赵云</span><span>8</span></p>
+                    <p><span>毁灭-战神张飞</span><span>8</span></p>
+                    <p><span>火麒麟-战神关羽</span><span>8</span></p>
+                    <p><span>黑骑士-战神马超</span><span>8</span></p>
+                    <p><span>M200-幻神-黄忠皮肤</span><span>10</span></p>
+                    <p><span>M200-幻神</span><span>12</span></p>
+                    <p><span>M4A1-雷神</span><span>4</span></p>
+                    <p><span>Barrett-毁灭</span><span>4</span></p>
+                    <p><span>AK47-火麒麟</span><span>4</span></p>
+                    <p><span>M4A1-黑骑士</span><span>4</span></p>
+                    <p><span>赵云玩偶（不可交易）</span><span>2</span></p>
+                    <p><span>张飞玩偶（不可交易）</span><span>2</span></p>
+                    <p><span>关羽玩偶（不可交易）</span><span>2</span></p>
+                    <p><span>马超玩偶（不可交易）</span><span>2</span></p>
+                    <p><span>黄忠玩偶（不可交易）</span><span>2</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="tip1">温馨提示：虚拟道具奖品将在24小时内发到您的游戏仓库。谢谢您的理解与支持！</p>
+    <a class="dia-close db popsp" href="javascript:closeDialog();" title="关闭">×</a>
+</div>
+<!--暂存箱end-->
+
+<!--中奖记录start 10连-->
+<div class="pop pop2" id="popJl" style="margin-top: -346px;margin-left: -247px;">
+    <h2 class="titzjxx popsp db">中奖信息</h2>
+    <p class="p_tips">抽奖过程中请勿刷新页面或中断，请以实际礼包记录为准。</p>
+    <div class="zj_info" id="choulist">
+        <p id="jlname0"></p>
+        <p id="jlname1"></p>
+        <p id="jlname2"></p>
+        <p id="jlname3"></p>
+        <p id="jlname4"></p>
+        <p id="jlname5"></p>
+        <p id="jlname6"></p>
+        <p id="jlname7"></p>
+        <p id="jlname8"></p>
+        <p id="jlname9"></p> 
+    </div>
+    <p class="tip1">温馨提示:<br/>1.虚拟道具奖品将在24小时内发到您的游戏仓库。谢谢您的理解与支持<br>2.由于数据量巨大，奖励道具显示将有所延迟，或可存在不展示的情况，请以礼包记录为准。</p>
+    <a class="dia-close db popsp" href="javascript:closeDialog();enter(1000);" title="关闭">×</a>
+</div>
+<!--中奖记录end-->
+
+<!--中奖记录start 单抽-->
+<div class="pop pop3" id="popdc"  style="margin-top: -188px;margin-left: -247px;">
+    <h2 class="titzjxx popsp db">中奖信息</h2>
+    <p class="p_tips">抽奖过程中请勿刷新页面或中断，请以实际礼包记录为准。</p>
+    <div class="pop_list">
+        <p id="dczjxx">xxxxxxxxxxxxxxxxx</p>
+    </div>
+    <p class="tip1">温馨提示:<br/>1.虚拟道具奖品将在24小时内发到您的游戏仓库。谢谢您的理解与支持<br>2.由于数据量巨大，奖励道具显示将有所延迟，或可存在不展示的情况，请以礼包记录为准。</p>
+    <a class="dia-close db popsp" href="javascript:closeDialog();enter(1000);" title="关闭">×</a>
+</div>
+
+<!--奖池概率-->
+<div class="pop pop4" id="popgl" style="margin-top:-458px ;">
+    <div class="popbtnnav">
+        <a class="popsp on" href="javascript:;">主奖池</a>
+        <a class="popsp" href="javascript:;">疯狂骰子</a>
+        <a class="popsp" href="javascript:;">五虎上将宝箱</a>
+    </div>
+    <div class="poptabgl">
+        <table class="tablegl tablegl1">
+            <thead>
+            <tr>
+                <th class="thjc">奖池</th>
+                <th class="thgl">概率</th>
+            </tr>
+            </thead>
+            <tbody class="poptbdy">
+
+
+            <tr>
+                <td>M4A1-战神赵云</td>
+                <td>0.40%</td>
+            </tr>
+            <tr class="h30">
+                <td>毁灭-战神张飞</td>
+                <td>0.40%</td>
+            </tr>
+            <tr>
+                <td>火麒麟-战神关羽</td>
+                <td>0.40%</td>
+            </tr>
+            <tr>
+                <td>黑骑士-战神马超</td>
+                <td>0.40%</td>
+            </tr>
+            <tr class="h30">
+                <td>M200-幻神-黄忠皮肤</td>
+                <td>0.30%</td>
+            </tr>
+            <tr>
+                <td>M200-幻神</td>
+                <td>0.30%</td>
+            </tr>
+            <tr class="h30">
+                <td>M4A1-雷神</td>
+                <td>0.70%</td>
+            </tr>
+            <tr>
+                <td>Barrett-毁灭</td>
+                <td>0.70%</td>
+            </tr>
+            <tr class="h30">
+                <td>AK47-火麒麟</td>
+                <td>0.70%</td>
+            </tr>
+            <tr>
+                <td>M4A1-黑骑士</td>
+                <td>0.70%</td>
+            </tr>
+            <tr class="h30">
+                <td>五虎将玩偶自选</td>
+                <td>1.00%</td>
+            </tr>
+            <tr>
+                <td>五虎上将宝箱</td>
+                <td>7.30%</td>
+            </tr>
+            <tr class="h30">
+                <td>疯狂骰子</td>
+                <td>0.10%</td>
+            </tr>
+            <tr>
+                <td>五虎币x100</td>
+                <td>0.10%</td>
+            </tr>
+            <tr class="h30">
+                <td>五虎币x50</td>
+                <td>2.00%</td>
+            </tr>
+            <tr>
+                <td>五虎币x20</td>
+                <td>4.50%</td>
+            </tr>
+            <tr class="h30">
+                <td>五虎币x10</td>
+                <td>50.00%</td>
+            </tr>
+            <tr>
+                <td>五虎币x5</td>
+                <td>30.00%</td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="tablegl tablegl2" style="display: none;">
+            <thead>
+            <tr>
+                <th class="thjc">奖池</th>
+                <th class="thgl">概率</th>
+            </tr>
+            </thead>
+            <tbody class="poptbdy">
+            <tr>
+                <td>点数10</td>
+                <td>10.00%</td>
+            </tr>
+            <tr>
+                <td>点数6</td>
+                <td>20.00%</td>
+            </tr>
+            <tr>
+                <td>点数4</td>
+                <td>30.00%</td>
+            </tr>
+            <tr>
+                <td>点数3</td>
+                <td>40.00%</td>
+            </tr>
+            </tbody>
+
+        </table>
+        <table class="tablegl tablegl3" style="display: none;">
+            <thead>
+            <tr>
+                <th class="thjc">五虎上将宝箱配置</th>
+                <th class="thgl">概率</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>赵云令牌x1</td>
+                <td>1%</td>
+            </tr>
+            <tr class="h30">
+                <td>张飞令牌x1</td>
+                <td>1%</td>
+            </tr>
+            <tr>
+                <td>关羽令牌x1</td>
+                <td>1%</td>
+            </tr>
+            <tr class="h30">
+                <td>马超令牌x1</td>
+                <td>1%</td>
+            </tr>
+            <tr>
+                <td>黄忠令牌x1</td>
+                <td>1%</td>
+            </tr>
+            <tr class="h30">
+                <td>王者之石x30</td>
+                <td>5%</td>
+            </tr>
+            <tr>
+                <td>王者之石x10</td>
+                <td>30%</td>
+            </tr>
+            <tr class="h30">
+                <td>王者之石x1</td>
+                <td>60%</td>
+            </tr>
+        </table>
+    </div>
+    <a class="dia-close db popsp" href="javascript:closeDialog();" title="关闭">×</a>
+</div>
+
+<script src="static/js/jquery-1.11.3.min.js"></script>
+<script src="static/cj.js"></script>
+<script>
+</script>
+
+</body>
+</html>
