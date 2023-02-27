@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .xfgg{
+            position: fixed;
+        }
+        .xfgg1{
+            width: 200px;
+            height: 225px;
+            background-image: url('gg/bg.png');
+            background-size: cover;
+          position: fixed;
+          bottom: 0%;
+          right: 0;
+        }
+        .xfgg2{
+            bottom: 245px;
+            right: 0px;
+        }
+        .gg1box{
+            width: 100px;
+            position: absolute;
+            top: 66px;
+            left: 50px;
+            display: flex;
+            overflow-x: hidden;
+        }
+    
+        .gg1box img{
+            width: 100px;
+transition-duration:3s;
+        }
+        .xfgg1:hover .ggnimg1{
+        margin-left: -200px; 
+        }
+        .ggtit{
+            text-align: right;
+            margin-top: -16px;
+            font-size: 12px;
+        }
+        @keyframes shutdh {
+            0%{display: none;}
+            100%{display: inline;}
+        }
+        .ggtit span{
+            animation: shutdh;
+            animation-duration: 1s;
+            animation-delay: 3s;
+            background-color: beige;
+        }
+.ggtit span{
+    cursor: pointer;
+}
+       .xfgg3{
+        bottom: 136px;
+        left: 0;
+       } 
+       .xfgg4{
+        bottom: 0;
+        left: 0;
+       }
+    </style>
+</head>
+<body>
+    
+        <div class="xfgg xfgg1 ggbox" >
+            <div class="ggtit">
+                <span>&nbsp;广告&nbsp;</span>&nbsp;&nbsp;<span onclick="shutgg()">&nbsp;关闭&nbsp;</span>
+            </div>
+            <a href="https://yyx.cfcyhx.top/" target="_blank" >
+
+           
+            <div style="width: 100%;height:250px">
+            <div class="gg1box">
+                <img src="gg/t2_prop10.png" class="ggnimg1" alt="">
+                <img src="gg/t2_prop11.png" class="ggnimg2"  alt="">
+                <img src="gg/t2_prop12.png" class="ggnimg3"  alt="">
+            </div>
+        </div>
+    </a>
+        </div>
+    
+        <div class="xfgg xfgg2 ggbox">
+            <a href="https://yyx.cfcyhx.top/"  target="_blank">
+                <img src="gg/hs.png" style="width: 200px;" alt="">
+            </a>
+        </div>
+
+<div class="xfgg xfgg3 ggbox">
+    <div class="ggtit">
+        <span>&nbsp;广告&nbsp;</span>&nbsp;&nbsp;<span onclick="shutgg()">&nbsp;关闭&nbsp;</span>
+    </div>
+<a href="">
+    <img src="gg/tkrk.png" style="width: 200px;" alt="">
+</a>
+</div>
+
+<div class="xfgg xfgg4 ggbox">
+    <div class="ggtit">
+        <span>&nbsp;广告&nbsp;</span>&nbsp;&nbsp;<span onclick="shutgg()">&nbsp;关闭&nbsp;</span>
+    </div>
+<a href="">
+    <img src="gg/cfhz.png" style="width: 300px;" alt="">
+</a>
+</div>
+    <script src="static/js/jquery-1.11.3.min.js"></script>
+    
+    <script>
+function shutgg(){
+    $(".ggbox").css("display","none")
+}
+        
+    </script>
+
+
+
+    
+</body>
+</html>
