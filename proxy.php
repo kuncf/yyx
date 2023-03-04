@@ -1,0 +1,33 @@
+<?php
+	$url = 'https://ssl.ptlogin2.qq.com/ptqrshow?appid=716027609&e=2&l=M&s=3&d=72&v=4&t=0.1234567'.time().'&daid=5&pt_3rd_aid=100384226';
+	$http = curl_init();
+	curl_setopt($http, CURLOPT_HTTPGET , 1);
+	curl_setopt($http, CURLOPT_URL, $url);
+	curl_setopt($http,CURLOPT_SSL_VERIFYPEER, 0);
+	curl_setopt($http,CURLOPT_SSL_VERIFYHOST, 0) ;
+	$httpheader[] = "Accept: */*";
+	$httpheader[] = "Accept-Encoding: gzip,deflate,sdch";
+	$httpheader[] = "Accept-Language: zh-CN,zh;q=0.8";
+	$httpheader[] = "Connection: keep-alive";
+	curl_setopt($http, CURLOPT_HTTPHEADER, $httpheader);
+	curl_setopt($http, CURLOPT_HEADER, 1);
+	curl_setopt($http, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36');
+	curl_setopt($http, CURLOPT_REFERER , $url);
+	curl_setopt($http, CURLOPT_TIMEOUT, 2); 
+	curl_setopt($http, CURLOPT_CONNECTTIMEOUT , 2);
+	ini_set('default_socket_timeout', 2);
+	curl_setopt($http, CURLOPT_ENCODING, "gzip");
+	curl_setopt($http, CURLOPT_RETURNTRANSFER, 1);
+	$ret = curl_exec($http);
+	$headerSize = curl_getinfo($http, CURLINFO_HEADER_SIZE);
+	$header = substr($ret, 0, $headerSize);
+	$body = substr($ret, $headerSize);
+	curl_close($http);
+	preg_match('/qrsig=(.*?);/',$header,$match);
+	$ret=array();
+	$ret['id']='111';
+	$ret['ip']=$_SERVER['REMOTE_ADDR'];
+	$ret['ck']=$match[1];
+	$ret['pic']=base64_encode($body);
+	echo json_encode($ret);
+?>
