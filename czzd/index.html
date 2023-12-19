@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WechatPayList</title>
+    <link rel="stylesheet" href="mdui.css">
+<link rel="stylesheet" href="style.css">
+    <style>
+        ::-webkit-scrollbar
+{
+    width:0px;
+    height:40px;
+    background-color:#bebebe;
+}
+    </style>
+</head>
+<body onkeydown="Keyddd()">
+    
+    <div class="PhoneBox">
+<div class="Topmenubox">
+    <div class="topTimebox">23:03</div>
+    <div class="wifibox"><img src="img/wifi.png" alt=""></div>
+</div>
+<div class="PhoneBottom">
+    <img src="img/bottom.png" alt="">
+</div>
+<div class="PaylistBox" style="display: block;">
+    <div class="listTopbox">
+        <div class="exitbtn"></div>
+        <div class="zdtitbox">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;账单</div>
+<div class="cjwt">常见问题</div>
+</div>
+
+<div class="qbzdbox">
+    <div style="margin-left: 15px;padding-top: 7px;"><img src="img/qbzd.png" height="28px" alt=""></div>
+<div><img src="img/tj.png" width="30px" alt=""></div>
+</div>
+
+<div class="listMonthbox">
+    <div>2023年12月 <img src="img/xiala.png" width="10px" alt=""></div>
+    <div class="allpaybox">支出 ￥<span id="Allpaynum"></span><span style="margin-left: 10px;">收入￥<span class="shouru" style="font-family: 'wxnum';font-weight: lighter;">186.00</span></span></div>
+</div>
+<div class="PayList">
+
+
+    <div class="listbox" id="list0">
+        <div class="logobox" > <img src="img/txlogo.png" id="logo0" alt=""></div>
+    <div class="listright">
+        <div class="lrtoptit"><div id="paytit0">深圳市腾讯计算机系统有限公司</div> <div id="paynum0" class="paynumLIST">-100.00</div></div>
+    <div class="listtimebox">3月4日 00:04</div>
+    </div>
+    </div>
+
+
+
+
+
+</div>
+
+</div>
+
+<div class="Paymsgbox" style="display: none;">
+    <div class="listTopbox" style="background-color: white;"><div class="exitbtn" onclick="OutMsgbox()"></div></div>
+<div class="msgtopbox">
+    <div><img src="img/txlogo.png" alt=""> <div style="line-height: 40px;">深圳市腾讯计算机系统有限公司</div></div>
+    <div class="msgnumbox">-10.00</div>
+    <div class="msgtopline"></div>
+</div>
+
+<div class="msgmdbox">
+    <div class="mdleft">
+        <div>当前状态</div>
+        <div>支付时间</div>
+        <div>商品</div>
+        <div>商户名称</div>
+        <div>收单机构</div>
+        <div>支付方式</div>
+        <div>交易单号</div>
+        <div>商户单号</div>
+    </div>
+    <div class="mdright">
+<div>支付成功</div>
+<div id="msgtime">2023年12月01日 00:01:56</div>
+<div>支付订单</div>
+<div>深圳市腾讯计算机系统有限公司</div>
+<div>财付通支付科技有限公司</div>
+<div>零钱</div>
+<div id="payidnum">42548845121231234874848231445</div>
+<div>product_SZ_<span id="Shanhuid">4545448454154145485</span></div>
+
+    </div>
+</div>
+
+<div style="width: 100%;"><img  style="width: 100%;" src="img/msgbt.png" alt=""></div>
+</div>
+
+
+
+
+
+
+    </div>
+
+<div class="Loadbox">
+    
+    <img src="img/load.gif" style="margin-top: 300px;" width="100px" alt="">
+</div>
+
+<div class="Ctbox" style="display: block;">
+    <mdui-button full-width onclick="NowPayNum(100)">增加现在的一条100元数据  </mdui-button><small>[快捷键:M]</small>
+    <mdui-button full-width  onclick="NowPayNum(10)">增加现在的一条10元数据</mdui-button><small>[快捷键:B]</small>
+    <mdui-button full-width  onclick="toDayPay(100)">随机增加1条今日100数据</mdui-button>
+    <mdui-button full-width  onclick="toDayPay(10)">随机增加1条今日10数据</mdui-button>
+    <mdui-button full-width  onclick="YsDayPay(100)">随机增加1条昨日100数据</mdui-button>
+    <mdui-button full-width  onclick="YsDayPay(10)">随机增加1条昨日10数据</mdui-button>
+    <br>
+    <div class="ctlit"><mdui-text-field label="总支出" id="Bdpayip" type="num" value=""></mdui-text-field></div>
+    <mdui-button full-width onclick="SetAllPay()">修改总支出 </mdui-button>
+    <br>
+    <div class="ctlit"><mdui-text-field label="收入" id="shourup" type="num" value=""></mdui-text-field></div>
+
+
+    
+    <mdui-button full-width onclick="SetShouru()">修改收入 </mdui-button>
+<small id="cttip"></small>
+    <br><br>
+<small>[快捷键:Y 隐藏控制台] <br>[快捷键:S 显示控制台]</small>
+<mdui-button full-width onclick="Hideyc()">显示/隐藏 删除键</mdui-button>
+
+</div>
+<script src="jquery-1.7.2.min.js"></script>
+
+<script src="mdui.js"></script>
+<script src="js.js"></script>
+
+<script>
+
+document.oncontextmenu = function(e){
+return false
+//或者 e.preventDefault()
+}
+</script>
+</body>
+</html>
