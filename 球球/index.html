@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            background-color: #000;
+            width: 100%;
+            height: 100%;
+         
+        }
+        body{
+            width: 100%;
+            height: 100%;
+            background-image: url(./img/1.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #coordinates {
+    position: fixed;
+    top: 10px;
+    right:10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+        .video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .Youjianbtn{
+            position: absolute;
+            top: 774px;
+            left: 0;
+
+            width: 50px;
+            height: 50px;
+
+            border-radius: 10px;
+        }
+        .EMBOX{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500px;
+            height: 890px;
+            background-color: rgba(0, 0, 0, 0.5);
+     display: none;
+        }
+        .JLBOX{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500px;
+            height: 890px;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <video src="vd/index.mp4" autoplay muted loop width="500px"></video>
+   
+    <div class="Youjianbtn" onclick="$('.EMBOX').css('display','block')"></div>
+
+    <div id="coordinates"></div>
+
+    <div class="EMBOX">
+        <video src="vd/em.mp4" onclick="$('.JLBOX').css('display','block')" id="" autoplay muted loop width="500px"></video>
+    </div>
+
+    <div class="JLBOX" >
+        <video src="vd/jl.mp4" id="jlcd"  onclick="$('.JLBOX').css('display','none')"  autoplay muted loop width="500px"></video>
+    </div>
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script>         
+     let clickCount = 0;
+    document.addEventListener('click', function(event) {
+        const x = event.pageX;
+        const y = event.pageY;
+        const coordinates = document.getElementById('coordinates');
+        coordinates.innerHTML = `点击坐标: (${x}, ${y})`;
+
+        if (clickCount === 1) {
+            const diffX = Math.abs(x - lastX);
+            const diffY = Math.abs(y - lastY);
+            coordinates.innerHTML += `<br>两次点击的坐标差值: (X: ${diffX}, Y: ${diffY})`;
+            clickCount = 0;
+        } else {
+            clickCount++;
+        }
+
+        lastX = x;
+        lastY = y;
+    });
+</script>
+</body>
+</html>
